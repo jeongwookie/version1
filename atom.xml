@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Jeongwook, IT Blog</title>
   
-  <subtitle>답답해서 개발 시작한 기획자 이야기</subtitle>
+  <subtitle>금성에서 온 기획자, 개발을 배우다</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2018-09-08T14:03:55.148Z</updated>
+  <updated>2018-09-10T06:36:33.000Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://jeongwookie.github.io/2018/09/08/Python-%EC%97%AC%EB%9F%AC%EA%B0%80%EC%A7%80/"/>
     <id>http://jeongwookie.github.io/2018/09/08/Python-여러가지/</id>
     <published>2018-09-08T01:02:37.000Z</published>
-    <updated>2018-09-08T14:03:55.148Z</updated>
+    <updated>2018-09-10T06:36:33.000Z</updated>
     
-    <content type="html"><![CDATA[<p>##흠 수업옴</p><p><em>흠 테스트</em></p><p>왜 안올라가는거죠?</p>]]></content>
+    <content type="html"><![CDATA[<p>##흠 수업옴</p><p><em>흠 테스트</em></p><p>왜 안올라가는거죠? 이상하다…<br>아직도 안올라가는건가?</p><p>Didn’t work?!</p>]]></content>
     
     <summary type="html">
     
@@ -31,6 +31,10 @@
     
     </summary>
     
+      <category term="Python2" scheme="http://jeongwookie.github.io/categories/Python2/"/>
+    
+    
+      <category term="test-test" scheme="http://jeongwookie.github.io/tags/test-test/"/>
     
   </entry>
   
@@ -39,7 +43,7 @@
     <link href="http://jeongwookie.github.io/2018/09/07/Test-at-Mac/"/>
     <id>http://jeongwookie.github.io/2018/09/07/Test-at-Mac/</id>
     <published>2018-09-06T20:05:39.000Z</published>
-    <updated>2018-09-06T20:13:28.962Z</updated>
+    <updated>2018-09-06T20:13:28.000Z</updated>
     
     <content type="html"><![CDATA[<p><em>호우</em></p><p><em>이 글은 맥에서 작성되었습니다</em></p><p>##띠용</p>]]></content>
     
@@ -64,10 +68,10 @@
   
   <entry>
     <title>첫번째 게시글이랄까</title>
-    <link href="http://jeongwookie.github.io/2018/09/07/%E1%84%8E%E1%85%A5%E1%86%BA%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2-%E1%84%80%E1%85%A6%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%86%AF%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%AF%E1%84%81%E1%85%A1/"/>
-    <id>http://jeongwookie.github.io/2018/09/07/첫번째-게시글이랄까/</id>
+    <link href="http://jeongwookie.github.io/2018/09/07/%EC%B2%AB%EB%B2%88%EC%A7%B8-%EA%B2%8C%EC%8B%9C%EA%B8%80%EC%9D%B4%EB%9E%84%EA%B9%8C/"/>
+    <id>http://jeongwookie.github.io/2018/09/07/첫번째-게시글이랄까/</id>
     <published>2018-09-06T18:13:19.000Z</published>
-    <updated>2018-09-06T19:46:22.000Z</updated>
+    <updated>2018-09-06T19:47:43.710Z</updated>
     
     <content type="html"><![CDATA[<h2 id="사실은-귀여운-새봄추였습니다"><a href="#사실은-귀여운-새봄추였습니다" class="headerlink" title="사실은 귀여운 새봄추였습니다"></a>사실은 귀여운 새봄추였습니다</h2><p>여기 적히는 문법은 html일까?<br>여기에다가 색깔 넣고 볼드 넣고 하는 건 어떻게 할까나<br>어어억<br>링크도 달고 해야<br>DDDN의 피자는 맛있다.<br>포스트에 thumbnail 추가하기<br>source/images에 이미지 파일을 넣고 포스트 font-matter에 thumbnail을 추가하고 이미지 경로를 넣어줍니다.</p><p>여기는 어떻게 이미지를 넣을까?<br>(글에 이미지 넣는 방법이 뭐지요)</p><p>흐음.</p><p>게시글을 찾아본 결과 Markdown 문법을 따르고 있음을 확인했다.<br>이제 이미지를 넣어보자.</p><p><img src="/images/1.png" alt="새봄추의 이미지"></p><p>된건가?</p><p><a href="https://simhyejin.github.io/2016/06/30/Markdown-syntax/#images" title="markdown systex" target="_blank" rel="noopener">마크다운</a></p><p><em>호우!</em></p>]]></content>
     
@@ -92,7 +96,7 @@
     <link href="http://jeongwookie.github.io/2018/09/06/window-test/"/>
     <id>http://jeongwookie.github.io/2018/09/06/window-test/</id>
     <published>2018-09-06T09:20:24.000Z</published>
-    <updated>2018-09-06T19:49:58.473Z</updated>
+    <updated>2018-09-06T19:49:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>###WHAAAAAATTTT</p><h2 id="글자-크기-테스트"><a href="#글자-크기-테스트" class="headerlink" title="글자 크기 테스트"></a>글자 크기 테스트</h2><h1 id="이건-글자-크기가-뭘까"><a href="#이건-글자-크기가-뭘까" class="headerlink" title="이건 글자 크기가 뭘까?"></a>이건 글자 크기가 뭘까?</h1><p>This is a test post.<br>한글 와 한글이다!<br>띄<br>어<br>쓰<br>기</p><hr>]]></content>
     
@@ -115,12 +119,33 @@
   
   <entry>
     <title>아무거나</title>
-    <link href="http://jeongwookie.github.io/2018/09/06/%E1%84%8B%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A5%E1%84%82%E1%85%A1/"/>
-    <id>http://jeongwookie.github.io/2018/09/06/아무거나/</id>
+    <link href="http://jeongwookie.github.io/2018/09/06/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
+    <id>http://jeongwookie.github.io/2018/09/06/아무거나/</id>
     <published>2018-09-05T18:51:06.000Z</published>
-    <updated>2018-09-06T19:41:35.000Z</updated>
+    <updated>2018-09-06T19:41:35.503Z</updated>
     
     <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://jeongwookie.github.io/2018/09/06/hello-world/"/>
+    <id>http://jeongwookie.github.io/2018/09/06/hello-world/</id>
+    <published>2018-09-05T18:46:13.662Z</published>
+    <updated>2018-09-05T18:46:13.662Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
     
     </summary>
     
@@ -132,30 +157,9 @@
     <link href="http://jeongwookie.github.io/2018/09/06/test-name/"/>
     <id>http://jeongwookie.github.io/2018/09/06/test-name/</id>
     <published>2018-09-05T16:05:01.000Z</published>
-    <updated>2018-09-06T19:37:43.292Z</updated>
+    <updated>2018-09-06T19:37:43.000Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://jeongwookie.github.io/2018/09/05/hello-world/"/>
-    <id>http://jeongwookie.github.io/2018/09/05/hello-world/</id>
-    <published>2018-09-04T17:12:01.946Z</published>
-    <updated>2018-09-05T18:46:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
     
     </summary>
     
