@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2018-09-10T13:42:22.742Z</updated>
+  <updated>2018-09-10T14:03:50.146Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github 블로그에 이미지 업로드하기</title>
+    <link href="http://jeongwookie.github.io/2018/09/10/Github-%EB%B8%94%EB%A1%9C%EA%B7%B8%EC%97%90-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%97%85%EB%A1%9C%EB%93%9C%ED%95%98%EA%B8%B0/"/>
+    <id>http://jeongwookie.github.io/2018/09/10/Github-블로그에-이미지-업로드하기/</id>
+    <published>2018-09-10T13:46:48.000Z</published>
+    <updated>2018-09-10T14:03:50.146Z</updated>
+    
+    <content type="html"><![CDATA[<p>Github를 사용해서 블로그를 시작하려는데, 문제가 생겼다.</p><blockquote><p>왜 이미지 업로드가 안되지?</p></blockquote><p>분명히 source를 확인하고, deploy_git에 정상적으로 image가 업로드 되었음에도, 내 페이지는 그대로..</p><p>이것저것 해보다가 다시 블로그를 새로고침했더니, 정상적으로 image가 올라가 있었다 -_-</p><p>내 짧은 지식과 검색으로 다음과 같은 결론을 얻었다.</p><ol><li>Github를 이용해서 블로그를 호스팅할 경우, 전송 속도가 매우 느려서 업로드 되는데 시간이 좀 걸린다. (약 3~4분)</li><li>되긴 되지만 답답하다. 다른 방법 없나?</li></ol><p>구글링을 열심히 해보니, 놀랍게도 GitHub Help에서 issue로 등록해 놨더라.</p><p><a href="https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/" title="깃허브 페이지에 이미지 업로드하기" target="_blank" rel="noopener">File attachments on issues and pull requests</a></p><p><img src="https://user-images.githubusercontent.com/25416425/45302205-a5964c80-b54d-11e8-8acb-170bf3e854f7.gif" alt="네모에다가 원하는 이미지를 드래그 앤 드랍 해보자"></p><p>위에 나와있는 움짤처럼 이미지를 끌어다가 네모에 넣고 기다리면, 이미지 링크가 생긴다.</p><p>이를 원하는 페이지에 붙여넣으면 끝!</p>]]></content>
+    
+    <summary type="html">
+    
+      깃허브 블로그에 이미지 업로드하기
+    
+    </summary>
+    
+      <category term="Github" scheme="http://jeongwookie.github.io/categories/Github/"/>
+    
+    
+      <category term="Giuhub" scheme="http://jeongwookie.github.io/tags/Giuhub/"/>
+    
+      <category term="블로그" scheme="http://jeongwookie.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>파이썬 시작하기</title>
@@ -34,9 +60,9 @@
       <category term="python" scheme="http://jeongwookie.github.io/categories/python/"/>
     
     
-      <category term="python" scheme="http://jeongwookie.github.io/tags/python/"/>
-    
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="python" scheme="http://jeongwookie.github.io/tags/python/"/>
     
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
@@ -63,45 +89,6 @@
     
     
       <category term="test-test" scheme="http://jeongwookie.github.io/tags/test-test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>첫번째 게시글이랄까</title>
-    <link href="http://jeongwookie.github.io/2018/09/07/%EC%B2%AB%EB%B2%88%EC%A7%B8-%EA%B2%8C%EC%8B%9C%EA%B8%80%EC%9D%B4%EB%9E%84%EA%B9%8C/"/>
-    <id>http://jeongwookie.github.io/2018/09/07/첫번째-게시글이랄까/</id>
-    <published>2018-09-06T18:13:19.000Z</published>
-    <updated>2018-09-06T19:47:43.710Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="사실은-귀여운-새봄추였습니다"><a href="#사실은-귀여운-새봄추였습니다" class="headerlink" title="사실은 귀여운 새봄추였습니다"></a>사실은 귀여운 새봄추였습니다</h2><p>여기 적히는 문법은 html일까?<br>여기에다가 색깔 넣고 볼드 넣고 하는 건 어떻게 할까나<br>어어억<br>링크도 달고 해야<br>DDDN의 피자는 맛있다.<br>포스트에 thumbnail 추가하기<br>source/images에 이미지 파일을 넣고 포스트 font-matter에 thumbnail을 추가하고 이미지 경로를 넣어줍니다.</p><p>여기는 어떻게 이미지를 넣을까?<br>(글에 이미지 넣는 방법이 뭐지요)</p><p>흐음.</p><p>게시글을 찾아본 결과 Markdown 문법을 따르고 있음을 확인했다.<br>이제 이미지를 넣어보자.</p><p><img src="/images/1.png" alt="새봄추의 이미지"></p><p>된건가?</p><p><a href="https://simhyejin.github.io/2016/06/30/Markdown-syntax/#images" title="markdown systex" target="_blank" rel="noopener">마크다운</a></p><p><em>호우!</em></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;사실은-귀여운-새봄추였습니다&quot;&gt;&lt;a href=&quot;#사실은-귀여운-새봄추였습니다&quot; class=&quot;headerlink&quot; title=&quot;사실은 귀여운 새봄추였습니다&quot;&gt;&lt;/a&gt;사실은 귀여운 새봄추였습니다&lt;/h2&gt;&lt;p&gt;여기 적히는 문법은 html일까?
-      
-    
-    </summary>
-    
-      <category term="개발" scheme="http://jeongwookie.github.io/categories/%EA%B0%9C%EB%B0%9C/"/>
-    
-    
-      <category term="python" scheme="http://jeongwookie.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>아무거나</title>
-    <link href="http://jeongwookie.github.io/2018/09/06/%EC%95%84%EB%AC%B4%EA%B1%B0%EB%82%98/"/>
-    <id>http://jeongwookie.github.io/2018/09/06/아무거나/</id>
-    <published>2018-09-05T18:51:06.000Z</published>
-    <updated>2018-09-06T19:41:35.503Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
