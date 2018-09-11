@@ -21,7 +21,7 @@
 <meta property="og:description" content="Python 강의 첫번째 숙제 - 문자열 다루기">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/25416425/45349274-cc0ac500-b5eb-11e8-8f15-54683c584f5c.png">
-<meta property="og:updated_time" content="2018-09-11T14:26:41.580Z">
+<meta property="og:updated_time" content="2018-09-11T15:03:10.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="첫번째 숙제">
 <meta name="twitter:description" content="Python 강의 첫번째 숙제 - 문자열 다루기">
@@ -195,19 +195,19 @@
             <p><strong>1번 문제 : 슬라이싱 및 문자열 합치기</strong></p>
 <p>첫 번째 문제는 주어진 string을 “슬라이싱” 및 “문자열 합치기”를 사용해서 주어진 format으로 만드는 것이다.</p>
 <p>“20180108”을 “2018년 01월 08일”로 바꾸어 출력해 보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = &quot;20180108&quot;</span><br><span class="line">&gt;&gt;&gt; year = a[:4]</span><br><span class="line">&gt;&gt;&gt; month = a[4:6]</span><br><span class="line">&gt;&gt;&gt; date = a[6:]</span><br><span class="line">&gt;&gt;&gt; date_format = &quot;&#123;&#125;년 &#123;&#125;월 &#123;&#125;일&quot;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(date_format.format(year, month, date))</span><br><span class="line">2018년 01월 08일</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">"20180108"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>year = a[:<span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>month = a[<span class="number">4</span>:<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>date = a[<span class="number">6</span>:]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>date_format = <span class="string">"&#123;&#125;년 &#123;&#125;월 &#123;&#125;일"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(date_format.format(year, month, date))</span><br><span class="line"><span class="number">2018</span>년 <span class="number">01</span>월 <span class="number">08</span>일</span><br></pre></td></tr></table></figure>
 <p><strong>2번 문제 : 나누기 및 나머지 구하기를 활용한 1번 문제 풀이*</strong></p>
 <p>두 번째 문제는 1번 문제와 동일한 결과물을 “나누기” 및 “나머지 구하기”를 활용하여 출력하는 것이다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = 20180108</span><br><span class="line">&gt;&gt;&gt; year = int(a/10000)     #int로 정수화</span><br><span class="line">&gt;&gt;&gt; month = int((a%10000)/100)      #int로 정수화</span><br><span class="line">&gt;&gt;&gt; date = (a%10000)%100</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(&quot;&#123;0&#125;년 &#123;3&#125;&#123;1&#125;월 &#123;3&#125;&#123;2&#125;일&quot;.format(year, month, date, 0))</span><br><span class="line">2018년 01월 08일</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">20180108</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>year = int(a/<span class="number">10000</span>)     <span class="comment">#int로 정수화</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>month = int((a%<span class="number">10000</span>)/<span class="number">100</span>)      <span class="comment">#int로 정수화</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>date = (a%<span class="number">10000</span>)%<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;0&#125;년 &#123;3&#125;&#123;1&#125;월 &#123;3&#125;&#123;2&#125;일"</span>.format(year, month, date, <span class="number">0</span>))</span><br><span class="line"><span class="number">2018</span>년 <span class="number">01</span>월 <span class="number">08</span>일</span><br></pre></td></tr></table></figure>
 <p>다른 방법도 있을텐데 그냥 0 자리를 만들고 그대로 format 함수 사용해서 채워넣었다.</p>
 <p><strong>3번 문제 : 슬라이싱 및 문자열 합치기</strong></p>
 <p>세 번째 문제는 주어진 문자열의 문자를 “슬라이싱” 및 “문자열 합치기”를 활용하여 바꾸는 것이다.</p>
 <p>“Hi Jeongwook” 을 “Hello Jeongwook” 으로 바꾸어 보자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; b = &quot;Hi Jeongwook&quot;</span><br><span class="line">&gt;&gt;&gt; say_hello = &quot;Hello &quot;</span><br><span class="line">&gt;&gt;&gt; result_statement = say_hello + b[3:]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(result_statement)</span><br><span class="line">&quot;Hello Jeongwook&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">"Hi Jeongwook"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>say_hello = <span class="string">"Hello "</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>result_statement = say_hello + b[<span class="number">3</span>:]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(result_statement)</span><br><span class="line"><span class="string">"Hello Jeongwook"</span></span><br></pre></td></tr></table></figure>
 <p><strong>4번 문제 : 원하는 문자를 Upper letter로 바꾸어 보기*</strong></p>
 <p>네 번째 문제는 문자열을 입력 받은 후 첫 번째 문자와 마지막 문자만 대문자로 바꾸어 출력하는 것이다.</p>
 <p>입력 받은 문자열을 슬라이싱 후 원하는 부분만 <a href="https://www.tutorialspoint.com/python/string_upper.htm" target="_blank" rel="noopener">upper()</a>을 적용한 후 다시 합치면 된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; input_statement = input()</span><br><span class="line">&gt;&gt;&gt; first_letter = input_statement[0].upper()</span><br><span class="line">&gt;&gt;&gt; last_letter = input_statement[-1].upper()</span><br><span class="line">&gt;&gt;&gt; middle_letter = input_statement[1:-1].lower()</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; output_statement = first_letter + middle_letter + last_letter</span><br><span class="line">&gt;&gt;&gt; print(output_statement)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>input_statement = input()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>first_letter = input_statement[<span class="number">0</span>].upper()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>last_letter = input_statement[<span class="number">-1</span>].upper()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>middle_letter = input_statement[<span class="number">1</span>:<span class="number">-1</span>].lower()</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>output_statement = first_letter + middle_letter + last_letter</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(output_statement)</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -215,7 +215,7 @@
 
 
 
-    <a data-url="http://jeongwookie.github.io/2018/09/11/First-homework-python/" data-id="cjlxt7v460000rcub9eqkk0wr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://jeongwookie.github.io/2018/09/11/First-homework-python/" data-id="cjlxuxnqj000540ubh9ea2sth" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -347,6 +347,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/09/11/code-alignment-using-format-function/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Format 함수로 정렬하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/09/10/Common-string-operation/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -368,6 +378,26 @@
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/11/code-alignment-using-format-function/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45367421-2cb1f600-b61c-11e8-87bd-2c9d17af18a0.jpg)" alt="Format 함수로 정렬하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Python/KAIST-IT-강좌/">KAIST IT 강좌</a></p>
+                            <p class="item-title"><a href="/2018/09/11/code-alignment-using-format-function/" class="title">Format 함수로 정렬하기</a></p>
+                            <p class="item-date"><time datetime="2018-09-11T14:38:47.000Z" itemprop="datePublished">2018-09-11</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -458,7 +488,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/KAIST-IT-강좌/">KAIST IT 강좌</a><span class="category-list-count">3</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/KAIST-IT-강좌/">KAIST IT 강좌</a><span class="category-list-count">4</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -468,7 +498,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -478,7 +508,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Giuhub/">Giuhub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KAIST/">KAIST</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발/">개발</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/교육/">교육</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그/">블로그</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Giuhub/">Giuhub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KAIST/">KAIST</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발/">개발</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/교육/">교육</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그/">블로그</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
