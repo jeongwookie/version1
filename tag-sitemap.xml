@@ -16,27 +16,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
-        <lastmod>2018-09-11T16:44:54.448Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/Python/</loc>
-        <lastmod>2018-09-12T08:09:51.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
-        <lastmod>2018-09-12T08:09:51.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8/</loc>
         <lastmod>2018-09-12T15:17:29.057Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,13 +39,6 @@
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/</loc>
         <lastmod>2018-09-12T15:46:22.247Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/KAIST/</loc>
-        <lastmod>2018-09-12T15:48:50.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -123,6 +95,34 @@
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
         <lastmod>2018-09-12T16:14:09.717Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
+        <lastmod>2018-09-12T16:22:24.845Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/Python/</loc>
+        <lastmod>2018-09-12T16:22:44.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
+        <lastmod>2018-09-12T16:22:44.690Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/KAIST/</loc>
+        <lastmod>2018-09-12T16:22:44.690Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
