@@ -42,15 +42,22 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/categories/Python/</loc>
-        <lastmod>2018-09-12T16:22:44.690Z</lastmod>
+        <loc>http://jeongwookie.github.io/categories/Python/KAIST/</loc>
+        <lastmod>2018-09-12T16:22:35.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/categories/Python/KAIST/</loc>
-        <lastmod>2018-09-12T16:22:44.690Z</lastmod>
+        <loc>http://jeongwookie.github.io/categories/Python/</loc>
+        <lastmod>2018-09-12T16:45:51.979Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/categories/Python/%EC%B9%B4%EC%9D%B4%EC%8A%A4%ED%8A%B8/</loc>
+        <lastmod>2018-09-12T16:45:51.979Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

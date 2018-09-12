@@ -191,7 +191,7 @@
     <link href="http://jeongwookie.github.io/2018/09/10/Start-learning-python/"/>
     <id>http://jeongwookie.github.io/2018/09/10/Start-learning-python/</id>
     <published>2018-09-10T12:47:29.000Z</published>
-    <updated>2018-09-12T16:22:44.690Z</updated>
+    <updated>2018-09-12T16:45:51.979Z</updated>
     
     <content type="html"><![CDATA[<p> 학교에서 주말마다 하는 IT 교육과정이 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45299472-b2637200-b546-11e8-8c45-424f3bf4a097.png" alt="KAIST IT 아카데미 교육과정"></p><p> 예전부터 파이썬을 혼자서 해보겠다고 책도 빌리고, 코드아카데미에서 몇번 끄젹여 봤었는데 시간이 잘 안나기도 하고 막상 시간이 나면 안했다..</p><p> 학부때 잠깐 EECS의 데이터마이닝 랩에서 근무 했었는데, 그때는 R을 써서 데이터를 읽어오고 간단하게 ANNOVAR 돌려보고 그랬다. C에 비해서는 대단히 직관적인 언어여서 금방금방 따라하긴 했는데 지금은 어떨까?</p><p> 파이썬과 R이 <strong>Data Science</strong> 하면 제일 많이 떠오르는 언어라고 하는데, 예전보다 파이썬의 위상이 하늘을 찌를 정도로 올라가서.. 이제는 파이썬이 아무튼 대세다.</p><p> 개인적으로 개발에 관심을 두기 전에도 대단히 잡다한 지식을 모으는 데에 관심이 있어서, 학부에서 화학을 전공하면서도 현대대수학과 같은 수학과 과목이랑, 양자역학, 세포생물학 및 세포물리학 등등 여기저기 돌아다녔다.</p><p> 인문 수업들도 꽤나 들었고, 다양한 과목들을 수강하면서 놀라웠던 점은 <strong>하나의 현상을 보고, 이를 분석하는 방법이 너무너무 달랐다는 것이다.</strong></p><p> 예를 들어서, 수소의 오비탈을 수식으로 풀어내는 과정에 있어서 양자역학을 배울 때에는 수학적인 정의와 함께 수식 자체를 유도하는 데에 집중한 반면, 물리화학 및 양자화학에서는 적당히 하다 건너뛰고 오히려 수소 뒤의 헬륨, 리튬 등 다른 원소에 적용하고 해석하는 데에 지면을 더 할애하고 있었다. (내 성적을 보자면 양자역학과 같은 쪽이 더 취향에 맞는걸로..)</p><p> 세포물리학은 더 놀라웠다. 생물 수업때 배운 시냅스의 구조 및 작용 원리에 대해서 물리학으로 접근해서, 운동방정식을 세우고 디멘션을 쪼개서 입자의 운동으로 설명하고 있었다.</p><p> 여기서 약간의 insight를 얻었다. Data Science는 결국 주어진 데이터 뭉치에서 어떤 특정한 factor에 집중해서 남들이 보지 못한 <strong>문맥 속 이야기</strong> 를 끌어내는 것이 아닌가?</p><p> 내가 가진 다양한 시각으로 데이터를 분석해서, 비즈니스의 혁신을 일으키고 싶은 것이 내 목표다. 그러기 위해서는 기본적인 개발 언어를 하나 제대로 익혀야겠지?</p><p> 주중에는 학교 수업이랑 회사 일때문에 많이 바쁘다. 그와중에 매주 주말 6시간짜리 코스를 신청하다니.. 이젠 죽었다 ㅠㅠ</p><p> 한번 열심히 해봐야지!</p>]]></content>
     
@@ -203,7 +203,7 @@
     
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Python/"/>
     
-      <category term="KAIST" scheme="http://jeongwookie.github.io/categories/Python/KAIST/"/>
+      <category term="카이스트" scheme="http://jeongwookie.github.io/categories/Python/%EC%B9%B4%EC%9D%B4%EC%8A%A4%ED%8A%B8/"/>
     
     
       <category term="Python" scheme="http://jeongwookie.github.io/tags/Python/"/>
