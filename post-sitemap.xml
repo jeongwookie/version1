@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://jeongwookie.github.io/2018/03/31/my-hobby/</loc>
+        <lastmod>2018-09-12T15:49:28.848Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/2018/03/27/after-meeting-1/</loc>
+        <lastmod>2018-09-12T15:49:00.297Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jeongwookie.github.io/2018/09/13/recommend-lingerwater/</loc>
         <lastmod>2018-09-12T15:46:22.247Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,14 +55,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/2018/03/31/my-hobby/</loc>
-        <lastmod>2018-09-12T06:00:35.825Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/2018/04/01/How-to-growth-hacking/</loc>
         <lastmod>2018-09-12T05:54:36.120Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -65,14 +73,6 @@
     <url>
         <loc>http://jeongwookie.github.io/2018/09/11/First-homework-python/</loc>
         <lastmod>2018-09-11T16:44:54.448Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2018/03/27/after-meeting-1/</loc>
-        <lastmod>2018-09-11T16:35:07.034Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
