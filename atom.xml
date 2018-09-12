@@ -92,13 +92,13 @@
       <category term="KAIST" scheme="http://jeongwookie.github.io/categories/Python/KAIST/"/>
     
     
-      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
-    
       <category term="Python" scheme="http://jeongwookie.github.io/tags/Python/"/>
     
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="KAIST" scheme="http://jeongwookie.github.io/tags/KAIST/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
   </entry>
   
@@ -122,13 +122,13 @@
       <category term="KAIST" scheme="http://jeongwookie.github.io/categories/Python/KAIST/"/>
     
     
-      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
-    
       <category term="Python" scheme="http://jeongwookie.github.io/tags/Python/"/>
     
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="KAIST" scheme="http://jeongwookie.github.io/tags/KAIST/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
   </entry>
   
@@ -191,7 +191,7 @@
     <link href="http://jeongwookie.github.io/2018/09/10/Start-learning-python/"/>
     <id>http://jeongwookie.github.io/2018/09/10/Start-learning-python/</id>
     <published>2018-09-10T12:47:29.000Z</published>
-    <updated>2018-09-12T16:45:51.979Z</updated>
+    <updated>2018-09-12T16:47:58.701Z</updated>
     
     <content type="html"><![CDATA[<p> 학교에서 주말마다 하는 IT 교육과정이 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45299472-b2637200-b546-11e8-8c45-424f3bf4a097.png" alt="KAIST IT 아카데미 교육과정"></p><p> 예전부터 파이썬을 혼자서 해보겠다고 책도 빌리고, 코드아카데미에서 몇번 끄젹여 봤었는데 시간이 잘 안나기도 하고 막상 시간이 나면 안했다..</p><p> 학부때 잠깐 EECS의 데이터마이닝 랩에서 근무 했었는데, 그때는 R을 써서 데이터를 읽어오고 간단하게 ANNOVAR 돌려보고 그랬다. C에 비해서는 대단히 직관적인 언어여서 금방금방 따라하긴 했는데 지금은 어떨까?</p><p> 파이썬과 R이 <strong>Data Science</strong> 하면 제일 많이 떠오르는 언어라고 하는데, 예전보다 파이썬의 위상이 하늘을 찌를 정도로 올라가서.. 이제는 파이썬이 아무튼 대세다.</p><p> 개인적으로 개발에 관심을 두기 전에도 대단히 잡다한 지식을 모으는 데에 관심이 있어서, 학부에서 화학을 전공하면서도 현대대수학과 같은 수학과 과목이랑, 양자역학, 세포생물학 및 세포물리학 등등 여기저기 돌아다녔다.</p><p> 인문 수업들도 꽤나 들었고, 다양한 과목들을 수강하면서 놀라웠던 점은 <strong>하나의 현상을 보고, 이를 분석하는 방법이 너무너무 달랐다는 것이다.</strong></p><p> 예를 들어서, 수소의 오비탈을 수식으로 풀어내는 과정에 있어서 양자역학을 배울 때에는 수학적인 정의와 함께 수식 자체를 유도하는 데에 집중한 반면, 물리화학 및 양자화학에서는 적당히 하다 건너뛰고 오히려 수소 뒤의 헬륨, 리튬 등 다른 원소에 적용하고 해석하는 데에 지면을 더 할애하고 있었다. (내 성적을 보자면 양자역학과 같은 쪽이 더 취향에 맞는걸로..)</p><p> 세포물리학은 더 놀라웠다. 생물 수업때 배운 시냅스의 구조 및 작용 원리에 대해서 물리학으로 접근해서, 운동방정식을 세우고 디멘션을 쪼개서 입자의 운동으로 설명하고 있었다.</p><p> 여기서 약간의 insight를 얻었다. Data Science는 결국 주어진 데이터 뭉치에서 어떤 특정한 factor에 집중해서 남들이 보지 못한 <strong>문맥 속 이야기</strong> 를 끌어내는 것이 아닌가?</p><p> 내가 가진 다양한 시각으로 데이터를 분석해서, 비즈니스의 혁신을 일으키고 싶은 것이 내 목표다. 그러기 위해서는 기본적인 개발 언어를 하나 제대로 익혀야겠지?</p><p> 주중에는 학교 수업이랑 회사 일때문에 많이 바쁘다. 그와중에 매주 주말 6시간짜리 코스를 신청하다니.. 이젠 죽었다 ㅠㅠ</p><p> 한번 열심히 해봐야지!</p>]]></content>
     
@@ -203,7 +203,7 @@
     
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Python/"/>
     
-      <category term="카이스트" scheme="http://jeongwookie.github.io/categories/Python/%EC%B9%B4%EC%9D%B4%EC%8A%A4%ED%8A%B8/"/>
+      <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/categories/Python/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
     
     
       <category term="Python" scheme="http://jeongwookie.github.io/tags/Python/"/>
@@ -260,13 +260,13 @@
       <category term="Github" scheme="http://jeongwookie.github.io/categories/Github/"/>
     
     
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
       <category term="Growth hacking" scheme="http://jeongwookie.github.io/tags/Growth-hacking/"/>
     
       <category term="그로스 해킹" scheme="http://jeongwookie.github.io/tags/%EA%B7%B8%EB%A1%9C%EC%8A%A4-%ED%95%B4%ED%82%B9/"/>
     
       <category term="디지털 마케팅" scheme="http://jeongwookie.github.io/tags/%EB%94%94%EC%A7%80%ED%84%B8-%EB%A7%88%EC%BC%80%ED%8C%85/"/>
+    
+      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
     
   </entry>
   
@@ -301,7 +301,7 @@
     <link href="http://jeongwookie.github.io/2018/03/29/start-from-customer/"/>
     <id>http://jeongwookie.github.io/2018/03/29/start-from-customer/</id>
     <published>2018-03-29T14:45:33.000Z</published>
-    <updated>2018-09-11T16:30:59.348Z</updated>
+    <updated>2018-09-12T16:50:15.034Z</updated>
     
     <content type="html"><![CDATA[<p>신제품 개발 프로세스에서 아마존 (Amazon)은 새로운 접근법을 고안했다.</p><p>아마존의 임원인 Ian McAllister은 이를 <strong>소비자로부터 출발하여 거꾸로 일하기 (Working backwards from the customer)</strong> 라고 부른다.</p><div class="video-container"><iframe src="//www.youtube.com/embed/7ALs7i-2eaQ" frameborder="0" allowfullscreen></iframe></div><p>먼저 새로운 계획을 세울 때, 내부에서는 이 잠재적인 프로젝트를 마치 막 끝낸 것처럼 공표하는 것으로 시작한다.</p><p>이것은 고객들에게도 전달되어, 새롭게 제공하는 기능이 고객들이 가지고 있던 문제를 얼마나 흥미진진하고 설득력 있는 방법으로 해결하는지 설명한다.</p><p>만약 공표한 내용이 실현되지 못하면 실현할 수 있을 때까지 초기 계획을 계속해서 수정한다.</p><p>이러한 프로세스는 팀이 신제품의 역량이 어디에 있어야 하는지, 특별한 장점이 무엇인지에 대해 정확히 집중할 수 있도록 한다.</p><hr><p>이를 내가 현재 생각하는 분야의 사업에 대해 똑같은 프레임워크로 접근해 보자.</p><p>우리가 A라는 기능을 가진 App을 만들기로 계획한다고 하자.</p><p>우리는 A가 기존의 고객들이 가지고 있는 문제를 얼마나 흥미진진하고 설득력 있는 방법으로 해결할 수 있는지 설명할 수 있어야 할 것이다.</p><p>하지만, <strong>설명만 할 수 있다고 해서 A가 정말 좋은 기능이라고 말하기에는 어렵지 않은가?</strong></p><p>이론적으로 이해는 하지만, 실제 프로젝트 수행에 있어 얼마나 도움이 되는지는 잘 모르겠다.</p>]]></content>
     
@@ -314,9 +314,9 @@
       <category term="Growth Hacking" scheme="http://jeongwookie.github.io/categories/Growth-Hacking/"/>
     
     
-      <category term="그로스 해킹" scheme="http://jeongwookie.github.io/tags/%EA%B7%B8%EB%A1%9C%EC%8A%A4-%ED%95%B4%ED%82%B9/"/>
+      <category term="Growth hacking" scheme="http://jeongwookie.github.io/tags/Growth-hacking/"/>
     
-      <category term="Growth Hacking" scheme="http://jeongwookie.github.io/tags/Growth-Hacking/"/>
+      <category term="그로스 해킹" scheme="http://jeongwookie.github.io/tags/%EA%B7%B8%EB%A1%9C%EC%8A%A4-%ED%95%B4%ED%82%B9/"/>
     
   </entry>
   
@@ -351,7 +351,7 @@
     <link href="http://jeongwookie.github.io/2018/03/27/after-meeting-1/"/>
     <id>http://jeongwookie.github.io/2018/03/27/after-meeting-1/</id>
     <published>2018-03-27T13:10:11.000Z</published>
-    <updated>2018-09-12T15:49:00.297Z</updated>
+    <updated>2018-09-12T16:50:59.849Z</updated>
     
     <content type="html"><![CDATA[<p>어제는 밤을 꼬박 새고 아침 일찍 강남에 도착했다.</p><p>11시 선릉 미팅에 점심 식사 하고, 4시에 을지로 미팅, 그리고 저녁 7시까지 대전 복귀해서 수업 들어가는 매우 강행군 스케줄;;</p><p>그래도 오랜만에 움직이는 거라 정신 바짝 차리고 임했다.</p><p>여러 가지 이슈가 새로 생겨서 앞으로 더 바빠질 것 같다.</p><p>나름 깨달은 사실이 있다면,</p><ol><li><p>내가 여러 사람 앞에서 피칭하는 것은 자신이 있어도 1:1로 설명은 잘 못한다는 것</p></li><li><p>짧게 보고해야 하는 자리인데도 미괄식으로 자꾸 말을 한다는 것</p></li></ol><p>두 가지 모두 앞으로 고쳐나가야겠다…</p>]]></content>
     
@@ -366,11 +366,11 @@
       <category term="일기장" scheme="http://jeongwookie.github.io/categories/Diary/%EC%9D%BC%EA%B8%B0%EC%9E%A5/"/>
     
     
+      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
+    
       <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
     
       <category term="미팅" scheme="http://jeongwookie.github.io/tags/%EB%AF%B8%ED%8C%85/"/>
-    
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
     
   </entry>
   
