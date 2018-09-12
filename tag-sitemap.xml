@@ -44,13 +44,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
-        <lastmod>2018-09-12T05:54:36.120Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/Growth-hacking/</loc>
         <lastmod>2018-09-12T05:54:36.120Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,6 +59,13 @@
 
     <url>
         <loc>http://jeongwookie.github.io/tags/%EB%94%94%EC%A7%80%ED%84%B8-%EB%A7%88%EC%BC%80%ED%8C%85/</loc>
+        <lastmod>2018-09-12T05:54:36.120Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
         <lastmod>2018-09-12T05:54:36.120Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
