@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2018-09-12T17:31:28.287Z</updated>
+  <updated>2018-09-12T17:36:16.091Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://jeongwookie.github.io/2018/09/13/violation-name/"/>
     <id>http://jeongwookie.github.io/2018/09/13/violation-name/</id>
     <published>2018-09-12T17:01:42.000Z</published>
-    <updated>2018-09-12T17:31:28.287Z</updated>
+    <updated>2018-09-12T17:36:16.091Z</updated>
     
-    <content type="html"><![CDATA[<p>새벽에 왠 고생이냐…</p><p>블로그 글을 정리하고 있는데, 갑자기 페이지 로딩이 안됐다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45441549-432e7f00-b6fa-11e8-9625-ffdb1c67e6d6.jpg" alt="HTML 404 ERROR 페이지. 귀엽게 그려놨는데 전혀 안귀엽다"></p><p>짜증을 뒤로 하고, 얼른 해결책부터 찾으려고 하는데 놀라운 점을 발견했다.</p><ol><li><p>카테고리 이름이 “Python”, “Growth Hacking”인 곳은 누르면 에러 발생</p></li><li><p>카테고리 이름이 “Diary”, “Github”인 곳은 문제 없이 작동</p></li></ol><p>아니 이게 무슨 상황이란 말인가?</p><p>모두 다 작동이 안된다면 뭔가 directing 문제가 발생했거니와.. 헤더 파일이나 설정 파일을 볼껀데</p><p>이건 되고 저건 안되니 어이가 없더라.</p><p>페이지 관리 도구에 들어가서 페이지 에러를 확인했더니 이런 메세지가 뜬다.</p><blockquote><p>Refused to load the font ‘<url>‘ because it violates the following Content Security Policy directive…</url></p></blockquote><blockquote><p>“default-src ‘none’”. Note that ‘font-src’ was not explicitly set, so ‘default-src’ is used as a fallback.</p></blockquote><p>뭐라고? <strong>Content Security Policy</strong> 라는 걸 어겨서 로딩이 거부되는 거라고?</p><p><img src="https://user-images.githubusercontent.com/25416425/45442114-12e7e000-b6fc-11e8-8fe1-768f1b77cf3d.jpg" alt="아직 아무것도 안했는데 벌써 뭔가를 어겼다고? ㅠㅠ"></p><p>처음에는 폰트가 어쩌구.. 하길래 폰트 로딩이 안됐나 하고 head.ejs 파일 살펴보고, _variables.styl 이랑 _config.yml 설정 파일 계속 들여다보고 이것 저것 고쳐봤는데 안됐다.</p><p>그런데 느낌이 쎄했다. 혹시 Security Policy라 그러니까 카테고리 이름에 hacking이 들어가서 블럭을 당한게 아닐까?</p><p>바로 “Growth Hacking” 이라는 카테고리 이름을  “그로스 해킹” 이라고 바꿨더니..</p><p>###됐다?!</p><p>그렇다면 Python도 모종의 이유로 블럭을 당했다고 판단, “파이썬”으로 고쳐 적었더니 정상 작동한다.</p><p><strong>결론 : 카테고리 이름에 “Hacking” 이나 “Python” 을 적으면 안된다네</strong></p><p>이유를 아시는 분은 알려주세요 ㅠㅠ</p>]]></content>
+    <content type="html"><![CDATA[<p>새벽에 왠 고생이냐…</p><p>블로그 글을 정리하고 있는데, 갑자기 페이지 로딩이 안됐다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45441549-432e7f00-b6fa-11e8-9625-ffdb1c67e6d6.jpg" alt="HTML 404 ERROR 페이지. 귀엽게 그려놨는데 전혀 안귀엽다"></p><p>짜증을 뒤로 하고, 얼른 해결책부터 찾으려고 하는데 놀라운 점을 발견했다.</p><ol><li><p>카테고리 이름이 <strong>Python</strong>, <strong>Growth Hacking</strong>인 곳은 누르면 에러 발생</p></li><li><p>카테고리 이름이 <strong>Diary</strong>, <strong>Github</strong>인 곳은 문제 없이 작동</p></li></ol><p>아니 이게 무슨 상황이란 말인가?</p><p>모두 다 작동이 안된다면 뭔가 directing 문제가 발생했거니와.. 헤더 파일이나 설정 파일을 볼껀데</p><p>이건 되고 저건 안되니 어이가 없더라.</p><p>페이지 관리 도구에 들어가서 페이지 에러를 확인했더니 이런 메세지가 뜬다.</p><blockquote><p>Refused to load the font ‘<url>‘ because it violates the following Content Security Policy directive…</url></p></blockquote><blockquote><p>“default-src ‘none’”. Note that ‘font-src’ was not explicitly set, so ‘default-src’ is used as a fallback.</p></blockquote><p>뭐라고? <strong>Content Security Policy</strong> 라는 걸 어겨서 로딩이 거부되는 거라고?</p><p><img src="https://user-images.githubusercontent.com/25416425/45442114-12e7e000-b6fc-11e8-8fe1-768f1b77cf3d.jpg" alt="아직 아무것도 안했는데 벌써 뭔가를 어겼다고? ㅠㅠ"></p><p>처음에는 폰트가 어쩌구.. 하길래 폰트 로딩이 안됐나 하고 <strong>head.ejs</strong> 파일 살펴보고, <strong>_variables.styl</strong> 이랑 <strong>_config.yml</strong> 설정 파일 계속 들여다보고 이것 저것 고쳐봤는데 안됐다.</p><p>그런데 느낌이 쎄했다. 혹시 Security Policy라 그러니까 카테고리 이름에 hacking이 들어가서 블럭을 당한게 아닐까?</p><p>바로 “Growth Hacking” 이라는 카테고리 이름을  <strong>그로스 해킹</strong> 이라고 바꿨더니..</p><p>###됐다?!</p><p>그렇다면 “Python”도 모종의 이유로 블럭을 당했다고 판단, <strong>파이썬</strong>으로 고쳐 적었더니 정상 작동한다.</p><p><strong>결론 : 카테고리 이름에 “Hacking” 이나 “Python” 을 적으면 안된다네</strong></p><p>이유를 아시는 분은 알려주세요 ㅠㅠ</p>]]></content>
     
     <summary type="html">
     
