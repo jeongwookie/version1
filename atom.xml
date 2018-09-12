@@ -150,11 +150,11 @@
       <category term="Github" scheme="http://jeongwookie.github.io/categories/Github/"/>
     
     
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
       <category term="Giuhub" scheme="http://jeongwookie.github.io/tags/Giuhub/"/>
     
       <category term="블로그" scheme="http://jeongwookie.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8/"/>
-    
-      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
   </entry>
   
@@ -332,9 +332,9 @@
       <category term="Diary" scheme="http://jeongwookie.github.io/categories/Diary/"/>
     
     
-      <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
-    
       <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
+    
+      <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
     
       <category term="미팅" scheme="http://jeongwookie.github.io/tags/%EB%AF%B8%ED%8C%85/"/>
     
