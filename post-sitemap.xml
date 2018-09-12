@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/13/category-name-problem/</loc>
-        <lastmod>2018-09-12T17:39:37.986Z</lastmod>
+        <lastmod>2018-09-12T17:47:10.172Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/2018/09/10/Github-Blog-image-upload/</loc>
+        <lastmod>2018-09-12T17:47:07.139Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,14 +41,6 @@
     <url>
         <loc>http://jeongwookie.github.io/2018/03/29/What-is-growth-hacker/</loc>
         <lastmod>2018-09-12T17:33:20.724Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2018/09/10/Github-Blog-image-upload/</loc>
-        <lastmod>2018-09-12T17:07:35.369Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
