@@ -21,20 +21,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/categories/Programming/</loc>
-        <lastmod>2018-09-13T06:51:05.900Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/categories/Programming/Python/</loc>
-        <lastmod>2018-09-13T06:51:05.900Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/categories/Diary/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/</loc>
         <lastmod>2018-09-13T06:52:58.015Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -58,6 +44,20 @@
     <url>
         <loc>http://jeongwookie.github.io/categories/Github/</loc>
         <lastmod>2018-09-13T06:54:39.953Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/categories/Programming/</loc>
+        <lastmod>2018-09-13T17:33:55.448Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/categories/Programming/Python/</loc>
+        <lastmod>2018-09-13T17:33:55.448Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
