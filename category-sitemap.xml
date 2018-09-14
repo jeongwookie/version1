@@ -8,56 +8,63 @@
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Marketing/</loc>
-        <lastmod>2018-09-13T06:50:20.967Z</lastmod>
+        <lastmod>2018-09-13T06:50:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Marketing/Growth-Hacking/</loc>
-        <lastmod>2018-09-13T06:50:20.967Z</lastmod>
+        <lastmod>2018-09-13T06:50:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Diary/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/</loc>
-        <lastmod>2018-09-13T06:52:58.015Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/categories/Diary/</loc>
-        <lastmod>2018-09-13T06:53:35.097Z</lastmod>
+        <lastmod>2018-09-13T06:52:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Diary/%EC%9D%BC%EA%B8%B0%EC%9E%A5/</loc>
-        <lastmod>2018-09-13T06:53:35.097Z</lastmod>
+        <lastmod>2018-09-13T06:53:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Github/</loc>
-        <lastmod>2018-09-13T06:54:39.953Z</lastmod>
+        <lastmod>2018-09-13T06:54:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Programming/</loc>
-        <lastmod>2018-09-13T17:33:55.448Z</lastmod>
+        <lastmod>2018-09-13T17:33:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Programming/Python/</loc>
-        <lastmod>2018-09-13T17:33:55.448Z</lastmod>
+        <lastmod>2018-09-13T17:33:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/categories/Diary/</loc>
+        <lastmod>2018-09-14T04:46:22.490Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/categories/Diary/%ED%95%99%EA%B5%90/</loc>
+        <lastmod>2018-09-14T04:46:22.490Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
