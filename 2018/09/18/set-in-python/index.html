@@ -23,7 +23,7 @@
 <meta property="og:description" content="파이썬 집합 자료형 다루기">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/25416425/45632890-65991180-bad9-11e8-86f2-d9409f4de2a1.png">
-<meta property="og:updated_time" content="2018-09-17T15:30:31.983Z">
+<meta property="og:updated_time" content="2018-09-17T15:43:07.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="집합 자료형 다루기">
 <meta name="twitter:description" content="파이썬 집합 자료형 다루기">
@@ -241,6 +241,7 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>set_1 = set(<span class="string">"Hello"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(set_1)</span><br><span class="line">&#123;<span class="string">'e'</span>, <span class="string">'H'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>&#125;    <span class="comment">#l이 하나 중복되어서 제거됨</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list_1 = list(set_1)    <span class="comment">#set_1을 list화</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(list_1)</span><br><span class="line">[<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(list_1[<span class="number">0</span>])    <span class="comment">#list이므로 indexing 가능</span></span><br><span class="line">H</span><br></pre></td></tr></table></figure>
 <p>집합 자료형을 이용하여 교집합(&amp;), 합집합(|), 차집합(-)을 구할 수 있다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s1 = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s2 = set([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(s1 &amp; s2)    <span class="comment">#교집합 구하기</span></span><br><span class="line">&#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(s1 | s2)    <span class="comment">#합집합 구하기</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(s1 - s2)    <span class="comment">#차집합 구하기</span></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(s2 - s1)</span><br><span class="line">&#123;<span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>끗!</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -255,7 +256,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://jeongwookie.github.io/2018/09/18/set-in-python/" data-id="cjm6g6cqr001bpgubfb24klmn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://jeongwookie.github.io/2018/09/18/set-in-python/" data-id="cjm7x5o72001gy4ub9qylg9sz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -383,6 +384,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2018/09/18/customer-discovery-kaist-e5/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            고객 검증 후 시장 규모 추정하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/09/16/team-member/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -404,6 +415,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/18/customer-discovery-kaist-e5/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45700437-85970680-bba7-11e8-8633-58e7ceb9f155.jpg)" alt="고객 검증 후 시장 규모 추정하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/학교-이야기/">학교 이야기</a></p>
+                            <p class="item-title"><a href="/2018/09/18/customer-discovery-kaist-e5/" class="title">고객 검증 후 시장 규모 추정하기</a></p>
+                            <p class="item-date"><time datetime="2018-09-18T13:59:02.000Z" itemprop="datePublished">2018-09-18</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -485,26 +516,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/09/14/tuple-and-dictionary/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45505081-9968f400-b7c6-11e8-94dd-a0eda2d76a16.jpeg)" alt="튜플과 딕셔너리 자료형" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2018/09/14/tuple-and-dictionary/" class="title">튜플과 딕셔너리 자료형</a></p>
-                            <p class="item-date"><time datetime="2018-09-13T16:18:27.000Z" itemprop="datePublished">2018-09-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -514,7 +525,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/일기장/">일기장</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/">Marketing</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Python/">Python</a><span class="category-list-count">7</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/일기장/">일기장</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/">Marketing</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Python/">Python</a><span class="category-list-count">7</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -524,7 +535,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -534,7 +545,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/">Error</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KAIST-IT-프로그램/">KAIST IT 프로그램</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발/">개발</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/고민/">고민</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/교육/">교육</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그로스-해킹/">그로스 해킹</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/디지털-마케팅/">디지털 마케팅</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미팅/">미팅</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그-issue/">블로그 issue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스타트업/">스타트업</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일상/">일상</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/창업석사/">창업석사</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/추천-아이템/">추천 아이템</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/학교/">학교</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/">Error</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KAIST-IT-프로그램/">KAIST IT 프로그램</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발/">개발</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/고민/">고민</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/교육/">교육</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그로스-해킹/">그로스 해킹</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/디지털-마케팅/">디지털 마케팅</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미팅/">미팅</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그-issue/">블로그 issue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스타트업/">스타트업</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일상/">일상</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/창업석사/">창업석사</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/추천-아이템/">추천 아이템</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/학교/">학교</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -544,7 +555,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Error/" style="font-size: 12px;">Error</a> <a href="/tags/Github/" style="font-size: 12px;">Github</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/KAIST-IT-프로그램/" style="font-size: 20px;">KAIST IT 프로그램</a> <a href="/tags/개발/" style="font-size: 20px;">개발</a> <a href="/tags/고민/" style="font-size: 12px;">고민</a> <a href="/tags/교육/" style="font-size: 20px;">교육</a> <a href="/tags/그로스-해킹/" style="font-size: 14px;">그로스 해킹</a> <a href="/tags/디지털-마케팅/" style="font-size: 12px;">디지털 마케팅</a> <a href="/tags/미팅/" style="font-size: 10px;">미팅</a> <a href="/tags/블로그-issue/" style="font-size: 12px;">블로그 issue</a> <a href="/tags/스타트업/" style="font-size: 18px;">스타트업</a> <a href="/tags/일상/" style="font-size: 20px;">일상</a> <a href="/tags/창업석사/" style="font-size: 12px;">창업석사</a> <a href="/tags/추천-아이템/" style="font-size: 10px;">추천 아이템</a> <a href="/tags/파이썬/" style="font-size: 20px;">파이썬</a> <a href="/tags/학교/" style="font-size: 16px;">학교</a>
+            <a href="/tags/Error/" style="font-size: 12px;">Error</a> <a href="/tags/Github/" style="font-size: 12px;">Github</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/KAIST-IT-프로그램/" style="font-size: 18px;">KAIST IT 프로그램</a> <a href="/tags/개발/" style="font-size: 18px;">개발</a> <a href="/tags/고민/" style="font-size: 12px;">고민</a> <a href="/tags/교육/" style="font-size: 18px;">교육</a> <a href="/tags/그로스-해킹/" style="font-size: 14px;">그로스 해킹</a> <a href="/tags/디지털-마케팅/" style="font-size: 12px;">디지털 마케팅</a> <a href="/tags/미팅/" style="font-size: 10px;">미팅</a> <a href="/tags/블로그-issue/" style="font-size: 12px;">블로그 issue</a> <a href="/tags/스타트업/" style="font-size: 18px;">스타트업</a> <a href="/tags/일상/" style="font-size: 20px;">일상</a> <a href="/tags/창업석사/" style="font-size: 14px;">창업석사</a> <a href="/tags/추천-아이템/" style="font-size: 10px;">추천 아이템</a> <a href="/tags/파이썬/" style="font-size: 18px;">파이썬</a> <a href="/tags/학교/" style="font-size: 16px;">학교</a>
         </div>
     </div>
 
