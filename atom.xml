@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2018-09-18T16:14:37.232Z</updated>
+  <updated>2018-09-19T16:37:41.896Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>파이썬으로 함수 다루기</title>
+    <link href="http://jeongwookie.github.io/2018/09/20/function-in-python/"/>
+    <id>http://jeongwookie.github.io/2018/09/20/function-in-python/</id>
+    <published>2018-09-19T15:25:57.000Z</published>
+    <updated>2018-09-19T16:37:41.896Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>함수 (Function)</strong>가 무엇인지는 우리 모두 알고 있다.</p><p>함수를 사용하는 이유가 무엇일까?</p><p>기본적으로 프로그래머란 종족들은 귀찮음을 최소화 하고 어떻게든 꿀(?)을 빨려고 한다.</p><p>중복되는 코드는 절대 작성하지 않는다는 뜻.</p><p>반복되는 부분이 있을 경우, 이를 그룹화 하여 <strong>함수</strong>로 만들고, 나중에 또 쓰고 싶을 때 한줄로 해결해 버린다.</p><p>결과적으로 코드의 양이 줄어들겠지?</p><p>이러한 <strong>함수화</strong>는 프로그램의 흐름을 명확하게 하는 순기능이 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45764003-ad03d700-bc6c-11e8-8922-ad9146df440d.png" alt="입력값를 넣으면 함수를 거쳐 결과값이 나오는 구조"></p><p>이제 우리의 본분으로 돌아가서, 파이썬에서의 함수 사용 방법을 알아보자.</p><p>함수의 구조는 아래와 같다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 함수이름<span class="params">(매개변수)</span>:</span></span><br><span class="line">    &lt;수행할 문장&gt;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> 결과값</span><br></pre></td></tr></table></figure><p>근데 이렇게 보면 감이 잘 안오니까 예시를 실행 해 보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">(a, b)</span>:</span>    <span class="comment"># 함수 이름은 sum이고 매개변수는 a와 b</span></span><br><span class="line">    result = a + b </span><br><span class="line">    <span class="keyword">return</span> result   <span class="comment"># 결과값 result 반환</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>value = sum(<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(value)</span><br><span class="line"><span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>value_2 = sum(a=<span class="number">3</span>, b=<span class="number">7</span>)   <span class="comment"># 매개변수 지정</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(value_2)</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure><p>함수를 작성할 때 위와 같은 방법이 정석이지만, 매개변수 자리를 비워 놓거나 return 값 지정을 안해줘도 돌아간다.</p><p>그런데, 입력값이 몇 개가 될지 모를 때는 어떻게 해야 할까?</p><p>위의 예제는 매개변수가 a와 b이므로 입력값이 2개로 지정되어 있는데..</p><p>파이썬에서는 <strong>“*”을 이용한다.</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_sum</span><span class="params">(*args)</span>:</span>    <span class="comment"># args는 임의의 변수명</span></span><br><span class="line">       sum = <span class="number">0</span> </span><br><span class="line">       <span class="keyword">for</span> i <span class="keyword">in</span> args:   <span class="comment"># 여러 개 입력 시 tuple로 들어감</span></span><br><span class="line">           sum = sum + i </span><br><span class="line">       <span class="keyword">return</span> sum</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>result = my_sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(result)</span><br><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure><p>위의 예시처럼 변수명에 *을 붙이면 여러 개를 입력할 수 있게 된다.</p><p>지금까지는 함수의 입력값에 초점을 두었다면, 이제부터는 <strong>return</strong>에 대해서 알아보자.</p><p><u>파이썬에서 함수의 결과값은 언제나 하나이다.</u></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_sub</span><span class="params">(a,b)</span></span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>+<span class="title">b</span>    # 첫 번째 <span class="title">return</span>값에서 함수가 종료됨</span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>-<span class="title">b</span>    </span></span><br><span class="line"><span class="function"></span></span><br><span class="line">&gt;&gt;&gt; result = sum_sub(3,2)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(result)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure><p>즉, 함수는 <strong>return문을 만나는 순간</strong> 결과값을 반환하고 종료된다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45765956-5ea50700-bc71-11e8-8e89-101cfaa507f6.jpg" alt="함수의 결과값은 언제나 하나!"></p><p>return의 이러한 성질을 사용해서 다른 방법으로 응용이 가능하다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_my_name</span><span class="params">(name)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">""</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    print(<span class="string">"제 이름은 &#123;&#125; 입니다."</span>.format(name))</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>say_my_name(<span class="string">"김정욱"</span>)</span><br><span class="line">제 이름은 김정욱 입니다.</span><br></pre></td></tr></table></figure><p>이처럼 return을 단독으로 쓰면 <u>함수를 즉시 빠져나갈 수 있다.</u></p><p>이번에는 조금 다른 형태의 입력값을 알아보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_myself</span><span class="params">(name, old, man=True)</span>:</span> </span><br><span class="line">    print(<span class="string">"제 이름은 &#123;&#125; 입니다."</span>.format(name)) </span><br><span class="line">    print(<span class="string">"나이는 &#123;&#125; 살 입니다."</span>.format(old)) </span><br><span class="line">    <span class="keyword">if</span> man: </span><br><span class="line">        print(<span class="string">"남자입니다."</span>)</span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        print(<span class="string">"여자입니다."</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(say_myself(<span class="string">"김정욱"</span>, <span class="number">26</span>))</span><br><span class="line">제 이름은 김정욱 입니다.</span><br><span class="line">나이는 <span class="number">26</span> 살 입니다.</span><br><span class="line">남자입니다.</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(say_myself(<span class="string">"김정욱"</span>, <span class="number">26</span>, <span class="keyword">True</span>))</span><br><span class="line">제 이름은 김정욱 입니다.</span><br><span class="line">나이는 <span class="number">26</span> 살 입니다.</span><br><span class="line">남자입니다.   <span class="comment"># 위와 동일한 출력값</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; print(say_myself(<span class="string">"이하린"</span>, <span class="number">20</span>, <span class="keyword">False</span>))</span><br><span class="line">제 이름은 이하린 입니다.</span><br><span class="line">나이는 <span class="number">20</span> 살 입니다.</span><br><span class="line">여자입니다.   <span class="comment"># 매개변수 False 출력값</span></span><br></pre></td></tr></table></figure><p><strong>man=True</strong>와 같이 매개변수에 미리 값을 넣어준 경우, 따로 입력하지 않아도 자동으로 True값으로 고정된다.</p><p>그래서 두 가지 결과값이 동일하게 출력된 것이다.</p><p>man 변수에 False 값이 전달된 경우, if-else문에 의하여 출력값이 바뀌었음을 확인할 수 있다.</p><p>마지막으로, 함수 사용 시 주의할 점을 소개한다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(a)</span>:</span></span><br><span class="line">    a = a +<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure><p>자칫 하다가는 결과값이 2라고 착각할 수 있다. 왜 이럴까?</p><p>함수 밖의 변수와 함수 안의 변수가 a로 이름이 똑같아서 혼란을 발생시킨 것이다.</p><p>함수 안의 매개변수는 함수 안에서만 사용되는 <strong>함수만의 변수</strong> 임에 유의하자.</p><p>그냥 global 변수와 이름을 구별되게 지으면 문제는 해결된다..</p><p>수업 시간에 강사님께서 매우 강조하셨다.</p><p>함수는!</p><p>한 가지를 해야 한다.</p><p>그 한 가지를 잘 해야 한다.</p><p><strong>그 한 가지만을 해야 한다.</strong></p><p><img src="https://user-images.githubusercontent.com/25416425/45767575-8007f200-bc75-11e8-9d94-4db745aae989.jpg" alt="뭐 좀 많이 할려다가 다치지 맙시다"></p>]]></content>
+    
+    <summary type="html">
+    
+      파이썬에서 함수를 정의하고 다루는 법
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
+    
+      <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
+    
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
+    
+      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>고객 검증 후 시장 규모 추정하기</title>
@@ -557,34 +587,6 @@
       <category term="디지털 마케팅" scheme="http://jeongwookie.github.io/tags/%EB%94%94%EC%A7%80%ED%84%B8-%EB%A7%88%EC%BC%80%ED%8C%85/"/>
     
       <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>중요한 미팅을 다녀와서</title>
-    <link href="http://jeongwookie.github.io/2018/03/27/after-meeting-1/"/>
-    <id>http://jeongwookie.github.io/2018/03/27/after-meeting-1/</id>
-    <published>2018-03-27T13:10:11.000Z</published>
-    <updated>2018-09-12T16:53:15.076Z</updated>
-    
-    <content type="html"><![CDATA[<p>어제는 밤을 꼬박 새고 아침 일찍 강남에 도착했다.</p><p>11시 선릉 미팅에 점심 식사 하고, 4시에 을지로 미팅, 그리고 저녁 7시까지 대전 복귀해서 수업 들어가는 매우 강행군 스케줄;;</p><p>그래도 오랜만에 움직이는 거라 정신 바짝 차리고 임했다.</p><p>여러 가지 이슈가 새로 생겨서 앞으로 더 바빠질 것 같다.</p><p>나름 깨달은 사실이 있다면,</p><ol><li><p>내가 여러 사람 앞에서 피칭하는 것은 자신이 있어도 1:1로 설명은 잘 못한다는 것</p></li><li><p>짧게 보고해야 하는 자리인데도 미괄식으로 자꾸 말을 한다는 것</p></li></ol><p>두 가지 모두 앞으로 고쳐나가야겠다…</p>]]></content>
-    
-    <summary type="html">
-    
-      중요한 미팅을 다녀와서 깨달은 나의 단점들
-    
-    </summary>
-    
-      <category term="Diary" scheme="http://jeongwookie.github.io/categories/Diary/"/>
-    
-      <category term="일기장" scheme="http://jeongwookie.github.io/categories/Diary/%EC%9D%BC%EA%B8%B0%EC%9E%A5/"/>
-    
-    
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
-      <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
-    
-      <category term="미팅" scheme="http://jeongwookie.github.io/tags/%EB%AF%B8%ED%8C%85/"/>
     
   </entry>
   
