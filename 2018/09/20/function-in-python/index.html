@@ -23,7 +23,7 @@
 <meta property="og:description" content="파이썬에서 함수를 정의하고 다루는 법">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/25416425/45764466-b93c6400-bc6d-11e8-8015-cec548652ba7.png">
-<meta property="og:updated_time" content="2018-09-19T16:37:41.896Z">
+<meta property="og:updated_time" content="2018-09-19T16:40:35.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="파이썬으로 함수 다루기">
 <meta name="twitter:description" content="파이썬에서 함수를 정의하고 다루는 법">
@@ -247,7 +247,7 @@ ga('send', 'pageview');
 <p>위의 예시처럼 변수명에 *을 붙이면 여러 개를 입력할 수 있게 된다.</p>
 <p>지금까지는 함수의 입력값에 초점을 두었다면, 이제부터는 <strong>return</strong>에 대해서 알아보자.</p>
 <p><u>파이썬에서 함수의 결과값은 언제나 하나이다.</u></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_sub</span><span class="params">(a,b)</span></span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>+<span class="title">b</span>    # 첫 번째 <span class="title">return</span>값에서 함수가 종료됨</span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>-<span class="title">b</span>    </span></span><br><span class="line"><span class="function"></span></span><br><span class="line">&gt;&gt;&gt; result = sum_sub(3,2)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(result)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_sub</span><span class="params">(a,b)</span></span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>+<span class="title">b</span>    # 여기서 함수가 종료됨</span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">a</span>-<span class="title">b</span>    </span></span><br><span class="line"><span class="function"></span></span><br><span class="line">&gt;&gt;&gt; result = sum_sub(3,2)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(result)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
 <p>즉, 함수는 <strong>return문을 만나는 순간</strong> 결과값을 반환하고 종료된다.</p>
 <p><img src="https://user-images.githubusercontent.com/25416425/45765956-5ea50700-bc71-11e8-8e89-101cfaa507f6.jpg" alt="함수의 결과값은 언제나 하나!"></p>
 <p>return의 이러한 성질을 사용해서 다른 방법으로 응용이 가능하다.</p>
