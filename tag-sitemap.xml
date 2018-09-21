@@ -51,13 +51,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/</loc>
-        <lastmod>2018-09-16T07:00:55.834Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
         <lastmod>2018-09-19T16:40:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -107,15 +100,22 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/</loc>
-        <lastmod>2018-09-21T08:45:39.291Z</lastmod>
+        <loc>http://jeongwookie.github.io/tags/%EA%B3%A0%EB%AF%BC/</loc>
+        <lastmod>2018-09-21T09:37:58.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B3%A0%EB%AF%BC/</loc>
-        <lastmod>2018-09-21T08:45:39.291Z</lastmod>
+        <loc>http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/</loc>
+        <lastmod>2018-09-21T09:44:06.912Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/</loc>
+        <lastmod>2018-09-21T09:44:06.912Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
