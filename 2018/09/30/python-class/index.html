@@ -6,7 +6,7 @@
     
 
     
-    <title>튜플과 딕셔너리 자료형 | Jeongwook, IT Blog</title>
+    <title>파이썬에서 클래스 쉽게 다루기 | Jeongwook, IT Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,23 +14,23 @@
     
 
       
-        <meta name="description" content="파이썬의 튜플과 딕셔너리 자료형에 대해서 다룹니다.">
+        <meta name="description" content="파이썬에서 클래스 다루기">
 <meta name="keywords" content="파이썬,교육,개발,KAIST IT 프로그램">
 <meta property="og:type" content="article">
-<meta property="og:title" content="튜플과 딕셔너리 자료형">
-<meta property="og:url" content="http://jeongwookie.github.io/2018/09/14/tuple-and-dictionary/index.html">
+<meta property="og:title" content="파이썬에서 클래스 쉽게 다루기">
+<meta property="og:url" content="http://jeongwookie.github.io/2018/09/30/python-class/index.html">
 <meta property="og:site_name" content="Jeongwook, IT Blog">
-<meta property="og:description" content="파이썬의 튜플과 딕셔너리 자료형에 대해서 다룹니다.">
+<meta property="og:description" content="파이썬에서 클래스 다루기">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/45505081-9968f400-b7c6-11e8-94dd-a0eda2d76a16.jpeg">
-<meta property="og:updated_time" content="2018-09-13T17:33:55.448Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/46248465-8572f280-c454-11e8-9b4b-a2fa7c77b866.png">
+<meta property="og:updated_time" content="2018-09-29T18:17:50.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="튜플과 딕셔너리 자료형">
-<meta name="twitter:description" content="파이썬의 튜플과 딕셔너리 자료형에 대해서 다룹니다.">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/45505081-9968f400-b7c6-11e8-94dd-a0eda2d76a16.jpeg">
+<meta name="twitter:title" content="파이썬에서 클래스 쉽게 다루기">
+<meta name="twitter:description" content="파이썬에서 클래스 다루기">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/46248465-8572f280-c454-11e8-9b4b-a2fa7c77b866.png">
         
     
-    <link rel="canonical" href="http://jeongwookie.github.io/2018/09/14/tuple-and-dictionary/"/>
+    <link rel="canonical" href="http://jeongwookie.github.io/2018/09/30/python-class/"/>
 
     
         <link rel="alternate" href="https://jeongwookie.github.io/atom.xml" title="Jeongwook, IT Blog" type="application/atom+xml" />
@@ -192,14 +192,14 @@ ga('send', 'pageview');
     enable_page_level_ads: true
   });
 </script>
-                            <article id="post-tuple-and-dictionary" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-python-class" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        튜플과 딕셔너리 자료형
+        파이썬에서 클래스 쉽게 다루기
         </h1>
     
 
@@ -209,8 +209,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/09/14/tuple-and-dictionary/" class="article-date">
-            <time datetime="2018-09-13T16:18:27.000Z" itemprop="datePublished">2018-09-14</time>
+        <a href="/2018/09/30/python-class/" class="article-date">
+            <time datetime="2018-09-29T16:25:25.000Z" itemprop="datePublished">2018-09-30</time>
         </a>
     </div>
 
@@ -226,36 +226,50 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><a href="https://www.w3schools.com/python/python_tuples.asp" target="_blank" rel="noopener">튜플(tuple)</a>은 리스트와 거의 유사하지만 다음과 같은 차이점이 있다.</p>
+            <p>오랜만의 포스트.</p>
+<p>추석동안 집에 다녀오고, 돌아와서는 이것저것 일하다 보니 벌써 주말이다.</p>
+<p>세 번째 섹션부터 배우기 시작한 클래스는 우리의 단순 노동 작업을 크게 줄여주고, 코드를 깔끔하게 해 주는 효자다.</p>
+<p>찬찬히 배운 내용을 정리해 보겠다.</p>
+<p><strong>클래스</strong>는 <u>붕어빵 틀</u>이다. 일종의 틀로, 똑같은 무언가를 만들어 낼 수 있는 도면과 같은 것이다.</p>
+<p><strong>객체</strong>는 클래스라는 틀에 의해 생성된 구체적인 어떤 것을 칭한다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46248490-cec34200-c454-11e8-8aa5-310335ed6530.png" alt="붕어빵 틀은 클래스, 만들어진 붕어빵은 객체"></p>
+<p>간단하게 예제를 통해서 클래스의 기본 구조에 대해 먼저 이해해 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FourCal</span>:</span>    <span class="comment"># 클래스명 "FourCal" 선언</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setdata</span><span class="params">(self, first, second)</span>:</span>   <span class="comment"># 매개변수 선언</span></span><br><span class="line">        self.first = first</span><br><span class="line">        self.second = second</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = FourCal()    <span class="comment"># 객체 "a" 생성 (FourCal의 인스턴스)</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.setdata(<span class="number">4</span>,<span class="number">2</span>)   <span class="comment"># 입력값 4와 2 전달</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.first)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.second)</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>파이썬에서 클래스를 다룰 때, 매개변수에 <strong>self</strong>를 포함시켜야 함에 주의하자.</p>
+<p>아래의 그림을 보면 그 구조를 파악하기 쉬울 것이다. 참고 : <a href="https://wikidocs.net/28" target="_blank" rel="noopener">파이썬 위키</a></p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46248374-8192a080-c453-11e8-8c0e-aa1e4a8f7c72.png" alt="객체와 호출 입력값의 전달 구조"></p>
+<p>이제 이 기본 지식으로 하나하나 클래스를 구현해 볼 것이다.</p>
+<p>지금부터 내가 게임 개발자라고 가정해 보자. 다음과 같은 임무가 주어졌다.</p>
 <ul>
-<li>대괄호 []가 아닌, 소괄호 ()를 사용</li>
-<li>리스트는 요소의 변경이 가능하지만, 튜플은 변경이 불가능 (immutable)</li>
+<li>기사, 마법사, 궁수 캐릭터를 만들어라.</li>
+<li>각각의 캐릭터는 레벨, 이름, HP가 있다.</li>
+<li>각각의 캐릭터는 좌우, 앞뒤로 움직일 수 있다.</li>
+<li>각각의 캐릭터는 공격을 할 수 있다.</li>
+<li>마법사는 마법을 쓸 수 있다.</li>
 </ul>
-<p>얼핏 보면 리스트보다 튜플이 나은 점이 없어 보이는데, 왜 쓸까?</p>
-<p>이에 대해 조교님께 물어봤는데, 튜플은 변경이 불가능하다는 속성 자체가 가치 있다고..</p>
-<p>즉 여러 명의 개발자가 같이 프로젝트를 진행할 경우, 어떤 요소들을 튜플로 표시했을 때 다른 개발자가 보고 ‘아 이것은 변경하지 말라는 소리구나’ 라고 이해한다고 한다.</p>
-<p>그리고 일반적인 경우에도 값이 바뀌는 상황이 걱정될 경우, 튜플을 일부러 사용하기도 한다.</p>
-<p><img src="https://user-images.githubusercontent.com/25416425/45502756-c49c1500-b7bf-11e8-98fa-a04e61b9cf39.gif" alt="돌이킬 수 없는 상황까지 오기 전에 튜플을 사용하자"></p>
-<p><a href="https://www.w3schools.com/python/python_dictionaries.asp" target="_blank" rel="noopener">딕셔너리(dictionary)</a> 자료형은 대응 관계를 표시한다. </p>
-<p>key와 value가 한 쌍이 되는데, 딕셔너리 자료형에서 값을 찾을 때는 index가 아닌 <strong>key</strong>로 이에 대응되는 값을 찾게 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(dict[<span class="string">"name"</span>])</span><br><span class="line">김정욱</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(dict[<span class="string">"age"</span>])</span><br><span class="line"><span class="number">26</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict[<span class="string">"home"</span>] = <span class="string">"Daejeon"</span>    <span class="comment">#딕셔너리 쌍 추가하기</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(dict)</span><br><span class="line">&#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>, <span class="string">"home"</span> : <span class="string">"Daejeon"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>딕셔너리 관련 함수들이 몇 가지 있는데, 기본적인 것만 간단하게 살펴보자.</p>
-<p><strong>1. Key 및 Value 리스트 생성하기 (keys, values)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.keys())   <span class="comment">#keys() 함수 사용</span></span><br><span class="line">dict_keys([<span class="string">"name"</span>, <span class="string">"age"</span>])    <span class="comment">#dict_keys 객체 리턴</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(list(a.keys()))   <span class="comment">#list로 변환</span></span><br><span class="line">[<span class="string">"name"</span>, <span class="string">"age"</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.values())   <span class="comment">#values() 함수 사용</span></span><br><span class="line">dict_values(<span class="string">"김정욱"</span>, <span class="number">26</span>)</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. Key 와 Value 쌍 생성하기 (items)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.items())    <span class="comment">#items() 함수 사용</span></span><br><span class="line">dict_items([(<span class="string">"name"</span>, <span class="string">"김정욱"</span>), (<span class="string">"age"</span>, <span class="number">26</span>)])</span><br></pre></td></tr></table></figure></p>
-<p><strong>3. Key 와 Value 쌍 모두 지우기 (clear)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.clear()   <span class="comment">#clear() 함수 사용</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a)</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4. Key 로 Value 얻기 (get)</strong></p>
-<p><a href="https://www.tutorialspoint.com/python/dictionary_get.htm" target="_blank" rel="noopener">get(x)</a> 함수는 x라는 key에 대응되는 value를 반환한다. 딕셔너리 자료형의 핵심이라고 보면 된다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.get(<span class="string">"name"</span>))</span><br><span class="line"><span class="string">"김정욱"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.get(<span class="string">"age"</span>))</span><br><span class="line"><span class="number">26</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.get(<span class="string">"major"</span>))   <span class="comment">#a에 없는 key값을 넣었을 때?!</span></span><br><span class="line"><span class="keyword">None</span></span><br></pre></td></tr></table></figure>
-<p>위 코드를 살펴보면, 현재 a라는 딕셔너리에는 key가 “name” , “age” 두 개 뿐이다.</p>
-<p>그런데, 6번째 줄에서 “major”라는 존재하지 않는 key를 get() 함수를 이용해 지정한 경우, None을 반환한다.</p>
-<p>이를 이용하는 대단히 휼륭한 예시가 있다.</p>
-<p>당신에게 이름, 나이, 전공이 기록된 엑셀 파일이 있다고 하자.</p>
-<p>하지만 이번 년도에 새로 입학하는 신입생들은 전공이 아직 없다. </p>
-<p>위의 get() 함수를 사용하면 전공이 입력되지 않은 학생들을 “새내기”로 반환할 수 있다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>, <span class="string">"major"</span> : <span class="string">"Business"</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = &#123;<span class="string">"name"</span> : <span class="string">"이하린"</span>, <span class="string">"age"</span> : <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(a.get(<span class="string">"major"</span>, <span class="string">"새내기"</span>))</span><br><span class="line"><span class="string">"Business"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(b.get(<span class="string">"major"</span>, <span class="string">"새내기"</span>))</span><br><span class="line"><span class="string">"새내기"</span></span><br></pre></td></tr></table></figure>
-<p>4번째 줄은 key가 “major”인 value, “Business”를 반환하게 한다.</p>
-<p>그러나 6번째 줄은 <u>“major” 이라는 key가 없을 경우 “새내기” 라고 반환</u>하게 한다.</p>
-<p><strong>5. 해당 Key가 딕셔너리 안에 있는지 조사하기 (in)</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">"name"</span> : <span class="string">"김정욱"</span>, <span class="string">"age"</span> : <span class="number">26</span>, <span class="string">"major"</span> : <span class="string">"Business"</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"name"</span> <span class="keyword">in</span> a</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"email"</span> <span class="keyword">in</span> a</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
+<p>먼저 기사 클래스부터 만들어 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Knight</span>:</span></span><br><span class="line">    level = <span class="number">20</span></span><br><span class="line">    name = <span class="string">"Battery"</span></span><br><span class="line">    hp = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, direction)</span>:</span></span><br><span class="line">        print(direction + <span class="string">"방향으로 이동합니다"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name + <span class="string">"이(가) 공격합니다"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>knight1 = Knight()    <span class="comment"># knight1 객체 선언 (클래스명 Knight의 인스턴스)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(knight1.level, knight1.name, knight1.hp)</span><br><span class="line"><span class="number">20</span> Battery <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>knight1.move(<span class="string">"왼쪽"</span>)</span><br><span class="line">왼쪽방향으로 이동합니다</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>knight1.attack()</span><br><span class="line">Battery이(가) 공격합니다</span><br></pre></td></tr></table></figure>
+<p>위에서 level, name, hp 등의 클래스 안에서 변수를 지정하는 것을 <strong>클래스 변수</strong> 라고 한다. 멤버 변수라고도 부른다.</p>
+<p>위 코드에 따르면, Knight 클래스에 의해서 생성된 인스턴스들은 기본적으로 지정된 클래스 변수 값을 가진다.</p>
+<p>기사 직업을 가진 유저가 어디 한둘 이겠는가? 객체를 생성할 때 바로바로 클래스 변수를 설정할 수 있도록 <strong>객체 변수</strong>를 설정해 보자.</p>
+<p><strong><strong>init</strong>()</strong> 은 객체를 생성할 때 호출되는 함수이다.</p>
+<p>여러가지 클래스 변수들을 객체가 생성될 때 설정할 수 있게 해준다.</p>
+<p>이번에는 기사 말고 마법사 클래스를 <strong>객체 변수</strong>를 사용하여 예시로 만들어보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wizard</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, level, name, hp)</span>:</span>    <span class="comment"># 4개의 객체 변수 지정</span></span><br><span class="line">        self.level = level</span><br><span class="line">        self.name = name</span><br><span class="line">        self.hp = hp</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, direction)</span>:</span></span><br><span class="line">        print(direction + <span class="string">"방향으로 이동합니다"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name + <span class="string">"이(가) 공격합니다"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">magic</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name + <span class="string">"이(가) 마법을 사용합니다"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>wizard1 = Wizard(<span class="number">30</span>, Bloodtrail, <span class="number">150</span>)    <span class="comment"># wizard1 객체 생성</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(wizard1.level, wizard1.name, wizard1.hp)</span><br><span class="line"><span class="number">30</span> Bloodtrail <span class="number">150</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>wizard1.move(<span class="string">"위쪽"</span>)</span><br><span class="line">위쪽방향으로 이동합니다</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>wizard1.attack()</span><br><span class="line">Bloodtrail이(가) 공격합니다</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>wizard1.magic()</span><br><span class="line">Bloodtrail이(가) 마법을 사용합니다</span><br></pre></td></tr></table></figure>
+<p>코드를 짜다보니 앞서 작성한 기사 클래스와 겹치는 부분이 많다. (짜증)</p>
+<p>그리고 이렇게 각각의 클래스를 작성하면, 객체 변수를 하나 추가하고 싶을 경우 클래스 3개를 수정해야 하는 불상사가 발생하게 된다..</p>
+<p>지금은 클래스가 3개라서 다행이지만, 만약 클래스가 100개라면?</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46248998-a8090980-c45c-11e8-99ce-b1dcc08a1f09.jpg" alt="난 못해! 못한다고!!"></p>
+<p>이런 경우, 우리는 <u>상속이 추가된 클래스 구조</u>를 생각해야 한다.</p>
+<p><strong>상속</strong>이란, 부모 클래스에 이미 구현되어진 클래스 변수와 함수를 자식 클래스가 받아서 사용하는 것을 의미한다.</p>
+<p>위 예제 코드에서 반복되는 부분을 부모 클래스로 구성해 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Character</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, level, name, hp)</span>:</span>    <span class="comment"># 반복되는 클래스 변수</span></span><br><span class="line">        self.level = level</span><br><span class="line">        self.name = name</span><br><span class="line">        self.hp = hp</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move</span><span class="params">(self, direction)</span>:</span>    <span class="comment"># 반복되는 클래스 함수 1</span></span><br><span class="line">        print(direction + <span class="string">"방향으로 이동합니다"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">attack</span><span class="params">(self)</span>:</span>     <span class="comment"># 반복되는 클래스 함수 2</span></span><br><span class="line">        print(self.name + <span class="string">"이(가) 공격합니다"</span>)</span><br></pre></td></tr></table></figure>
+<p>Character 이라는 클래스를 새로 만들고, 기사, 마법사, 궁수 클래스를 만들 때 공통적으로 포함되는 클래스 변수와 클래스 함수들을 집어 넣었다.</p>
+<p>이제 이 부모 클래스를 사용해서 자식 클래스를 구성해 보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Knight</span><span class="params">(Character)</span>:</span>    <span class="comment"># 부모 클래스인 Character을 사용</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Archer</span><span class="params">(Character)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wizard</span><span class="params">(Character)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">magic</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name + <span class="string">"이(가) 마법을 사용합니다"</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>knight_user = Knight(<span class="number">20</span>, <span class="string">"Battery"</span>, <span class="number">200</span>)</span><br><span class="line">    wizard_user = Wizard(<span class="number">30</span>, <span class="string">"Bloodtrail"</span>, <span class="number">150</span>)</span><br><span class="line">    archer_user = Archer(<span class="number">15</span>, <span class="string">"CashIsK1ng"</span>, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>knight_user.move(<span class="string">"오른쪽"</span>)</span><br><span class="line">오른쪽방향으로 이동합니다</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>wizard_user.magic()</span><br><span class="line">Bloodtrail이(가) 마법을 사용합니다</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>archer_user.attack()</span><br><span class="line">CashIsK1ng이(가) 공격합니다</span><br></pre></td></tr></table></figure>
+<p>클래스의 상속 관계를 잘 설정해 놓으면, 이렇게 깔끔하게 코드가 완성된다.</p>
+<p>차후 MP, 마지막으로 접속한 시간 등의 변수를 추가할 때에도 부모 클래스인 Character만 수정하면 모든 자식 클래스에 제대로 적용될 것이다.</p>
+<p>클래스 작성에 익숙해지자!</p>
 
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -270,7 +284,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://jeongwookie.github.io/2018/09/14/tuple-and-dictionary/" data-id="cjmnrf1l8001zxkubkrhh0ofk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://jeongwookie.github.io/2018/09/30/python-class/" data-id="cjmnrf1kw001bxkubuju8qxyk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -398,20 +412,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/09/14/kschool-student/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            KAIST 창업석사
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/09/13/category-name-problem/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/09/21/second-homework-python/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Hexo 카테고리 이름 설정 시 문제</p>
+        <p class="article-nav-title">두 번째 숙제 - 반복문</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -616,7 +620,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'jeongwookie';
     
     
-    var disqus_url = 'http://jeongwookie.github.io/2018/09/14/tuple-and-dictionary/';
+    var disqus_url = 'http://jeongwookie.github.io/2018/09/30/python-class/';
     
     (function() {
     var dsq = document.createElement('script');
