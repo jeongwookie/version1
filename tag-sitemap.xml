@@ -23,34 +23,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/Github/</loc>
-        <lastmod>2018-09-13T06:54:39.953Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8-issue/</loc>
-        <lastmod>2018-09-13T06:54:39.953Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/Error/</loc>
-        <lastmod>2018-09-13T06:54:39.953Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/Hexo/</loc>
-        <lastmod>2018-09-13T06:54:39.953Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
         <lastmod>2018-09-19T16:48:41.277Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -116,6 +88,41 @@
     <url>
         <loc>http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/</loc>
         <lastmod>2018-09-29T18:17:50.058Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/Github/</loc>
+        <lastmod>2018-10-02T05:22:03.123Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/Error/</loc>
+        <lastmod>2018-10-02T05:22:03.123Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8-issue/</loc>
+        <lastmod>2018-10-02T07:11:12.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/Hexo/</loc>
+        <lastmod>2018-10-02T07:11:12.481Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/Google-Adsense/</loc>
+        <lastmod>2018-10-02T07:11:12.481Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

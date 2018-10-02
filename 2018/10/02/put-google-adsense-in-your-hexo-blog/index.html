@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Blog에 구글 애드센스(Adsense) 추가하기 | Jeongwook, IT Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="블로그 issue,Hexo,Google Adsense" />
+    
+
+      
+        <meta name="description" content="Hexo 블로그에 광고 (google adsense) 추가하는 방법">
+<meta name="keywords" content="블로그 issue,Hexo,Google Adsense">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog에 구글 애드센스(Adsense) 추가하기">
+<meta property="og:url" content="http://jeongwookie.github.io/2018/10/02/put-google-adsense-in-your-hexo-blog/index.html">
+<meta property="og:site_name" content="Jeongwook, IT Blog">
+<meta property="og:description" content="Hexo 블로그에 광고 (google adsense) 추가하는 방법">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/46330631-d6e6d180-c64e-11e8-83ea-d23eaf90ffbb.jpg">
+<meta property="og:updated_time" content="2018-10-02T07:11:12.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog에 구글 애드센스(Adsense) 추가하기">
+<meta name="twitter:description" content="Hexo 블로그에 광고 (google adsense) 추가하는 방법">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/46330631-d6e6d180-c64e-11e8-83ea-d23eaf90ffbb.jpg">
+        
+    
+    <link rel="canonical" href="http://jeongwookie.github.io/2018/10/02/put-google-adsense-in-your-hexo-blog/"/>
+
+    
+        <link rel="alternate" href="https://jeongwookie.github.io/atom.xml" title="Jeongwook, IT Blog" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="https://user-images.githubusercontent.com/25416425/45255002-3806e680-b3bc-11e8-8d51-5dde5f6c454d.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-125636294-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <!-- Facebook Pixel Code -->
+<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '238359246855158');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=238359246855158&ev=PageView&noscript=1"
+      /></noscript>
+      <!-- End Facebook Pixel Code -->
+      
+</head>
+<script>
+        fbq('track', 'ViewContent');
+      </script>
+      
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">배움과 생각 쌓기</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/">Diary</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/일기장/">일기장</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Github/">Github</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/">Marketing</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Python/">Python</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/jeongwook">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Hexo/">Hexo</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- header -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="1101437998"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-put-google-adsense-in-your-hexo-blog" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Blog에 구글 애드센스(Adsense) 추가하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/10/02/put-google-adsense-in-your-hexo-blog/" class="article-date">
+            <time datetime="2018-10-02T05:18:51.000Z" itemprop="datePublished">2018-10-02</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Google-Adsense/">Google Adsense</a>, <a class="tag-link" href="/tags/Hexo/">Hexo</a>, <a class="tag-link" href="/tags/블로그-issue/">블로그 issue</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>블로그를 시작하다 보니 자연스럽게 광고에도 관심이 갔다.</p>
+<p>아직 View 수가 많거나 방문자 수가 셀 수 없을 만큼은 안되지만, 광고를 추가하고 싶었다.</p>
+<p>그러나 방문하신 분이 불쾌하지 않고, 본문을 읽기에 방해가 되지 않는 선에서만.</p>
+<p>가장 유명하고, 많이 사용하는 광고 툴이 바로 <a href="https://www.google.co.kr/intl/ko/adsense/start/?utm_medium=cpc&amp;utm_source=google&amp;utm_campaign=1001272-adsense-acquisition-kr-ko-hybrid-bkws&amp;utm_term=google%20adsense&amp;utm_content=224589754532&amp;gclid=Cj0KCQjwi8fdBRCVARIsAEkDvnIFHkEsQhYsyqEVi7VMWwdOS7AQS8c7tCQbRhzm47L_wsOxjFkgBhoaAmXxEALw_wcB#/?modal_active=none" target="_blank" rel="noopener">구글 애드센스 (Google adsense)</a></p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46330778-ab181b80-c64f-11e8-88c7-89ea4f8ca341.PNG" alt="구글 애드센스 (Google Adsense) 홈페이지"></p>
+<p>홈페이지에 접속하면, 구글 계정으로 로그인 한 후, 먼저 구글 애드센스에 가입해야 한다.</p>
+<p>광고를 등록하고자 하는 웹사이트 URL과 구글 이메일 주소를 입력하면 된다.</p>
+<p>그 후는 통상 하는 회원가입과 비슷한데, 한 가지 유의할 점은 주소를 입력할 때 실거주지를 제대로 입력해야 한다는거! 한글로 써도 무방하다.</p>
+<p>이 주소로 우편물이 오는데, <u>여기 적힌 Pin 번호를 입력해야 수익이 지급되니 주의할 것.</u></p>
+<p>이까지는 참 쉽다! 하지만.. 이제부터가 시작이다 ㅠㅠ</p>
+<p>많은 블로거들이 고생하는 <strong>구글 애드센스 계정 활성화하기</strong>, 나도 오늘까지는 안되는 줄 알았다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46331991-5bd4e980-c655-11e8-8c36-fc2fa819d64d.jpg" alt="공포의 구글 애드센스 사이트 검토 과정 시작"></p>
+<p>필자의 경우 Hexo를 통해 블로그를 구성하고 있으며 테마는 Hueman을 사용하고 있다.<br>(<a href="https://futurecreator.github.io/2016/06/14/hexo-apply-hueman-theme/" target="_blank" rel="noopener">Hexo 블로그 테마 적용하기</a> - Eric Han님의 블로그 참고)</p>
+<p>구글 애드센스의 안내로는 자신의 페이지의 <head> HTML 태그 바로 뒤에 붙여넣으라 하는데.. </head></p>
+<p>지금 hexo로 구성된 파일들을 보면 index.html이 여러가지 js파일을 통해 <code>hexo generate</code> 할 때 마다 생성되고 있었고, 여기에다가 붙여넣는 것은 의미가 없었다.</p>
+<p>어찌어찌 검색을 통해서 알아낸 사실은, <code>themes</code> 폴더 안에 있는 <code>layout</code> 폴더에 들어가서 여기 파일 중 <code>layout.ejs</code>가 전체적인 레이아웃을 담당하고 있다는 것이다.</p>
+<p>그래서 여기 <code>&lt;body&gt;</code> 태그 위에 코드를 그대로 붙여 넣었었다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">head</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">header</span>', <span class="attr">null</span>, &#123;<span class="attr">cache:</span> !<span class="attr">config.relative_link</span>&#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body container-inner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body-inner"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">content-title</span>') %&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body-content"</span>&gt;</span></span><br><span class="line">                            <span class="comment">&lt;!-- 여기다가 코드 붙여넣기 --&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">body</span> %&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">sidebar</span>') %&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">footer</span>', <span class="attr">null</span>, &#123;<span class="attr">cache:</span> !<span class="attr">config.relative_link</span>&#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">scripts</span>') %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>그런데, 1주일을 넘게 기다렸는데도 승인 메일은 오지 않았다..</p>
+<p>그래서 뭔가 조취를 취해야 겠다고 생각했다.</p>
+<p>블로그를 세팅할 때 많은 도움을 주신 Eric Han님의 블로그에서 다시 찬찬히 <a href="https://futurecreator.github.io/2016/06/16/add-google-adsense-to-hexo/" target="_blank" rel="noopener">Hexo 블로그에 구글 애드센스(Adsense) 추가하기</a> 글을 따라해 보았다.</p>
+<p>먼저, <code>layout</code> 폴더 안에 <code>ads</code>라는 폴더를 새로 만들었다.</p>
+<p>그리고 아까 전 <code>layout.ejs</code> 안에 붙어넣었던 구글 애드센스가 준 코드를 지우고, 새로 만든 ads 폴더 안에 <code>adsense.ejs</code>를 새로 만들어서 거기다가 코드를 붙여 넣었다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46332993-8fb20e00-c659-11e8-8499-2df26e5a74a9.jpg" alt="adsense.ejs 파일을 새로 만들었다"></p>
+<p>그리고 내가 광고를 개제하고 싶은 공간에다가 모두 <code>&lt;%- partial(&#39;ads/adsense&#39;) %&gt;</code> 를 붙여 넣었다.</p>
+<ol>
+<li>본문 상단</li>
+</ol>
+<p><code>themes/layout/layout.ejs</code> 파일 안의 <code>&lt;%- body %&gt;</code> 바로 위에 붙여넣기.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">head</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">header</span>', <span class="attr">null</span>, &#123;<span class="attr">cache:</span> !<span class="attr">config.relative_link</span>&#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body container-inner"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body-inner"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">content-title</span>') %&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main-body-content"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">ads</span>/<span class="attr">adsense</span>') %&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">body</span> %&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">sidebar</span>') %&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">footer</span>', <span class="attr">null</span>, &#123;<span class="attr">cache:</span> !<span class="attr">config.relative_link</span>&#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">common</span>/<span class="attr">scripts</span>') %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>본문 하단</li>
+</ol>
+<p><code>themes/layout/common/article.ejs</code> 파일 안의 <code>&lt;footer class=&quot;article-footer&quot;&gt;</code> 바로 위에 붙여넣기.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span> <span class="attr">id</span>=<span class="string">"&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;"</span> <span class="attr">class</span>=<span class="string">"article article-single article-type-&lt;%= post.layout %&gt;&lt;%= (post.direction &amp;&amp; post.direction.toLowerCase() === 'rtl' ? ' rtl' : '') %&gt;"</span> <span class="attr">itemscope</span> <span class="attr">itemprop</span>=<span class="string">"blogPost"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-inner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">post.link</span> || <span class="attr">post.title</span>) &#123; %&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"article-header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">title</span>', &#123; <span class="attr">class_name:</span> '<span class="attr">article-title</span>' &#125;) %&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">post.layout</span> != <span class="string">'page'</span>) &#123; %&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-meta"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">date</span>', &#123; <span class="attr">class_name:</span> '<span class="attr">article-date</span>', <span class="attr">date_format:</span> <span class="attr">null</span> &#125;) %&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">author</span>') %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">tag</span>') %&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">gallery</span>') %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article-entry"</span> <span class="attr">itemprop</span>=<span class="string">"articleBody"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">post.content</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">ads</span>/<span class="attr">adsense</span>') %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">footer</span> <span class="attr">class</span>=<span class="string">"article-footer"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">share</span>/<span class="attr">index</span>', &#123; <span class="attr">post:</span> <span class="attr">post</span> &#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">comment</span>/<span class="attr">index</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>사이드바</li>
+</ol>
+<p><code>themes/layout/common/sidebar.ejs</code> 파일 안의 제일 아래 <code>&lt;/aside&gt;</code> 바로 위에 붙여넣기.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">"sidebar"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"sidebar-toggle"</span> <span class="attr">title</span>=<span class="string">"Expand Sidebar"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"toggle icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar-top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">sidebar.follow</span>') %&gt;</span>:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"social-links"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span> (<span class="attr">var</span> <span class="attr">i</span> <span class="attr">in</span> <span class="attr">theme.customize.social_links</span>) &#123; %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.customize.social_links</span>[<span class="attr">i</span>]) &#123; %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"social-tooltip"</span> <span class="attr">title</span>=<span class="string">"&lt;%= i %&gt;"</span> <span class="attr">href</span>=<span class="string">"&lt;%- url_for(theme.customize.social_links[i]) %&gt;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">rel</span>=<span class="string">"noopener"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon fa fa-&lt;%= i %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"github-card"</span> <span class="attr">data-github</span>=<span class="string">"jeongwookie"</span> <span class="attr">data-width</span>=<span class="string">""</span> <span class="attr">data-height</span>=<span class="string">""</span> <span class="attr">data-theme</span>=<span class="string">"default"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.jsdelivr.net/github-cards/latest/widget.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">is_post</span>()) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">nav</span>', &#123;<span class="attr">post:</span> <span class="attr">page</span>&#125;) %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"widgets-container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.widgets</span>) &#123; %&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> <span class="attr">theme.widgets.forEach</span>(<span class="attr">function</span>(<span class="attr">widget</span>) &#123; %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">widget</span>/' + <span class="attr">widget</span>, &#123;<span class="attr">post:</span> <span class="attr">page</span>&#125;) %&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> &#125;) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">ads</span>/<span class="attr">adsense</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>그리고 <code>hexo g --d</code>를 입력하면 끝!</p>
+<p><code>adsense.ejs</code>에 작성한 코드는 구글 애드센스가 준 페이지 확인 코드이기 때문에, 따로 generate 시 제대로 적용 되었는지 확인할 방도가 없다..</p>
+<p>나도 이렇게 해놓긴 했는데 제대로 된건지 안된건지 알수가 없어서 그냥 그대로 방치(?)했는데,</p>
+<p>이렇게 세팅한지 2주 가까이 되었나? 거의 까먹어 갈 때 즈음 메일이 왔다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46333612-ea4c6980-c65b-11e8-8177-a0a1322af4e2.png" alt="애드센스 연결 완료!!! 와 이게 몇주만이냐"></p>
+<p>참고로 승인이 날 동안 블로그의 방문자수는 거의 0에 수렴하였고, 게시글의 숫자도 20개가 채 안되었었다.</p>
+<p>블로그 게시물 숫자나 방문자 수가 승인 기준이 아니라, 그냥 제대로 된 곳에 코드를 잘 붙여놓고 인내심을 가지면 해결되는 문제인 것 같다.</p>
+<p>승인 이후에는 매우 쉽다.</p>
+<p>승인된 계정으로 다시 한번 애드센스 홈페이지에 접속하고, <strong>내 광고 &gt; 콘텐츠 &gt; 광고 단위</strong> 메뉴에 들어가서 새 광고를 만들면 된다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/46333830-c50c2b00-c65c-11e8-99e8-c1d597462327.png" alt="텍스트 및 디스플레이 광고 만들기. 반응형을 클릭하면 된다."></p>
+<p>등록을 완료하면, 고유 코드가 생성되는데 이것을 복사한다.</p>
+<p>그리고 앞서 만들어놓은 <code>themes/layout/ads/adsense/ejs</code> 파일 안에 있는 구글 애드센스 계정 등록 시 사용되었던 코드를 깨끗하게 지우고, 여기다가 붙여 넣으면 된다.</p>
+<p>필자와 똑같이 하면, 구글 애드센스 광고가 본문 상단, 본문 하단, 그리고 사이드바에 성공적으로 위치함을 확인할 수 있다.</p>
+<p>조금 더 상세한 정보를 알고 싶다면 <a href="https://futurecreator.github.io/2016/06/16/add-google-adsense-to-hexo/" target="_blank" rel="noopener">Eric Han’s Blog</a> 를 참고하자.</p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- footer -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5144624785"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jeongwookie.github.io/2018/10/02/put-google-adsense-in-your-hexo-blog/" data-id="cjmrac684001bgkubj0ouzx06" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+            
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/jeongwook-kim/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jeongwookie" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/bluelingo/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="https://jeongwookie.github.io/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jeongwookie" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/09/30/python-class/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">파이썬에서 클래스 쉽게 다루기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/02/put-google-adsense-in-your-hexo-blog/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/46330631-d6e6d180-c64e-11e8-83ea-d23eaf90ffbb.jpg)" alt="Blog에 구글 애드센스(Adsense) 추가하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2018/10/02/put-google-adsense-in-your-hexo-blog/" class="title">Blog에 구글 애드센스(Adsense) 추가하기</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T05:18:51.000Z" itemprop="datePublished">2018-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/30/python-class/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/46248465-8572f280-c454-11e8-9b4b-a2fa7c77b866.png)" alt="파이썬에서 클래스 쉽게 다루기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/09/30/python-class/" class="title">파이썬에서 클래스 쉽게 다루기</a></p>
+                            <p class="item-date"><time datetime="2018-09-29T16:25:25.000Z" itemprop="datePublished">2018-09-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/21/second-homework-python/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45877160-e442c700-bdd7-11e8-9b5d-8d1f807a1d1b.jpg)" alt="두 번째 숙제 - 반복문" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/09/21/second-homework-python/" class="title">두 번째 숙제 - 반복문</a></p>
+                            <p class="item-date"><time datetime="2018-09-21T10:02:35.000Z" itemprop="datePublished">2018-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/21/recommend-saving-account/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45871201-db49f980-bdc7-11e8-95ba-2131c007b902.jpeg)" alt="건전한 소비 습관, 적금 들기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/추천-아이템/">추천 아이템</a></p>
+                            <p class="item-title"><a href="/2018/09/21/recommend-saving-account/" class="title">건전한 소비 습관, 적금 들기</a></p>
+                            <p class="item-date"><time datetime="2018-09-21T08:53:56.000Z" itemprop="datePublished">2018-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/20/function-in-python/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45764466-b93c6400-bc6d-11e8-8015-cec548652ba7.png)" alt="파이썬으로 함수 다루기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/09/20/function-in-python/" class="title">파이썬으로 함수 다루기</a></p>
+                            <p class="item-date"><time datetime="2018-09-19T15:25:57.000Z" itemprop="datePublished">2018-09-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/일기장/">일기장</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/">Marketing</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Python/">Python</a><span class="category-list-count">10</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/">Error</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Adsense/">Google Adsense</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KAIST-IT-프로그램/">KAIST IT 프로그램</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발/">개발</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/고민/">고민</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/교육/">교육</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/그로스-해킹/">그로스 해킹</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/디지털-마케팅/">디지털 마케팅</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/미팅/">미팅</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/블로그-issue/">블로그 issue</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/스타트업/">스타트업</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/일상/">일상</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/창업석사/">창업석사</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/추천-아이템/">추천 아이템</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/학교/">학교</a><span class="tag-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Error/" style="font-size: 12px;">Error</a> <a href="/tags/Github/" style="font-size: 12px;">Github</a> <a href="/tags/Google-Adsense/" style="font-size: 10px;">Google Adsense</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/KAIST-IT-프로그램/" style="font-size: 20px;">KAIST IT 프로그램</a> <a href="/tags/개발/" style="font-size: 20px;">개발</a> <a href="/tags/고민/" style="font-size: 14px;">고민</a> <a href="/tags/교육/" style="font-size: 20px;">교육</a> <a href="/tags/그로스-해킹/" style="font-size: 14px;">그로스 해킹</a> <a href="/tags/디지털-마케팅/" style="font-size: 12px;">디지털 마케팅</a> <a href="/tags/미팅/" style="font-size: 10px;">미팅</a> <a href="/tags/블로그-issue/" style="font-size: 14px;">블로그 issue</a> <a href="/tags/스타트업/" style="font-size: 18px;">스타트업</a> <a href="/tags/일상/" style="font-size: 20px;">일상</a> <a href="/tags/창업석사/" style="font-size: 14px;">창업석사</a> <a href="/tags/추천-아이템/" style="font-size: 12px;">추천 아이템</a> <a href="/tags/파이썬/" style="font-size: 20px;">파이썬</a> <a href="/tags/학교/" style="font-size: 16px;">학교</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5416797967"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Jeongwook, Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jeongwookie';
+    
+    
+    var disqus_url = 'http://jeongwookie.github.io/2018/10/02/put-google-adsense-in-your-hexo-blog/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
