@@ -56,22 +56,22 @@
     </url>
 
     <url>
+        <loc>http://jeongwookie.github.io/categories/Hexo/</loc>
+        <lastmod>2018-10-02T07:12:58.206Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://jeongwookie.github.io/categories/Programming/</loc>
-        <lastmod>2018-09-29T18:17:50.058Z</lastmod>
+        <lastmod>2018-10-04T13:51:52.259Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/categories/Programming/Python/</loc>
-        <lastmod>2018-09-29T18:17:50.058Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/categories/Hexo/</loc>
-        <lastmod>2018-10-02T07:12:58.206Z</lastmod>
+        <lastmod>2018-10-04T13:51:52.259Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

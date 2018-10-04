@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2018-10-02T07:12:58.206Z</updated>
+  <updated>2018-10-04T13:51:52.259Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>모듈과 패키지</title>
+    <link href="http://jeongwookie.github.io/2018/10/04/python-module/"/>
+    <id>http://jeongwookie.github.io/2018/10/04/python-module/</id>
+    <published>2018-10-04T12:46:51.000Z</published>
+    <updated>2018-10-04T13:51:52.259Z</updated>
+    
+    <content type="html"><![CDATA[<p>코딩에서 가장 중요한 것은, 바로 남이 구현해 놓은 것을 가져다가 잘 쓰는 것이라고 배웠다.</p><p><strong>모듈 (moudule)</strong>이란 함수나 변수 혹은 클래스 등을 뫃아놓은 파일이며, 쉽게 말하면 다른 파이썬 프로그램에서 불러와 사용할 수 있게끔 만들어진 파이썬 파일이다.</p><p>다른 사람들이 이미 만들어 놓은 모듈을 사용하거나, 내가 직접 만들어서 사용할 수도 있다.</p><p>간단히 모듈을 만들고 불러와 보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my_statistics.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b</span><br><span class="line"></span><br><span class="line"><span class="comment"># my_main.py (my_statistics.py와 같은 폴더 내의 파일)</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> my_statistics</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(my_statistics.add(<span class="number">10</span>,<span class="number">20</span>))</span><br><span class="line"><span class="number">30</span></span><br></pre></td></tr></table></figure><p>my_statistics.py라는 모듈을 불러오기 위하여 <code>import</code> 를 사용하였다.</p><p>불러온 이후, 모듈 내의 함수 <code>add</code>를 사용하기 위해 <strong>모듈이름.함수명()</strong>  와 같이 도트 연산자를 붙였다.</p><p><code>my_statistics.add(10,20)</code></p><p>조금 길지 않은가? 모듈 이름을 쓰지 않고 함수를 사용하는 방법도 있다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my_main.py</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> my_statistics <span class="keyword">import</span> sum</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(sum(<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> my_statistics <span class="keyword">import</span> *</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(sub(<span class="number">5</span>,<span class="number">2</span>))</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure><p>위와 같이 <strong>from 모듈이름 import 모듈함수</strong> 와 같은 형태를 입력하면, 그 함수를 모듈이름을 붙이지 않고 사용할 수 있다.</p><p>모듈 내 모든 함수를 불러오려면, <code>*</code>을 붙이면 된다.</p><p>이번에는, 앞서 만든 <code>my_statistics.py</code> 모듈에 몇 개의 코드를 추가해 보자.</p><p>모듈이 제대로 작동하는지 테스트를 위한 코드이다.</p><p>그리고, import를 통해 다른 파이썬 파일에서 모듈을 불러와 보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my_statistics.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b</span><br><span class="line"></span><br><span class="line">print(add(<span class="number">1</span>,<span class="number">3</span>))   <span class="comment"># 테스트 코드</span></span><br><span class="line">print(<span class="string">"my_statistics 파일입니다"</span>)   <span class="comment"># 테스트 코드</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># my_main.py</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> my_statistics</span><br><span class="line"><span class="number">4</span></span><br><span class="line">my_statistics 파일입니다</span><br></pre></td></tr></table></figure><p>나는 <code>my_statistics.py</code> 모듈 안의 <code>add</code> 함수와 <code>sub</code> 함수를 사용하려고 <code>import</code>했는데, 테스트 코드까지 같이 출력되어 버린다..</p><p>이러한 문제를 방지하기 위하여, <code>if __name__ == &quot;__main__&quot;</code>을 사용한다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my_statistics.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a - b</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">   print(add(<span class="number">1</span>,<span class="number">3</span>))   </span><br><span class="line">   print(<span class="string">"my_statistics 파일입니다"</span>)   </span><br><span class="line"></span><br><span class="line"><span class="comment"># my_main.py</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> my_statistics</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure><p><code>import</code>를 실행했을 때 이제는 테스트 코드가 출력되지 않음을 알 수 있다.</p><p> 내가 만약 my_statistics.py을 직접 실행시킬 경우 <code>__name__</code>에는 <code>__main__</code> 이라는 값이 저장된다.</p><p> 하지만, my_main.py와 같은 다른 파이썬 파일에서 my_statistics.py을 직접 실행시킬 경우, <code>__name__</code>에는 <code>my_main.py</code> 이라는 값이 대신 저장된다.</p><p> 지금까지는 작성한 모듈과 실행하고 있는 파이썬 파일이 같은 디렉토리 안에 존재하는 경우만 다루었다.</p><p> 만약 내가 적당한 곳 (ex.바탕화면에 있는 python 폴더)에 py파일을 저장해 놓았는데, 이를 불러서 현재 디렉토리 내에서 사용하려면 어떻게 해야할까?</p> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sys.path.append(<span class="string">"C:\\Users\\JEONGWOOK\\python"</span>)</span><br></pre></td></tr></table></figure><p><code>sys.path</code>는 파이썬 라이브러리들이 설치되어 있는 디렉토리를 list 자료형으로 가지고 있다.</p><p>여기다가 우리는 <a href="https://jeongwookie.github.io/2018/09/12/list-operation/">list 자료형 다루기</a>에서 언급하였던 <code>append()</code>함수를 사용하여 요소를 추가하면 된다.</p><p>파이썬 모듈의 경로를 입력할 때, <code>\</code>가 <code>&quot; &quot;</code> 안에서 인식되게 하기 위하여 <code>\\</code> 이렇게 두 번 입력했음에 유의하자.</p><p><strong>패키지 (package)</strong>는 모듈들을 묶어놓은 것으로, 폴더 형태로 생각하면 된다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">root_package/</span><br><span class="line">    __init__.py</span><br><span class="line">    sub_package_1/</span><br><span class="line">        __init__.py</span><br><span class="line">        module1.py</span><br><span class="line">        module2.py</span><br><span class="line">    sub_package_2/</span><br><span class="line">        __init__.py</span><br><span class="line">        module3.py</span><br><span class="line">        module4.py</span><br></pre></td></tr></table></figure><p>위 구조를 예시로 살펴보면, <code>root_package</code>안에 <code>sub_package_1</code>과 <code>sub_package_2</code>가 있고 각각의 디렉토리 안에 모듈들이 들어 있다.</p><p>패키지 안의 모듈을 사용하려면 루트 디렉토리부터 경로를 적어주면 된다.</p><p><code>import root_package.sub_package_1.module1</code></p><p>패키지의 경우 보통 많은 개발자들이 참여하는 복잡한 프로젝트의 경우에 사용한다. </p><p>그러므로 조금 더 자세한 내용을 보려면 <a href="https://wikidocs.net/1418" target="_blank" rel="noopener">여기</a>를 클릭하자.</p>]]></content>
+    
+    <summary type="html">
+    
+      파이썬에서 모듈과 패키지 사용하기
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
+    
+      <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
+    
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
+    
+      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>구글 애드센스(Adsense) 추가하기</title>
@@ -180,11 +210,11 @@
       <category term="창업 이야기" scheme="http://jeongwookie.github.io/categories/Diary/%EC%B0%BD%EC%97%85-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
     
     
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
       <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
     
       <category term="학교" scheme="http://jeongwookie.github.io/tags/%ED%95%99%EA%B5%90/"/>
+    
+      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
     
       <category term="창업석사" scheme="http://jeongwookie.github.io/tags/%EC%B0%BD%EC%97%85%EC%84%9D%EC%82%AC/"/>
     
@@ -294,11 +324,11 @@
       <category term="창업 이야기" scheme="http://jeongwookie.github.io/categories/Diary/%EC%B0%BD%EC%97%85-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
     
     
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
       <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
     
       <category term="학교" scheme="http://jeongwookie.github.io/tags/%ED%95%99%EA%B5%90/"/>
+    
+      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
     
       <category term="창업석사" scheme="http://jeongwookie.github.io/tags/%EC%B0%BD%EC%97%85%EC%84%9D%EC%82%AC/"/>
     
@@ -561,36 +591,6 @@
       <category term="Error" scheme="http://jeongwookie.github.io/tags/Error/"/>
     
       <category term="Hexo" scheme="http://jeongwookie.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>파이썬 시작하기</title>
-    <link href="http://jeongwookie.github.io/2018/09/10/Start-learning-python/"/>
-    <id>http://jeongwookie.github.io/2018/09/10/Start-learning-python/</id>
-    <published>2018-09-10T12:47:29.000Z</published>
-    <updated>2018-09-13T06:51:05.900Z</updated>
-    
-    <content type="html"><![CDATA[<p> 학교에서 주말마다 하는 IT 교육과정이 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45299472-b2637200-b546-11e8-8c45-424f3bf4a097.png" alt="KAIST IT 아카데미 교육과정"></p><p> 예전부터 파이썬을 혼자서 해보겠다고 책도 빌리고, 코드아카데미에서 몇번 끄젹여 봤었는데 시간이 잘 안나기도 하고 막상 시간이 나면 안했다..</p><p> 학부때 잠깐 EECS의 데이터마이닝 랩에서 근무 했었는데, 그때는 R을 써서 데이터를 읽어오고 간단하게 ANNOVAR 돌려보고 그랬다. C에 비해서는 대단히 직관적인 언어여서 금방금방 따라하긴 했는데 지금은 어떨까?</p><p> 파이썬과 R이 <strong>Data Science</strong> 하면 제일 많이 떠오르는 언어라고 하는데, 예전보다 파이썬의 위상이 하늘을 찌를 정도로 올라가서.. 이제는 파이썬이 아무튼 대세다.</p><p> 개인적으로 개발에 관심을 두기 전에도 대단히 잡다한 지식을 모으는 데에 관심이 있어서, 학부에서 화학을 전공하면서도 현대대수학과 같은 수학과 과목이랑, 양자역학, 세포생물학 및 세포물리학 등등 여기저기 돌아다녔다.</p><p> 인문 수업들도 꽤나 들었고, 다양한 과목들을 수강하면서 놀라웠던 점은 <strong>하나의 현상을 보고, 이를 분석하는 방법이 너무너무 달랐다는 것이다.</strong></p><p> 예를 들어서, 수소의 오비탈을 수식으로 풀어내는 과정에 있어서 양자역학을 배울 때에는 수학적인 정의와 함께 수식 자체를 유도하는 데에 집중한 반면, 물리화학 및 양자화학에서는 적당히 하다 건너뛰고 오히려 수소 뒤의 헬륨, 리튬 등 다른 원소에 적용하고 해석하는 데에 지면을 더 할애하고 있었다. (내 성적을 보자면 양자역학과 같은 쪽이 더 취향에 맞는걸로..)</p><p> 세포물리학은 더 놀라웠다. 생물 수업때 배운 시냅스의 구조 및 작용 원리에 대해서 물리학으로 접근해서, 운동방정식을 세우고 디멘션을 쪼개서 입자의 운동으로 설명하고 있었다.</p><p> 여기서 약간의 insight를 얻었다. Data Science는 결국 주어진 데이터 뭉치에서 어떤 특정한 factor에 집중해서 남들이 보지 못한 <strong>문맥 속 이야기</strong> 를 끌어내는 것이 아닌가?</p><p> 내가 가진 다양한 시각으로 데이터를 분석해서, 비즈니스의 혁신을 일으키고 싶은 것이 내 목표다. 그러기 위해서는 기본적인 개발 언어를 하나 제대로 익혀야겠지?</p><p> 주중에는 학교 수업이랑 회사 일때문에 많이 바쁘다. 그와중에 매주 주말 6시간짜리 코스를 신청하다니.. 이젠 죽었다 ㅠㅠ</p><p> 한번 열심히 해봐야지!</p>]]></content>
-    
-    <summary type="html">
-    
-      파이썬 시작하기
-    
-    </summary>
-    
-      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
-    
-      <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
-    
-    
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
-      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
-    
-      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
-    
-      <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
     
   </entry>
   
