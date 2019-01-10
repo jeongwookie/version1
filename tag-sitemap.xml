@@ -122,14 +122,21 @@
 
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/</loc>
-        <lastmod>2019-01-10T12:00:53.606Z</lastmod>
+        <lastmod>2019-01-10T12:06:59.595Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%B7%A8%EB%AF%B8/</loc>
-        <lastmod>2019-01-10T12:00:53.606Z</lastmod>
+        <lastmod>2019-01-10T12:06:59.595Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EC%85%80%ED%94%84-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4/</loc>
+        <lastmod>2019-01-10T12:06:59.595Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
