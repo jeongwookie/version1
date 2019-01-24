@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2019-01-19T14:18:56.527Z</updated>
+  <updated>2019-01-24T09:39:57.670Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IBM Watson 다루기</title>
+    <link href="http://jeongwookie.github.io/2019/01/22/AI-development-training-course-in-kaist/"/>
+    <id>http://jeongwookie.github.io/2019/01/22/AI-development-training-course-in-kaist/</id>
+    <published>2019-01-22T09:22:49.000Z</published>
+    <updated>2019-01-24T09:39:57.670Z</updated>
+    
+    <content type="html"><![CDATA[<p>12월 말 정도부터 거의 매일 학교에서 저녁에 열렸던 AI 관련 특별 강좌를 이수했다.</p><p>원래는 TensorFlow 기본을 수강하려 했는데 수강 인원이 꽉 차버려서..ㅠㅠ</p><p>예전에 왓슨을 이용해서 간단한 챗봇은 구성해본 경험이 있어서, 왓슨의 다양한 기능들을 사용해 보고 프로젝트에 써먹을 수 있는 것이 있을까 파악하는 것도 재미있어 보였다.</p><p>이 수업에서는 기본적으로 <code>IBM Watson</code>의 다양한 기능들을 사용해보고, 이를 비즈니스에 실제로 적용할 때에 구성 방식에 대해서 배웠다.</p><p>제일 처음은 Watson Assistant를 사용한 피자 배달 챗봇 만들기부터 ㅋㅋㅋ</p><p>예전에 구성했던 챗봇은 선택지를 미리 정해놓고 케이스만 나누어서 응답하는 가장 기초적인 응답 챗봇이었기 때문에, 이번에는 선택지 없이 계속 케이스를 러닝 시키면서 accuracy가 올라가도록 구성해 보았다.</p><p>이후에는 Watson Discovery 및 Watson Knowledge Studio를 사용해서 기업 내부의 아카이브 된 지식 체계들을 쉽게 검색할 수 있도록 데모를 만들어 보았고.. 여러가지 검색어를 트라이 해보면서 놀았다.</p><p>Watson의 또 하나의 서비스인 Visual Recognition도 대단히 흥미로운 툴이었다. 분류자를 직접 만들어서 내가 가지고 있는 로컬 서버의 이미지 파일들을 정돈하는 데에 수 초가 걸리지 않았다. 결과도 꽤나 정확했던.. 물론 내가 직접 찍은 사진들은 너무 local스러워서 러닝이 더 필요해 보이긴 했지만.</p><p>새로운 툴을 만져 보는 것은 언제나 즐겁다. </p><p><img src="https://user-images.githubusercontent.com/25416425/51669137-250d4f80-2007-11e9-8a51-20661af4b714.png" alt="55시간에 걸친 수업 끝!!"></p>]]></content>
+    
+    <summary type="html">
+    
+      카이스트 특별 수업 - IBM Watson 다루기
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
+    
+      <category term="Tools" scheme="http://jeongwookie.github.io/categories/Programming/Tools/"/>
+    
+    
+      <category term="IBM Watson" scheme="http://jeongwookie.github.io/tags/IBM-Watson/"/>
+    
+      <category term="AI" scheme="http://jeongwookie.github.io/tags/AI/"/>
+    
+      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>컴퓨터방 셀프 인테리어, 마지막</title>
@@ -270,13 +302,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -300,9 +332,9 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -326,13 +358,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -382,13 +414,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -412,13 +444,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -468,13 +500,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -530,13 +562,13 @@
       <category term="Python" scheme="http://jeongwookie.github.io/categories/Programming/Python/"/>
     
     
-      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
       <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
     
       <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
     
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
+    
+      <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
     
   </entry>
   
@@ -561,32 +593,6 @@
     
     
       <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
-    
-      <category term="고민" scheme="http://jeongwookie.github.io/tags/%EA%B3%A0%EB%AF%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>스타트업 팀 빌딩에 관한 생각들</title>
-    <link href="http://jeongwookie.github.io/2018/09/16/team-member/"/>
-    <id>http://jeongwookie.github.io/2018/09/16/team-member/</id>
-    <published>2018-09-16T14:46:03.000Z</published>
-    <updated>2018-09-16T16:48:28.211Z</updated>
-    
-    <content type="html"><![CDATA[<p>초기 스타트업을 판단하는 기준에는 여러가지가 있다.</p><p>참신한 아이디어, 뛰어난 기술력, 풍부한 자금, 훌륭한 팀원들.. </p><p>다양한 factor 가 자신들의 사업계획서 속에 녹아 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45598349-93b51d80-ba15-11e8-958e-def433f65f52.jpg" alt="사업계획서의 주요 목차를 이루는 제목들"></p><p>그런데, 내가 지금까지 만났던 투자자들 하나같이 입을 모아서 1번으로 생각하는 가치가 있다면,</p><h2 id="그건-바로-팀이다"><a href="#그건-바로-팀이다" class="headerlink" title="그건 바로 팀이다."></a>그건 바로 팀이다.</h2><p>팀이 어떻게 만들어졌고, 구성원들 각각의 능력은 어떻고 등등.. 팀의 스토리를 알고 싶어한다.</p><p>왜 그러겠는가? 참신한 아이디어와 같은 것은 생각보다 뒷전이다.</p><p>심지어 어떤 유명 투자자는 이렇게 말하기도 했다.</p><p>아이디어는 솔직히 어찌 되어도 상관 없다고.. 팀만 좋으면 된다고.</p><p>조금 너무 나갔는지도 모르겠다. 하지만, 그만큼 팀 빌딩이 중요하다는 것만 알아두자.</p><p><img src="https://user-images.githubusercontent.com/25416425/45598366-d7a82280-ba15-11e8-9230-5196935d13f1.png" alt="스타트업이 망하는 이유 Top3에 들어가는 &quot;잘못된 팀 빌딩&quot;"></p><p>팀 빌딩이 중요하다는 것은 알았다 치자. 그러면 좋은 팀원은 누구이고, 어떻게 만나야 하는 걸까?</p><blockquote><p>친구랑은 사업하는 것 아니다!</p></blockquote><p><img src="https://user-images.githubusercontent.com/25416425/45598572-4f2b8100-ba19-11e8-9749-8a084dbcd73b.JPG" alt="이런 글들 많이 봤을꺼다"></p><p>앞서 이야기 하였듯이, 투자자들은 팀에 얽힌 이야기를 듣고 싶어한다.</p><p>이는 스타트업의 생존이 매우매우 어렵기 때문에, 풍파가 닥치더라도 함께 단단하게 헤쳐나갈 수 있는 결속력이 있는지 보는 것이다.</p><p>팀에 결속력이 없으면.. 조금만 상황이 어려워져도 서로 등을 돌리거나 헐뜯지 않겠는가?</p><p>브런치의 <a href="https://brunch.co.kr/@goodnerds/11" target="_blank" rel="noopener">@goodnerds</a> 님이 그리신 스타트업 만화를 봐도 대략 감이 온다.</p><p>또 하나 우리가 잘 아는 말이 있다.</p><blockquote><p>고등학교 친구가 진짜 친구다!</p></blockquote><p><img src="https://user-images.githubusercontent.com/25416425/45598497-d8da4f00-ba17-11e8-9f34-2d4cad93ca99.jpg" alt="이 친구들은 진짜지"></p><p>음.. 이 말은 대학교나 그 이후 사회 생활 하면서 만나는 사람들은 어쩔 수 없이 조건에 얽혀서 만나게 되고, 진정으로 모두가 동일한 ‘학생’일 때 허물없이 어울리는 친구가 진짜 친구다 라는 말로 들린다.</p><p>그렇다면, 나에게 결속력이 가장 강한 친구들은 힘들 때 조건 없이 달려와주는 일명 ‘고등학교 친구’ 라는 건데, 친구랑은 사업 하는 것 아니라며?</p><p>…</p><p>참 난감하다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45598600-d1b44080-ba19-11e8-86a8-4a1ba3422295.jpg" alt="일명 가불기. 격투 게임에서 유래한 가드 불가 기술의 줄임말이다."></p><p>친구랑 사업하지 말라는 것도 이해가 간다.</p><p>인정에 기대게 되고, 냉철한 판단을 내리지 못하게 한다.</p><p>결국은 사업 망하면 친구까지 따라 잃으니, 하지 말라는 것일 거다.</p><p>하지만, 나는 개인적으로 이건 옛말 같다.</p><p>스타트업은 누구보다도 고된 여정이다.</p><p><strong>코파운더(공동창업자, co-founder)</strong>는 신대륙으로 떠나는 배의 키를 잡고 선장실에서 열띤 토론을 해야 하는 선장과 그의 옛 동료들이다.</p><p>힘들 때 힘들다 말할 수 있고, 서로의 등을 맡길 수 있는 존재.</p><p>신뢰라는 것이 단시간에 생기는 것이 절대 아님을 우리는 모두 알고 있다..</p><p>너무 사견을 많이 붙였나?</p><p>스타트업 팀 빌딩은 모두가 어려워 하는 주제가 맞다.</p><p>오죽하면 좋은 팀원을 만나기 위한 플랫폼 서비스가 성행하겠는가. </p><p>많은 초기 스타트업이 고민하는 문제이고, 이를 해결하기 위한 서비스인 <a href="https://www.gofounder.net/" target="_blank" rel="noopener">고파운더</a>와 같은 플랫폼들이 있다.</p><p>내가 본 팀 빌딩은 크게 두 가지 부류였다.</p><p><strong>첫 번째</strong>는 짱짱한 사람이 사업을 진행하는데 필요한 짱짱한 사람들을 각 파트별로 모은 드림팀.</p><p><strong>두 번째</strong>는 대부분의 대학생 창업에서 이루어지는, 마음 맞는 친구들과 팀 이루기.</p><p>둘 다 성공한 케이스들이 있고, 무엇이 더 성공에 가까운지는 알 수 없다.</p><p>그런데 첫 번째의 경우 만약 내가 대표자라면, 나부터 뛰어난 능력으로 무장해야 다른 사람들을 모을 근거가 마련된다.</p><p>그리고 대학생 및 아직 졸업하지 않은 대학원생은 솔직히 말해서 능력이 없다..</p><p>그럼 답은 하나지 뭐.</p><p>능력이 조금씩 딸리더라도, 마음이 맞는 친구들.</p><p>그리고 거친 파도를 헤쳐나가며 서로에게 힘이 되어, 서로에게 성장의 원동력이 되는 친구들.</p><p>우리의 부족한 힘으로 만들어진 엉성한 스타트업을 끌어올리면서, 실력도 같이 끌어올리는 그림을 그려야지.</p><p>이쯤되면 너무 조건이 까다롭지 않냐고, 이래서 언제 창업 시작하느냐고 되물을지도 모르겠다. </p><p>단순한 직장 생활이 아니라, 창업은 삶 그 자체이기 때문에.. (수많은 야근 및 임금 없는 생활)</p><p><strong>공동창업자는 결혼 배우자를 알아보는 것과 비슷하다.</strong></p><p>쉽게 선택하지는 않겠지? 급하게 생각하지 말자. <u>창업, 쉬운 일 아니다.</u></p><p>하나 좋은 해결책이 있다.</p><p>본격적으로 창업에 나서기 전에, 학교 프로젝트이던 공모전이던 상관 없으니 무언가 노는 것 말고 일하는 걸 같이 해보자.</p><p>요즘은 창업 관련해서도 대회, 해커톤, 공모전 등 엄청 많으니까.</p><p><img src="https://user-images.githubusercontent.com/25416425/45598631-18099f80-ba1a-11e8-962e-36922eac933a.jpg" alt="필자가 작년, 초기 팀 멤버이자 친한 친구들과 함께 나갔던 정주영창업경진대회"></p><p><strong>호흡을 한번 맞춰 보고, 일이 잘 진행된다 싶으면 지르자!</strong></p><p>만약 사업이 잘 안되더라도, 값진 실패가 될 것이다.</p><p>다음 포스트에서는 작년 나의 실패 이야기를 해볼까 한다.</p><p>내가 가졌던 팀원에 대한 생각들과, 앞으로 어떤 사람과 함께할 것인지를.</p>]]></content>
-    
-    <summary type="html">
-    
-      스타트업 팀 빌딩 전반에 대한 나의 생각들
-    
-    </summary>
-    
-      <category term="Diary" scheme="http://jeongwookie.github.io/categories/Diary/"/>
-    
-      <category term="창업 이야기" scheme="http://jeongwookie.github.io/categories/Diary/%EC%B0%BD%EC%97%85-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
-    
-    
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
     
       <category term="고민" scheme="http://jeongwookie.github.io/tags/%EA%B3%A0%EB%AF%BC/"/>
     

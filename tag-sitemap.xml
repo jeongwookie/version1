@@ -100,27 +100,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
-        <lastmod>2019-01-17T05:42:08.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
-        <lastmod>2019-01-17T05:42:08.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/</loc>
-        <lastmod>2019-01-17T05:42:08.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/</loc>
         <lastmod>2019-01-19T14:18:56.527Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -137,6 +116,41 @@
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%85%80%ED%94%84-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4/</loc>
         <lastmod>2019-01-19T14:18:56.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/IBM-Watson/</loc>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/AI/</loc>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/</loc>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
