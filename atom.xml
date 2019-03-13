@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeongwookie.github.io/"/>
-  <updated>2019-02-08T10:38:13.348Z</updated>
+  <updated>2019-03-13T04:57:55.180Z</updated>
   <id>http://jeongwookie.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>R을 사용한 데이터 시각화, 1편</title>
+    <link href="http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/"/>
+    <id>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</id>
+    <published>2019-03-06T12:54:08.000Z</published>
+    <updated>2019-03-13T04:57:55.180Z</updated>
+    
+    <content type="html"><![CDATA[<p>R은 데이터 시각화에 강력한 라이브러리들을 여럿 가지고 있어서 매우 유용하다.</p><p>이번 포스트에서 사용할 라이브러리는 아래와 같다.</p><p>library : <code>gglpot2</code> <code>plotrix</code> <code>boot</code> <code>scatterplot3d</code> <code>lattice</code> <code>MASS</code></p><p>먼저, 내장 데이터셋인 <strong>faithful</strong> 을 기본 함수 <code>plot()</code>을 통해 그려보자.</p><p><img src="https://user-images.githubusercontent.com/25416425/54251976-80ca7280-458c-11e9-99f8-fe3fbbb703b6.png" alt="faithful의 개략적 형태"></p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">head(faithful)</span><br><span class="line">fa &lt;- faithful[order(faithful$waiting),] </span><br><span class="line"><span class="comment"># waiting을 오름차순으로 정렬한 값을 fa에 저장</span></span><br><span class="line">head(fa)</span><br><span class="line">x &lt;- fa[,<span class="number">2</span>]; y &lt;- fa[,<span class="number">1</span>] </span><br><span class="line"><span class="comment"># waiting을 x에, eruptions을 y에 저장</span></span><br><span class="line">plot(x,y,type=<span class="string">"l"</span>, col=<span class="number">4</span>, xlab = <span class="string">"Waiting Time"</span>, ylab = <span class="string">"Eruption Time"</span>, main = <span class="string">"Old Faithful Eruptions"</span>)</span><br><span class="line">points(x,y, pch=<span class="number">20</span>, col=<span class="number">3</span>) </span><br><span class="line"><span class="comment"># pch는 점의 생김새를 의미, 20은 작은 점</span></span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/25416425/54250526-76f24080-4587-11e9-8024-211abb8730cf.png" alt=""></p><p>fa는 <em>waiting</em> 열을 <code>order()</code>을 통해 정렬한 <strong>faithful</strong> 데이터를 기록한 것이다.</p><p>즉, fa[,1] = fa$eruptions 이고, fa[,2] = fa$waiting 이다.</p><p><code>plot()</code>은 type을 지정할 수 있으며, 여기서는 line을 나타내었다.</p><p><code>point()</code>는 말 그대로 점을 찍는 함수이며, 여기서 점의 생김새를 결정하는 <strong>pch=</strong> 를 한번 보자.</p><p><img src="https://user-images.githubusercontent.com/25416425/54250863-bbcaa700-4588-11e9-9085-411761ab6e28.png" width="300"></p><p>여러가지 타입이 있다는 것만 알면 된다. 중요한 것은 <strong>pch=</strong> 가 점의 타입을 결정하는 요소이며 자주 쓰이는 것이 <strong>pch = 20(점), 21, 22, 23, 24, 25</strong> 라는 사실이다.</p><p>이번에는 동일한 데이터를 <code>ggplot2</code> 패키지를 통해서 그려 보자.</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(fa, aes(x,y))+</span><br><span class="line">  geom_point(col=<span class="number">3</span>) + geom_line(col=<span class="number">4</span>) + <span class="comment"># 점을 찍을 때 geom_point를 사용</span></span><br><span class="line">  xlab(<span class="string">'Waiting time'</span>) + ylab(<span class="string">'Eruption time'</span>)+</span><br><span class="line">  ggtitle(<span class="string">'Old Faithful Eruption'</span>)</span><br></pre></td></tr></table></figure><p><img src="https://user-images.githubusercontent.com/25416425/54251159-bc177200-4589-11e9-8d10-8a0cbbc34cb9.png" width="600"></p><p>역시 <code>ggplot2</code> 답게 그래프 디자인이 조금 더 깔끔해 보인다.</p><p><code>ggplot()</code>함수는 어떤 데이터로 어느 축에 할당할 것인지 정한다. 이 함수만 출력하면 <u>아무것도 plot되지 않음에 주의하자.</u> 실제로 점을 찍고 선을 긋는 함수는 뒤에 있다.</p><p>자주 쓰이는 형태는 <code>ggplot(data, aes(x = , y = , fill = ))</code>으로, fill값에 대해서는 뒤에 다시 설명하겠다.</p><p><code>geom_point()</code>는 말그대로 점을 찍는 함수이다. 여기에도 여러가지 디자인 요소들이 있지만 자주 쓰이는 것은 <strong>col=</strong> 으로, 점의 색상을 결정한다.</p><p>이외에도 점의 모양을 결정하는 <strong>shape=</strong>, 점의 색상을 요소(factor)에 따라 변화하게 하는 <strong>aes(fill=)</strong>, 점의 크기를 결정하는 <strong>size=</strong> 등이 쓰이는데 자세한 것은 <a href="https://ggplot2.tidyverse.org/reference/geom_point.html" target="_blank" rel="noopener">여기</a>를 참고하자.</p><p><code>geom_line()</code>은 선을 긋는 함수이다. 마찬가지로 <strong>col=4</strong>라고 적음으로써 4번 색상인 파랑을 출력하고 있다. 자세한 디자인 요소 변경은 <a href="https://m.blog.naver.com/coder1252/221031694057" target="_blank" rel="noopener">여기</a>를 참고하자.</p><p>이번에는 또 다른 내장 데이터인 <strong>diamonds</strong> 를 <code>ggplot2</code>로 그려 보자.</p><p><img src="https://user-images.githubusercontent.com/25416425/54252070-c6873b00-458c-11e9-934b-2f1d1fed3da7.png" alt="diamonds 데이터의 형태"></p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head(diamonds)</span><br><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(diamonds, aes(x=carat, y=price)) +</span><br><span class="line">  geom_point(aes(col=color)) + <span class="comment"># point의 컬러(col)를 color라는 변수값에 따라 변하도록 설정</span></span><br><span class="line">  facet_grid(color ~ .) <span class="comment"># ~을 사용한 format</span></span><br></pre></td></tr></table></figure><p><code>ggplot()</code>에서 x축 데이터를 carat열, 그리고 y축 데이터를 price열 로 설정하였다.</p><p>그리고 <code>geom_point()</code>로 점을 찍는데, 그 점들의 색상을 <u>color열의 요소에 따라 달라지도록 지정하였다.</u></p><p>마지막으로, 새로운 함수가 하나 나타났는데 바로 <code>facet_grid()</code>.</p><p>주로 <strong>집단(group) 간의 효과적인 비교를 위해 면을 분할하고 싶을 때</strong> 사용한다.</p><p>또한, 많은 경우 <code>x ~ y</code>와 같은 형태로 작성하는데, 이는 표현 그대로 좌측은 x (input), 우측은 y (output)을 의미하는 간략한 함수 형태이다.</p><p>위의 <code>facet_grid(color ~ .)</code>은 color에 따라 나머지 모든 데이터를 그룹화 하여 면을 분할 해서 표현하라는 의미로 해석된다. 참고는 <a href="https://rfriend.tistory.com/85" target="_blank" rel="noopener">여기</a></p><p>만약 <code>facet_grid(. ~ color)</code>로 쓴다면, 쉽게 말해서 x와 y가 반전되어 출력된다. (세로)</p><div style="width:50%; height:300px; float:left;"><br><img src="https://user-images.githubusercontent.com/25416425/54253074-ba9d7800-4590-11e9-8bf7-eb477fea57fa.png" width="300"><br></div><div style="width:50%; height:300px; float:right;"><br><img src="https://user-images.githubusercontent.com/25416425/54253032-95106e80-4590-11e9-8cd2-03386699c406.png" width="300"><br></div><p>왼쪽은 <strong>facet_grid(color ~ .)</strong> 이고, 오른쪽은 <strong>facet_grid(. ~ color)</strong> 의 결과물이다. 위의 <code>geom_point()</code> 세팅에 따라, 점의 색상이 <strong>diamonds$color</strong>의 값에 따라 달라짐을 알 수 있다.</p><p>이어지는 포스트에서는 기본 plot외의 bar, histogram 등의 형태를 다루어 볼 것이다.</p><blockquote><p><em>본 포스트는 KAIST 전산학부 대학원 과정에서 수강하고 있는 Big Data Analytics using R (CS564)을 실습하며 작성하였음을 밝힙니다.</em></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
+    
+      <category term="R" scheme="http://jeongwookie.github.io/categories/Programming/R/"/>
+    
+    
+      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="R programming" scheme="http://jeongwookie.github.io/tags/R-programming/"/>
+    
+  </entry>
   
   <entry>
     <title>좋은 서비스 디자인하기</title>
@@ -561,38 +589,6 @@
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
     
       <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>우리 서비스의 시장 크기는 얼마나 될까?</title>
-    <link href="http://jeongwookie.github.io/2018/09/18/customer-discovery-kaist-e5/"/>
-    <id>http://jeongwookie.github.io/2018/09/18/customer-discovery-kaist-e5/</id>
-    <published>2018-09-18T13:59:02.000Z</published>
-    <updated>2018-09-19T16:47:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>아닛..!!</p><p>저번주에 참여했던 KAIST E5 에서 놀랍게도 상금을 받으면서 2차 미션 대상팀이 되었다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45693115-52e51200-bb97-11e8-9cef-9fb6db86a37c.jpg" alt="띠용? 우리팀이 상금이라뇨!!"></p><p>아무래도 주제가 좋지 않았나 싶다. 아직 많이 부족하지만..</p><p>아무튼 그래서 오늘은 2차 Mission 인 <strong>Customer Discovery</strong> 강의를 들으러 KAIST 스타트업 스튜디오 1층으로 모였다.</p><p>저번 비즈니스 모델링은 카카오벤처스 <strong>김기준 상무님</strong>께서 강연해 주셨고, 이번에는 씨엔티테크 <strong>전화성 대표님</strong>께서 직접 방문하셨다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45695810-2c29da00-bb9d-11e8-9742-5bf801e04b03.png" alt="하나의 시장을 아예 씹어드신 대단한 분"></p><p>이번 2차 미션의 목표는, 1차 캠프에서 설계한 <u>우리의 비즈니스 모델이 정말 시장에서 통하는지</u> 그 가설을 검증하는 것이다.</p><p>대표님께서 처음 강연 시작 전, <strong>시장</strong>에 관하여 짧고 굵게 정의하셨는데 대단히 인상깊다.</p><blockquote><p>시장, 길게 설명할 것 없어. 나한테 돈을 주는 사람들의 집합이지.</p></blockquote><p>고객을 발견하는 일련의 과정은, 결국 내가 제시한 해결책이 효과적임을 입증하는 수단이다.</p><p>이를 세 가지 프로세스로 요약할 수 있다.</p><ol><li><p>진짜 공감되는 문제인가? (마켓의 문제를 입증하기)</p></li><li><p>내가 제시한 솔루션이 효과적인가?</p></li><li><p>1번과 2번의 결과를 보았을 때, 내가 뛰어들 마켓의 사이즈는 이정도다!</p></li></ol><p>그러면 구체적으로 위와 같은 의문을 어떻게 해결해야 할까?</p><h2 id="내가-돈-받을-사람한테-직접-가서-알아보는-수-밖에-없다"><a href="#내가-돈-받을-사람한테-직접-가서-알아보는-수-밖에-없다" class="headerlink" title="내가 돈 받을 사람한테 직접 가서 알아보는 수 밖에 없다!"></a>내가 돈 받을 사람한테 직접 가서 알아보는 수 밖에 없다!</h2><p>무엇이 힘든지, 얼마나 힘든지, 내가 이런 서비스를 만들껀데 어떤 기능이 당신에게 큰 도움이 될지 등 고객과의 <strong>Deep interwiew</strong>를 진행해야 한다.</p><p><strong>시장 규모 추정</strong>은 사업 계획서에 반드시 들어가는 항목이다.</p><p>그런데 의문이 들지 않는가?</p><p>내가 생각하는 서비스는 새로운 건데, 시장을 도데체 어떻게 숫자로 표현하라는 거지?</p><p>이를 제시하기 위한 유명한 툴이 있긴 하다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45697168-21247900-bba0-11e8-9d33-6eedcc608687.jpg" alt="TAM-SAM-SOM Approach"></p><p>TAM (Total Addressable Market)은 한국말로 <strong>전체 시장</strong>이다. 제품 및 서비스와 관련된 전체 시장의 규모를 뜻한다.</p><p>예를 들어, 모바일 APP의 경우, 국내 스마트폰 사용자 전체 <strong>4000만명</strong>이 전체 시장 규모일 수 있겠다.</p><p>SAM (Service Available Market)은 한국말로 <strong>유효 시장</strong>이다. </p><p>우리 서비스가 추구하는 비즈니스 모델이 있는 영역만을 타겟팅 한 것인데,</p><p>예를 들어 모바일 헬스케어 스타트업인 경우, 자료를 보니 전체 사용자 중 1/4가 모바일 헬스케어를 이용한다고 나와 있으므로 <strong>1000만명</strong>이다.</p><p>제일 중요한건 SOM (Serviceable Obtainable Market)인데 한국말로 <strong>수익 시장</strong>이다.</p><p>쉽게 말하면 유효 시장 안에서 우리 서비스가 초기에 노릴 수 있는 고객이 몇명인가? 에 대한 답변이다.</p><blockquote><p>누가 너의 초기 서비스에 재화를 지불할 것인가?</p></blockquote><p>위의 시장 규모 추정법에 대해 자세히 알고 싶은 사람은 <a href="https://verticalplatform.kr/archives/5494" target="_blank" rel="noopener">여기</a>를 참고하자.</p><p>나에게 대단히 도움을 많이 주고 계신 로아인벤션랩의 김진영 대표님께서 운영하시는 스타트업 관련 정보 플랫폼이다.</p><p>딱 보면 알겠지만, 결국 <strong>수익 시장을 어떻게 잡느냐</strong>가 초기 스타트업의 성패를 좌우하게 된다.</p><p>그런데, 말이 쉽지 이걸 특정하기는 대단히 어렵다..</p><p>이 때, 괜히 없는 자료 뒤적거리지 말고 사무실 밖으로 나가보면 어떨까. (어짜피 새로운 시도를 할꺼라면 자료가 없을 꺼다)</p><p><img src="https://user-images.githubusercontent.com/25416425/45697776-7f9e2700-bba1-11e8-8ab3-c94d3049883d.jpg" alt="니가 찾는 사실은 사무실에 없으니까 제발 밖에 좀 나가라!"></p><p>이 말씀을 하신 분이 바로 <a href="https://www.slideshare.net/MatthewLee/case-study-51449865" target="_blank" rel="noopener">Lean Startup</a>의 창시자, <strong>Steve Blank</strong> 선생님 되시겠다.</p><p>고객을 특정 지으려면, 먼저 고객을 만나서 <strong>진짜 그들이 겪는 문제</strong>를 들어봐야 한다.</p><p>그러니까 사업계획서에 수익 시장을 적어 넣으려면 고객을 만나야 한다는 거다.</p><p>전화성 대표님께서 말씀해 주신 프로세스가 있다. (그리고 이것이 2차 Mission 발표일에 꼭 들어가야 한다!)</p><ol><li><p>누구한테 팔껀지 가정을 하고, 그 고객한테 찾아간다.</p></li><li><p>내가 설정한 “문제”를 실제로 그들이 심각하게 겪고 있는지 검증한다.</p></li><li><p>내가 설계한 “해결책”을 제시하고, <strong>돈을 지불할 의향이 있는지 물어본다.</strong></p></li></ol><p>2번 단계에서 많은 초기 스타트업 팀은, 그들이 생각하기에 <strong>심각한 문제</strong> 였던 것이 실제로는 별 거 아님을 깨닫는다.</p><p>이 때, 내가 생각하기에 방향이 두가지 정도 있는 것 같은데</p><p>첫 번째는 이들한테 인터뷰를 하면서 <strong>진짜 심각한 문제</strong>를 새로 캐치해 내는 것.</p><p>두 번째는 내가 설정한 <strong>심각한 문제</strong>를 겪을 만한 고객을 다시 물색하는 것.</p><p>두 가지 다 해볼만 하다. 빨리빨리 움직여 봐야 할 것이다.</p><p>또 하나, 3번 단계에서 조금 주의해야 할 사항이 있다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45698810-d60c6500-bba3-11e8-8db4-e44e8f324db1.jpg" alt="환하게 웃고 계신 우리동네 음악대장님. 그런데 속마음은 어떨까? 흠"></p><p>고객들은 속마음을 이야기하지 않는다.</p><p>특히, 열심히 자신의 사업에 대해 이야기하는 사람을 앞에 두고 <strong>아 정말 쓸모없네요</strong> 라고 말하는 사람이 과연 몇이나 될까?</p><p>게다가 아는 사람들한테 물어보면 더 그렇다.</p><p>인터뷰도 스킬이다. 고객을 끄덕이는 것은 우리가 원하는 반응이 아니다.</p><p><strong>진짜 매력도를 느끼는 기능이 무엇인지</strong> 캐내야 한다.</p><p>지금 단계에서 고객들이 이야기하는 “괜찮네요” 가 당신한테 그 서비스를 구매하기 위해 돈을 지불하겠다는 것과 다름을 염두에 두자.</p><h2 id="사람들의-지갑에서-돈을-꺼내는-건-진짜로-힘든-일이다"><a href="#사람들의-지갑에서-돈을-꺼내는-건-진짜로-힘든-일이다" class="headerlink" title="사람들의 지갑에서 돈을 꺼내는 건 진짜로 힘든 일이다."></a>사람들의 지갑에서 돈을 꺼내는 건 진짜로 힘든 일이다.</h2><p>여기서 스티브 잡스 (Steve Jobs) 의 이야기를 꺼내는 사람들이 있을 수 있겠다.</p><p>잡스 형님께서 당당하게 하신 말씀.</p><blockquote><p>나는 아이폰 만들때 시장 조사를 하지 않았다. 고객들은 자신들이 원하는 게 뭔질 모르니까.</p></blockquote><p>요점은 아이폰을 만들 때 자신의 <strong>직관</strong>에 의존하였다는 것인데..</p><p>직관에 의존할 만큼 당신은, 당신이 만들 서비스가 속한 영역에 경험치가 쌓여 있는가?</p><p>스티브 잡스는 컴퓨터를 작게 만드는 데 <u>평생을 미쳐 있었다.</u></p><p>25년동안 쌓은 경험들이 그의 직관을 구성했고, 이는 보통 사람들의 생각을 아득히 뛰어넘은 것이었다.</p><p>실제로 그 사이에 애플은 많은 삽질을 했다. </p><p>그들이 만든 애플 컴퓨터는 소수의 매니아층을 만족시킬 뿐이었고, 과도한 카리스마식 경영을 하다 결국 자신이 만든 회사에서 쫓겨나기까지 하는 수모를 겪은 그다.</p><p>이 정도 경험치로 이루어진 직관에게 시장 조사 결과가 별 건가?</p><p>전화성 대표님깨서 한 마디 하셨다.</p><p><strong>“경험치를 그 정도 쌓은 분야에서 사업을 하던가, 아니면 시간을 가지고 시장 조사를 해”</strong></p><p>실제로 서비스를 오픈에서 시장에 뛰어들면, 수많은 예측하지 못했던 문제들이 튀어나온다.</p><p>그렇다면, 사업 시작 전에 충분히 주의해서 막을 수 있는 문제들은 막아야 하지 않을까?</p><p><strong>치밀하고 날카롭게 사업 하자.</strong></p><p>P.S 전화성 대표님도 <strong>운동</strong>을 대단히 강조하셨다. 사업할려면 인내심이 엄청나게 필요한데 키우는 방법은 오직 운동 뿐이라고. 열심히 하자!</p>]]></content>
-    
-    <summary type="html">
-    
-      고객 검증 후 시장 규모 추정하기
-    
-    </summary>
-    
-      <category term="Diary" scheme="http://jeongwookie.github.io/categories/Diary/"/>
-    
-      <category term="학교 이야기" scheme="http://jeongwookie.github.io/categories/Diary/%ED%95%99%EA%B5%90-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
-    
-      <category term="창업 이야기" scheme="http://jeongwookie.github.io/categories/Diary/%EC%B0%BD%EC%97%85-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
-    
-    
-      <category term="스타트업" scheme="http://jeongwookie.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/"/>
-    
-      <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
-    
-      <category term="학교" scheme="http://jeongwookie.github.io/tags/%ED%95%99%EA%B5%90/"/>
-    
-      <category term="창업석사" scheme="http://jeongwookie.github.io/tags/%EC%B0%BD%EC%97%85%EC%84%9D%EC%82%AC/"/>
     
   </entry>
   

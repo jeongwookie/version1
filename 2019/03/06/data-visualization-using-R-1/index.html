@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>R을 사용한 데이터 시각화, 1편 | Jeongwook, Life Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="교육,개발,R programming" />
+    
+
+      
+        <meta name="description" content="R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기">
+<meta name="keywords" content="교육,개발,R programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R을 사용한 데이터 시각화, 1편">
+<meta property="og:url" content="http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/index.html">
+<meta property="og:site_name" content="Jeongwook, Life Blog">
+<meta property="og:description" content="R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/54202156-c5b1c300-4512-11e9-8f67-c200cc3719e6.png">
+<meta property="og:updated_time" content="2019-03-13T04:57:55.180Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R을 사용한 데이터 시각화, 1편">
+<meta name="twitter:description" content="R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/54202156-c5b1c300-4512-11e9-8f67-c200cc3719e6.png">
+        
+    
+    <link rel="canonical" href="http://jeongwookie.github.io/2019/03/06/data-visualization-using-r-1/"/>
+
+    
+        <link rel="alternate" href="https://jeongwookie.github.io/atom.xml" title="Jeongwook, Life Blog" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="https://user-images.githubusercontent.com/25416425/45255002-3806e680-b3bc-11e8-8d51-5dde5f6c454d.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-125636294-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <!-- Facebook Pixel Code -->
+<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '238359246855158');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=238359246855158&ev=PageView&noscript=1"
+      /></noscript>
+      <!-- End Facebook Pixel Code -->
+      
+</head>
+<script>
+        fbq('track', 'ViewContent');
+      </script>
+      
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">배움과 생각 쌓기</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/">Diary</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/일기장/">일기장</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/">Marketing</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/Design/">Design</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/R/">R</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Tools/">Tools</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/jeongwook">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/R/">R</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- header -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="1101437998"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-data-visualization-using-R-1" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        R을 사용한 데이터 시각화, 1편
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/06/data-visualization-using-R-1/" class="article-date">
+            <time datetime="2019-03-06T12:54:08.000Z" itemprop="datePublished">2019-03-06</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/R-programming/">R programming</a>, <a class="tag-link" href="/tags/개발/">개발</a>, <a class="tag-link" href="/tags/교육/">교육</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>R은 데이터 시각화에 강력한 라이브러리들을 여럿 가지고 있어서 매우 유용하다.</p>
+<p>이번 포스트에서 사용할 라이브러리는 아래와 같다.</p>
+<p>library : <code>gglpot2</code> <code>plotrix</code> <code>boot</code> <code>scatterplot3d</code> <code>lattice</code> <code>MASS</code></p>
+<p>먼저, 내장 데이터셋인 <strong>faithful</strong> 을 기본 함수 <code>plot()</code>을 통해 그려보자.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54251976-80ca7280-458c-11e9-99f8-fe3fbbb703b6.png" alt="faithful의 개략적 형태"></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">head(faithful)</span><br><span class="line">fa &lt;- faithful[order(faithful$waiting),] </span><br><span class="line"><span class="comment"># waiting을 오름차순으로 정렬한 값을 fa에 저장</span></span><br><span class="line">head(fa)</span><br><span class="line">x &lt;- fa[,<span class="number">2</span>]; y &lt;- fa[,<span class="number">1</span>] </span><br><span class="line"><span class="comment"># waiting을 x에, eruptions을 y에 저장</span></span><br><span class="line">plot(x,y,type=<span class="string">"l"</span>, col=<span class="number">4</span>, xlab = <span class="string">"Waiting Time"</span>, ylab = <span class="string">"Eruption Time"</span>, main = <span class="string">"Old Faithful Eruptions"</span>)</span><br><span class="line">points(x,y, pch=<span class="number">20</span>, col=<span class="number">3</span>) </span><br><span class="line"><span class="comment"># pch는 점의 생김새를 의미, 20은 작은 점</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/25416425/54250526-76f24080-4587-11e9-8024-211abb8730cf.png" alt=""></p>
+<p>fa는 <em>waiting</em> 열을 <code>order()</code>을 통해 정렬한 <strong>faithful</strong> 데이터를 기록한 것이다.</p>
+<p>즉, fa[,1] = fa$eruptions 이고, fa[,2] = fa$waiting 이다.</p>
+<p><code>plot()</code>은 type을 지정할 수 있으며, 여기서는 line을 나타내었다.</p>
+<p><code>point()</code>는 말 그대로 점을 찍는 함수이며, 여기서 점의 생김새를 결정하는 <strong>pch=</strong> 를 한번 보자.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54250863-bbcaa700-4588-11e9-9085-411761ab6e28.png" width="300"></p>
+<p>여러가지 타입이 있다는 것만 알면 된다. 중요한 것은 <strong>pch=</strong> 가 점의 타입을 결정하는 요소이며 자주 쓰이는 것이 <strong>pch = 20(점), 21, 22, 23, 24, 25</strong> 라는 사실이다.</p>
+<p>이번에는 동일한 데이터를 <code>ggplot2</code> 패키지를 통해서 그려 보자.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(fa, aes(x,y))+</span><br><span class="line">  geom_point(col=<span class="number">3</span>) + geom_line(col=<span class="number">4</span>) + <span class="comment"># 점을 찍을 때 geom_point를 사용</span></span><br><span class="line">  xlab(<span class="string">'Waiting time'</span>) + ylab(<span class="string">'Eruption time'</span>)+</span><br><span class="line">  ggtitle(<span class="string">'Old Faithful Eruption'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/25416425/54251159-bc177200-4589-11e9-8d10-8a0cbbc34cb9.png" width="600"></p>
+<p>역시 <code>ggplot2</code> 답게 그래프 디자인이 조금 더 깔끔해 보인다.</p>
+<p><code>ggplot()</code>함수는 어떤 데이터로 어느 축에 할당할 것인지 정한다. 이 함수만 출력하면 <u>아무것도 plot되지 않음에 주의하자.</u> 실제로 점을 찍고 선을 긋는 함수는 뒤에 있다.</p>
+<p>자주 쓰이는 형태는 <code>ggplot(data, aes(x = , y = , fill = ))</code>으로, fill값에 대해서는 뒤에 다시 설명하겠다.</p>
+<p><code>geom_point()</code>는 말그대로 점을 찍는 함수이다. 여기에도 여러가지 디자인 요소들이 있지만 자주 쓰이는 것은 <strong>col=</strong> 으로, 점의 색상을 결정한다.</p>
+<p>이외에도 점의 모양을 결정하는 <strong>shape=</strong>, 점의 색상을 요소(factor)에 따라 변화하게 하는 <strong>aes(fill=)</strong>, 점의 크기를 결정하는 <strong>size=</strong> 등이 쓰이는데 자세한 것은 <a href="https://ggplot2.tidyverse.org/reference/geom_point.html" target="_blank" rel="noopener">여기</a>를 참고하자.</p>
+<p><code>geom_line()</code>은 선을 긋는 함수이다. 마찬가지로 <strong>col=4</strong>라고 적음으로써 4번 색상인 파랑을 출력하고 있다. 자세한 디자인 요소 변경은 <a href="https://m.blog.naver.com/coder1252/221031694057" target="_blank" rel="noopener">여기</a>를 참고하자.</p>
+<p>이번에는 또 다른 내장 데이터인 <strong>diamonds</strong> 를 <code>ggplot2</code>로 그려 보자.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54252070-c6873b00-458c-11e9-934b-2f1d1fed3da7.png" alt="diamonds 데이터의 형태"></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head(diamonds)</span><br><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(diamonds, aes(x=carat, y=price)) +</span><br><span class="line">  geom_point(aes(col=color)) + <span class="comment"># point의 컬러(col)를 color라는 변수값에 따라 변하도록 설정</span></span><br><span class="line">  facet_grid(color ~ .) <span class="comment"># ~을 사용한 format</span></span><br></pre></td></tr></table></figure>
+<p><code>ggplot()</code>에서 x축 데이터를 carat열, 그리고 y축 데이터를 price열 로 설정하였다.</p>
+<p>그리고 <code>geom_point()</code>로 점을 찍는데, 그 점들의 색상을 <u>color열의 요소에 따라 달라지도록 지정하였다.</u></p>
+<p>마지막으로, 새로운 함수가 하나 나타났는데 바로 <code>facet_grid()</code>.</p>
+<p>주로 <strong>집단(group) 간의 효과적인 비교를 위해 면을 분할하고 싶을 때</strong> 사용한다.</p>
+<p>또한, 많은 경우 <code>x ~ y</code>와 같은 형태로 작성하는데, 이는 표현 그대로 좌측은 x (input), 우측은 y (output)을 의미하는 간략한 함수 형태이다.</p>
+<p>위의 <code>facet_grid(color ~ .)</code>은 color에 따라 나머지 모든 데이터를 그룹화 하여 면을 분할 해서 표현하라는 의미로 해석된다. 참고는 <a href="https://rfriend.tistory.com/85" target="_blank" rel="noopener">여기</a></p>
+<p>만약 <code>facet_grid(. ~ color)</code>로 쓴다면, 쉽게 말해서 x와 y가 반전되어 출력된다. (세로)</p>
+<div style="width:50%; height:300px; float:left;"><br><img src="https://user-images.githubusercontent.com/25416425/54253074-ba9d7800-4590-11e9-8bf7-eb477fea57fa.png" width="300"><br></div>
+
+<div style="width:50%; height:300px; float:right;"><br><img src="https://user-images.githubusercontent.com/25416425/54253032-95106e80-4590-11e9-8cd2-03386699c406.png" width="300"><br></div>
+
+<p>왼쪽은 <strong>facet_grid(color ~ .)</strong> 이고, 오른쪽은 <strong>facet_grid(. ~ color)</strong> 의 결과물이다. 위의 <code>geom_point()</code> 세팅에 따라, 점의 색상이 <strong>diamonds$color</strong>의 값에 따라 달라짐을 알 수 있다.</p>
+<p>이어지는 포스트에서는 기본 plot외의 bar, histogram 등의 형태를 다루어 볼 것이다.</p>
+<blockquote>
+<p><em>본 포스트는 KAIST 전산학부 대학원 과정에서 수강하고 있는 Big Data Analytics using R (CS564)을 실습하며 작성하였음을 밝힙니다.</em></p>
+</blockquote>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- footer -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5144624785"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/" data-id="cjt6qhjnt000h3wq2jv9v0d3k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+            
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/jeongwook-kim/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jeongwookie" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/bluelingo/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="https://jeongwookie.github.io/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jeongwookie" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/02/08/goal-directed-design/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">좋은 서비스 디자인하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/06/data-visualization-using-R-1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54202156-c5b1c300-4512-11e9-8f67-c200cc3719e6.png)" alt="R을 사용한 데이터 시각화, 1편" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/R/">R</a></p>
+                            <p class="item-title"><a href="/2019/03/06/data-visualization-using-R-1/" class="title">R을 사용한 데이터 시각화, 1편</a></p>
+                            <p class="item-date"><time datetime="2019-03-06T12:54:08.000Z" itemprop="datePublished">2019-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/02/08/goal-directed-design/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/52469218-3db46280-2bce-11e9-882f-2004eb5b8a7d.jpeg)" alt="좋은 서비스 디자인하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Marketing/">Marketing</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Marketing/Design/">Design</a></p>
+                            <p class="item-title"><a href="/2019/02/08/goal-directed-design/" class="title">좋은 서비스 디자인하기</a></p>
+                            <p class="item-date"><time datetime="2019-02-08T09:17:43.000Z" itemprop="datePublished">2019-02-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/02/03/find-a-new-hobby/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/52431145-ff299400-2b4a-11e9-979c-ee3663704d2d.jpg)" alt="문득 떠오른 취미" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/일기장/">일기장</a></p>
+                            <p class="item-title"><a href="/2019/02/03/find-a-new-hobby/" class="title">문득 떠오른 취미</a></p>
+                            <p class="item-date"><time datetime="2019-02-02T17:38:28.000Z" itemprop="datePublished">2019-02-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/22/AI-development-training-course-in-kaist/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/51668503-aebc1d80-2005-11e9-9b10-a81a84aa92b1.png)" alt="IBM Watson 다루기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Tools/">Tools</a></p>
+                            <p class="item-title"><a href="/2019/01/22/AI-development-training-course-in-kaist/" class="title">IBM Watson 다루기</a></p>
+                            <p class="item-date"><time datetime="2019-01-22T09:22:49.000Z" itemprop="datePublished">2019-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/17/house-remodeling-4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/51427032-ead23580-1c35-11e9-93a7-7e1141796d23.jpg)" alt="컴퓨터방 셀프 인테리어, 마지막" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/일기장/">일기장</a></p>
+                            <p class="item-title"><a href="/2019/01/17/house-remodeling-4/" class="title">컴퓨터방 셀프 인테리어, 마지막</a></p>
+                            <p class="item-date"><time datetime="2019-01-17T12:51:53.000Z" itemprop="datePublished">2019-01-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/일기장/">일기장</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/">Marketing</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Design/">Design</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Python/">Python</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/R/">R</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Tools/">Tools</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Error/" style="font-size: 10.91px;">Error</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google-Adsense/" style="font-size: 10px;">Google Adsense</a> <a href="/tags/Hexo/" style="font-size: 11.82px;">Hexo</a> <a href="/tags/IBM-Watson/" style="font-size: 10px;">IBM Watson</a> <a href="/tags/KAIST-IT-프로그램/" style="font-size: 17.27px;">KAIST IT 프로그램</a> <a href="/tags/R-programming/" style="font-size: 10px;">R programming</a> <a href="/tags/개발/" style="font-size: 19.09px;">개발</a> <a href="/tags/고민/" style="font-size: 13.64px;">고민</a> <a href="/tags/교육/" style="font-size: 18.18px;">교육</a> <a href="/tags/그로스-해킹/" style="font-size: 11.82px;">그로스 해킹</a> <a href="/tags/디자인-리서치/" style="font-size: 10px;">디자인 리서치</a> <a href="/tags/디지털-마케팅/" style="font-size: 10.91px;">디지털 마케팅</a> <a href="/tags/미팅/" style="font-size: 10px;">미팅</a> <a href="/tags/블로그-issue/" style="font-size: 11.82px;">블로그 issue</a> <a href="/tags/셀프-인테리어/" style="font-size: 12.73px;">셀프 인테리어</a> <a href="/tags/스타트업/" style="font-size: 16.36px;">스타트업</a> <a href="/tags/일상/" style="font-size: 20px;">일상</a> <a href="/tags/창업/" style="font-size: 10px;">창업</a> <a href="/tags/창업석사/" style="font-size: 14.55px;">창업석사</a> <a href="/tags/추천-아이템/" style="font-size: 10.91px;">추천 아이템</a> <a href="/tags/취미/" style="font-size: 13.64px;">취미</a> <a href="/tags/파이썬/" style="font-size: 17.27px;">파이썬</a> <a href="/tags/학교/" style="font-size: 15.45px;">학교</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5416797967"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jeongwook, Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jeongwookie';
+    
+    
+    var disqus_url = 'http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
