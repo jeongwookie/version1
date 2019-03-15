@@ -135,27 +135,6 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
-        <lastmod>2019-03-13T04:57:55.180Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
-        <lastmod>2019-03-13T04:57:55.180Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/tags/R-programming/</loc>
-        <lastmod>2019-03-13T04:57:55.180Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/</loc>
         <lastmod>2019-03-14T09:07:25.101Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -172,6 +151,27 @@
     <url>
         <loc>http://jeongwookie.github.io/tags/%EC%B0%BD%EC%97%85%EC%84%9D%EC%82%AC/</loc>
         <lastmod>2019-03-14T09:07:25.101Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/</loc>
+        <lastmod>2019-03-15T10:10:58.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/</loc>
+        <lastmod>2019-03-15T10:10:58.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/tags/R-programming/</loc>
+        <lastmod>2019-03-15T10:10:58.469Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

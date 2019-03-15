@@ -6,26 +6,31 @@
     
 
     
-    <title>Category: 추천 아이템 | Jeongwook, Life Blog</title>
+    <title>R을 사용한 데이터 시각화, 2편 | Jeongwook, Life Blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+        <meta name="keywords" content="교육,개발,R programming" />
+    
 
       
-        <meta name="description" content="Jeongwook Kim&apos;s Private Space">
-<meta name="keywords" content="김정욱, KAIST">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jeongwook, Life Blog">
-<meta property="og:url" content="http://jeongwookie.github.io/categories/Diary/추천-아이템/index.html">
+        <meta name="description" content="R을 사용한 데이터 시각화 2편 - 막대 그래프 그려보기">
+<meta name="keywords" content="교육,개발,R programming">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R을 사용한 데이터 시각화, 2편">
+<meta property="og:url" content="http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/index.html">
 <meta property="og:site_name" content="Jeongwook, Life Blog">
-<meta property="og:description" content="Jeongwook Kim&apos;s Private Space">
+<meta property="og:description" content="R을 사용한 데이터 시각화 2편 - 막대 그래프 그려보기">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/54419985-2d9f1e00-474c-11e9-83b6-8a451e28eb2c.png">
+<meta property="og:updated_time" content="2019-03-15T10:10:58.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeongwook, Life Blog">
-<meta name="twitter:description" content="Jeongwook Kim&apos;s Private Space">
+<meta name="twitter:title" content="R을 사용한 데이터 시각화, 2편">
+<meta name="twitter:description" content="R을 사용한 데이터 시각화 2편 - 막대 그래프 그려보기">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/54419985-2d9f1e00-474c-11e9-83b6-8a451e28eb2c.png">
         
     
-    <link rel="canonical" href="http://jeongwookie.github.io/categories/diary/추천-아이템/"/>
+    <link rel="canonical" href="http://jeongwookie.github.io/2019/03/08/data-visualization-using-r-2/"/>
 
     
         <link rel="alternate" href="https://jeongwookie.github.io/atom.xml" title="Jeongwook, Life Blog" type="application/atom+xml" />
@@ -175,7 +180,7 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">추천 아이템</em>
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/R/">R</a>
     </h1>
 </div>
 
@@ -191,124 +196,169 @@ ga('send', 'pageview');
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-                            
-
-    
-    
+                            <article id="post-data-visualization-using-R-2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/21/recommend-saving-account/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45871201-db49f980-bdc7-11e8-95ba-2131c007b902.jpeg)" alt="건전한 소비 습관, 적금 들기" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://jeongwookie.github.io/2018/09/21/recommend-saving-account/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/추천-아이템/">추천 아이템</a>
-            </div>
-            <div class="date"><time datetime="2018-09-21T08:53:56.000Z" itemprop="datePublished">2018-09-21</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/21/recommend-saving-account/">건전한 소비 습관, 적금 들기</a>
+        R을 사용한 데이터 시각화, 2편
         </h1>
     
 
-        <p class="article-excerpt">
-            부모님께서 항상 하시는 말씀이 있다.
-작은 돈을 받을 때부터 조금씩이라도 돈을 모으는 습관을 가져야 한다고.
-사실 지금까지를 고백하자면, 돈을 받는 족족 쓰기만 했지 한푼도 모아본 적이 없다.
-얼마 안되는 돈, 모아봤자 얼마나 모으겠냐는 부모님께서 들으시면 괘씸한(?) 심리와
-나중에 월급 받으면 모으기 시작하면 되지! 하는 안일한 심리가 합쳐진 결과.
-
-하
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/08/data-visualization-using-R-2/" class="article-date">
+            <time datetime="2019-03-08T07:06:15.000Z" itemprop="datePublished">2019-03-08</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/09/13/recommend-lingerwater/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/45434958-7d902000-b6ea-11e8-9c0a-2f3193d44dfd.jpg)" alt="마시는 링거, 링티 후기" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://jeongwookie.github.io/2018/09/13/recommend-lingerwater/">0</span>
-    
-</span>
+		
 
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/R-programming/">R programming</a>, <a class="tag-link" href="/tags/개발/">개발</a>, <a class="tag-link" href="/tags/교육/">교육</a>
+    </div>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/추천-아이템/">추천 아이템</a>
             </div>
-            <div class="date"><time datetime="2018-09-12T15:15:34.000Z" itemprop="datePublished">2018-09-13</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/09/13/recommend-lingerwater/">마시는 링거, 링티 후기</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>지난 포스트  : <a href="https://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/">R을 사용한 데이터 시각화,1편</a></p>
+<p>이번 포스트에서는 내장 데이터셋을 Barplot (막대 그래프) 으로 표현해 볼 것이다.</p>
+<h3 id="데이터셋-sleep으로-Barplot-그리기"><a href="#데이터셋-sleep으로-Barplot-그리기" class="headerlink" title="데이터셋 sleep으로 Barplot 그리기"></a>데이터셋 sleep으로 Barplot 그리기</h3><p>먼저 <strong>sleep</strong>가 어떤 형태인지부터 보자.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54420514-84f1be00-474d-11e9-833d-22eb7ab4cf8c.png" alt=""></p>
+<p>열이 세개로, 각각 extra, group, ID 라는 이름을 가지고 있다.</p>
+<p>ID는 각각의 사람을 의미하고, group은 실험의 상태를 분류하며, extra는 이에 대한 결과값이다.</p>
+<p>이제 x축은 ID, y축은 extra, 그리고 group별로 다른 색상을 나타내는 Barplot을 그려 보자.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">head(sleep)</span><br><span class="line"><span class="keyword">attach</span>(sleep) <span class="comment">#sleep내의 objects(extra, group, ID)를 이름으로 쉽게 접근가능</span></span><br><span class="line">y &lt;- rbind(extra[<span class="number">1</span>:<span class="number">10</span>], extra[<span class="number">11</span>:<span class="number">20</span>]) <span class="comment">#group별로 extra값을 나누어 row bind 시킴. form : num</span></span><br><span class="line">barplot(y, names.arg = ID[<span class="number">1</span>:<span class="number">10</span>], col = <span class="number">5</span>:<span class="number">6</span>, xlab = <span class="string">"ID"</span>, ylab = <span class="string">"Extra Sleep Hour"</span>, beside = <span class="literal">T</span>)</span><br><span class="line"><span class="comment"># beside는 논리값으로, True이면 값을 병렬적으로, False이면 값을 쌓아서 반환함</span></span><br><span class="line">abline(h=<span class="number">0</span>) <span class="comment">#높이가 0인 line을 덧그림</span></span><br><span class="line">legend(<span class="string">'topleft'</span>, title = <span class="string">'group'</span>, legend = <span class="number">1</span>:<span class="number">2</span>, fill = <span class="number">5</span>:<span class="number">6</span>) <span class="comment"># legend 추가</span></span><br></pre></td></tr></table></figure>
+<p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54420947-adc68300-474e-11e9-9d39-6d4eaae4db11.png" width="450"></p>
+<p>attatch()는 데이터를 붙인다는 뜻인데, 데이터 내의 오브젝트에 이름으로 접근이 가능해진다.</p>
+<p>그래서 바로 아랫줄에서 <code>extra[1:10]</code> 이런 식으로 서술이 가능하고, 이를 <code>rbind()</code>을 사용하여 행렬로 만든다.</p>
+<p><code>barplot()</code>을 사용하려면 제일 앞에 들어가는 y를 이처럼 vector 혹은 matrix 형태로 바꾸어 주어야 한다.</p>
+<p>함수 내부의 <code>beside=</code> 옵션은 TRUE일 때 데이터를 병렬적으로 보여주고, FALSE이면 하나의 막대에 전부 합쳐서 출력한다.</p>
+<h3 id="데이터셋-sleep으로-Barplot-그리기-ggplot2"><a href="#데이터셋-sleep으로-Barplot-그리기-ggplot2" class="headerlink" title="데이터셋 sleep으로 Barplot 그리기 (ggplot2)"></a>데이터셋 sleep으로 Barplot 그리기 (ggplot2)</h3><p>이번에는 동일한 barplot을 <code>ggplot2</code> 패키지를 사용해서 그려보자. 함수는 <code>geom_bar()</code>을 사용한다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(sleep, aes(x=ID, y=extra, fill = group))+ <span class="comment"># fill은 면의 컬러를 채울때 사용 </span></span><br><span class="line">  geom_bar(stat = <span class="string">"identity"</span>, position = <span class="string">"dodge"</span>)+ <span class="comment"># stat값을 identity로 지정하면 y 데이터를 높이로 사용</span></span><br><span class="line">  <span class="comment"># position을 default로 놔두면 값이 쌓아지고, dodge를 할당하면 병렬적으로 출력됨</span></span><br><span class="line">  theme_bw() <span class="comment"># data가 더 잘보이기 위한 테마</span></span><br></pre></td></tr></table></figure>
+<p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54421682-4ad5eb80-4750-11e9-9866-e0b3094a2b87.png" width="450"></p>
+<p>먼저 <code>ggplot()</code>에서 인풋 데이터를 지정하고, aes 안에 x,y축 데이터를 지정하였는데 그다음에 <code>fill = group</code>이라는 옵션을 사용하였다.</p>
+<p>대단히 자주 쓰이는 표현으로, <u>group에 따라 면의 컬러를 다르게 칠하라는 뜻</u>이다.</p>
+<p><code>geom_bar()</code>은 본 패키지에서 barplot을 그리게 하는 함수로, 가장 자주 쓰이는 옵션이 바로 <code>stat=</code> 과 <code>position=</code>이다.</p>
+<p><strong>stat</strong>은 statistic의 약자로, 바 그래프의 형태에 대해서 지정하는 옵션이다. <code>stat=&#39;identity&#39;</code>라고 쓰게 되면, y축 데이터를 높이로 하는 바 그래프를 그리라는 뜻이다.</p>
+<p><strong>position</strong>은 막대의 위치를 의미하며, <code>position=&#39;dodge&#39;</code>는 여러 데이터를 독립적인 바 그래프로 나란히 표현할 때 사용한다. 이 옵션을 표기하지 않으면 데이터가 하나의 막대로 표시된다. </p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54422623-401c5600-4752-11e9-9ba1-526d71c32915.png" width="450"></p>
+<center> position=dodge 를 표기하지 않았을 때 </center>
 
-        <p class="article-excerpt">
-            요즘따라 몸이 많이 피곤함을 느낀다.
-커피를 마셔도 예전같이 빠릿빠릿하지 않고.. 격일로 운동을 간지 1달 조금 넘었는데 체력이 길러지기는 커녕 더 떨어진 것 같다.
-그 와중에 와디즈를 보다가 무심코 발견한 아이템이 바로 마시는 링거, 링티
-군의관들이 개발한 것이란다. 열사병으로 쓰러지는 군인들을 위해 개발했는데, 기사를 보니 군 장성들이 그렇게 좋아한단다
-        </p>
+<h3 id="데이터셋-USPersonalExpenditure으로-Barplot-그리기"><a href="#데이터셋-USPersonalExpenditure으로-Barplot-그리기" class="headerlink" title="데이터셋 USPersonalExpenditure으로 Barplot 그리기"></a>데이터셋 USPersonalExpenditure으로 Barplot 그리기</h3><p>먼저 <strong>USPersonalExpenditure</strong>가 어떤 형태인지 알아보자.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54423376-e74dbd00-4753-11e9-9c56-3c657d5f3e6a.png" width="500"></p>
+<p>Matrix의 형태로, 행에는 지출 항목, 그리고 열에는 년도가 기록되어 있다. 이들이 만나는 곳에는 실제 지출의 크기가 표기되어 있다.</p>
+<p>이제 이 데이터를 최대한 잘 파악하기 위해, 년도별로 지출의 크기를 각 항목으로 나누어 바 그래프를 그려 보자.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data(USPersonalExpenditure) <span class="comment"># Global Environment에 데이터 추가</span></span><br><span class="line">UPE &lt;- USPersonalExpenditure <span class="comment"># 너무 길어서 간략화</span></span><br><span class="line">str(UPE) <span class="comment">#데이터의 form확인 : num</span></span><br><span class="line">barplot(UPE, beside = <span class="literal">T</span>, col = <span class="number">2</span>:<span class="number">6</span>, xlab = <span class="string">"Year"</span>, ylab = <span class="string">"Expenditure ($)"</span>, main = <span class="string">"United States Personal Expenditures"</span>)</span><br><span class="line">legend(<span class="string">'topleft'</span>, legend = row.names(UPE), fill = <span class="number">2</span>:<span class="number">6</span>, cex = <span class="number">0.7</span>) <span class="comment"># legend의 이름을 data의 row.name으로</span></span><br></pre></td></tr></table></figure>
+<p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54423687-968a9400-4754-11e9-9f62-b28064818b10.png" width="450"></p>
+<p>원하는 대로 깔끔하게 data visualization 에 성공했다!</p>
+<p>앞선 <strong>sleep</strong>와 마찬가지로 데이터를 병렬적으로 표기하기 위해 <code>beside=T</code> 옵션을 넣었고, 각각의 막대 컬러를 2번 ~ 6번 색상으로 다르게 지정했다.</p>
+<p>그리고 <code>legend()</code>를 사용하여 따로 범례를 추가하였는데, 범례 이름은 <strong>UPE</strong>의 행 이름으로 지정했고, 색상은 <code>fill=</code>을 사용하여 앞서 지정하였던 막대 컬러 2~6번과 동일하게 하였다.</p>
+<p>또한 <code>cex=</code>가 등장하였는데, 이는 글자 크기를 조절하는 데에 사용하며 비율로 결정되므로 적절히 조절해서 숫자를 넣으면 된다. 자주 쓰이는 옵션이니 기억해 두자.</p>
+<p>이어지는 포스트에서는 barplot 외에 자주 쓰이는 pie chart 와 histogram에 대해 다루어 볼 예정이다.</p>
+<blockquote>
+<p><em>본 포스트는 KAIST 전산학부 대학원 과정에서 수강하고 있는 Big Data Analytics using R (CS564)을 실습하며 작성하였음을 밝힙니다.</em></p>
+</blockquote>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- footer -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5144624785"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/" data-id="cjt9wjjzh000pvzq2pisy2q0o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -360,6 +410,29 @@ ga('send', 'pageview');
     </div>
     <div class="github-card" data-github="jeongwookie" data-width="" data-height="" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/03/14/kschool-2019-fall-admission/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            KAIST 창업석사 신입생 모집 (19년 가을)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/06/data-visualization-using-R-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">R을 사용한 데이터 시각화, 1편</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -553,11 +626,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'jeongwookie';
     
     
+    var disqus_url = 'http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

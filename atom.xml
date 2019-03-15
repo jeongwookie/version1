@@ -45,6 +45,34 @@
   </entry>
   
   <entry>
+    <title>R을 사용한 데이터 시각화, 2편</title>
+    <link href="http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/"/>
+    <id>http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/</id>
+    <published>2019-03-08T07:06:15.000Z</published>
+    <updated>2019-03-15T10:10:58.469Z</updated>
+    
+    <content type="html"><![CDATA[<p>지난 포스트  : <a href="https://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/">R을 사용한 데이터 시각화,1편</a></p><p>이번 포스트에서는 내장 데이터셋을 Barplot (막대 그래프) 으로 표현해 볼 것이다.</p><h3 id="데이터셋-sleep으로-Barplot-그리기"><a href="#데이터셋-sleep으로-Barplot-그리기" class="headerlink" title="데이터셋 sleep으로 Barplot 그리기"></a>데이터셋 sleep으로 Barplot 그리기</h3><p>먼저 <strong>sleep</strong>가 어떤 형태인지부터 보자.</p><p><img src="https://user-images.githubusercontent.com/25416425/54420514-84f1be00-474d-11e9-833d-22eb7ab4cf8c.png" alt=""></p><p>열이 세개로, 각각 extra, group, ID 라는 이름을 가지고 있다.</p><p>ID는 각각의 사람을 의미하고, group은 실험의 상태를 분류하며, extra는 이에 대한 결과값이다.</p><p>이제 x축은 ID, y축은 extra, 그리고 group별로 다른 색상을 나타내는 Barplot을 그려 보자.</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">head(sleep)</span><br><span class="line"><span class="keyword">attach</span>(sleep) <span class="comment">#sleep내의 objects(extra, group, ID)를 이름으로 쉽게 접근가능</span></span><br><span class="line">y &lt;- rbind(extra[<span class="number">1</span>:<span class="number">10</span>], extra[<span class="number">11</span>:<span class="number">20</span>]) <span class="comment">#group별로 extra값을 나누어 row bind 시킴. form : num</span></span><br><span class="line">barplot(y, names.arg = ID[<span class="number">1</span>:<span class="number">10</span>], col = <span class="number">5</span>:<span class="number">6</span>, xlab = <span class="string">"ID"</span>, ylab = <span class="string">"Extra Sleep Hour"</span>, beside = <span class="literal">T</span>)</span><br><span class="line"><span class="comment"># beside는 논리값으로, True이면 값을 병렬적으로, False이면 값을 쌓아서 반환함</span></span><br><span class="line">abline(h=<span class="number">0</span>) <span class="comment">#높이가 0인 line을 덧그림</span></span><br><span class="line">legend(<span class="string">'topleft'</span>, title = <span class="string">'group'</span>, legend = <span class="number">1</span>:<span class="number">2</span>, fill = <span class="number">5</span>:<span class="number">6</span>) <span class="comment"># legend 추가</span></span><br></pre></td></tr></table></figure><p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54420947-adc68300-474e-11e9-9d39-6d4eaae4db11.png" width="450"></p><p>attatch()는 데이터를 붙인다는 뜻인데, 데이터 내의 오브젝트에 이름으로 접근이 가능해진다.</p><p>그래서 바로 아랫줄에서 <code>extra[1:10]</code> 이런 식으로 서술이 가능하고, 이를 <code>rbind()</code>을 사용하여 행렬로 만든다.</p><p><code>barplot()</code>을 사용하려면 제일 앞에 들어가는 y를 이처럼 vector 혹은 matrix 형태로 바꾸어 주어야 한다.</p><p>함수 내부의 <code>beside=</code> 옵션은 TRUE일 때 데이터를 병렬적으로 보여주고, FALSE이면 하나의 막대에 전부 합쳐서 출력한다.</p><h3 id="데이터셋-sleep으로-Barplot-그리기-ggplot2"><a href="#데이터셋-sleep으로-Barplot-그리기-ggplot2" class="headerlink" title="데이터셋 sleep으로 Barplot 그리기 (ggplot2)"></a>데이터셋 sleep으로 Barplot 그리기 (ggplot2)</h3><p>이번에는 동일한 barplot을 <code>ggplot2</code> 패키지를 사용해서 그려보자. 함수는 <code>geom_bar()</code>을 사용한다.</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(sleep, aes(x=ID, y=extra, fill = group))+ <span class="comment"># fill은 면의 컬러를 채울때 사용 </span></span><br><span class="line">  geom_bar(stat = <span class="string">"identity"</span>, position = <span class="string">"dodge"</span>)+ <span class="comment"># stat값을 identity로 지정하면 y 데이터를 높이로 사용</span></span><br><span class="line">  <span class="comment"># position을 default로 놔두면 값이 쌓아지고, dodge를 할당하면 병렬적으로 출력됨</span></span><br><span class="line">  theme_bw() <span class="comment"># data가 더 잘보이기 위한 테마</span></span><br></pre></td></tr></table></figure><p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54421682-4ad5eb80-4750-11e9-9866-e0b3094a2b87.png" width="450"></p><p>먼저 <code>ggplot()</code>에서 인풋 데이터를 지정하고, aes 안에 x,y축 데이터를 지정하였는데 그다음에 <code>fill = group</code>이라는 옵션을 사용하였다.</p><p>대단히 자주 쓰이는 표현으로, <u>group에 따라 면의 컬러를 다르게 칠하라는 뜻</u>이다.</p><p><code>geom_bar()</code>은 본 패키지에서 barplot을 그리게 하는 함수로, 가장 자주 쓰이는 옵션이 바로 <code>stat=</code> 과 <code>position=</code>이다.</p><p><strong>stat</strong>은 statistic의 약자로, 바 그래프의 형태에 대해서 지정하는 옵션이다. <code>stat=&#39;identity&#39;</code>라고 쓰게 되면, y축 데이터를 높이로 하는 바 그래프를 그리라는 뜻이다.</p><p><strong>position</strong>은 막대의 위치를 의미하며, <code>position=&#39;dodge&#39;</code>는 여러 데이터를 독립적인 바 그래프로 나란히 표현할 때 사용한다. 이 옵션을 표기하지 않으면 데이터가 하나의 막대로 표시된다. </p><p><img src="https://user-images.githubusercontent.com/25416425/54422623-401c5600-4752-11e9-9ba1-526d71c32915.png" width="450"></p><center> position=dodge 를 표기하지 않았을 때 </center><h3 id="데이터셋-USPersonalExpenditure으로-Barplot-그리기"><a href="#데이터셋-USPersonalExpenditure으로-Barplot-그리기" class="headerlink" title="데이터셋 USPersonalExpenditure으로 Barplot 그리기"></a>데이터셋 USPersonalExpenditure으로 Barplot 그리기</h3><p>먼저 <strong>USPersonalExpenditure</strong>가 어떤 형태인지 알아보자.</p><p><img src="https://user-images.githubusercontent.com/25416425/54423376-e74dbd00-4753-11e9-9c56-3c657d5f3e6a.png" width="500"></p><p>Matrix의 형태로, 행에는 지출 항목, 그리고 열에는 년도가 기록되어 있다. 이들이 만나는 곳에는 실제 지출의 크기가 표기되어 있다.</p><p>이제 이 데이터를 최대한 잘 파악하기 위해, 년도별로 지출의 크기를 각 항목으로 나누어 바 그래프를 그려 보자.</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data(USPersonalExpenditure) <span class="comment"># Global Environment에 데이터 추가</span></span><br><span class="line">UPE &lt;- USPersonalExpenditure <span class="comment"># 너무 길어서 간략화</span></span><br><span class="line">str(UPE) <span class="comment">#데이터의 form확인 : num</span></span><br><span class="line">barplot(UPE, beside = <span class="literal">T</span>, col = <span class="number">2</span>:<span class="number">6</span>, xlab = <span class="string">"Year"</span>, ylab = <span class="string">"Expenditure ($)"</span>, main = <span class="string">"United States Personal Expenditures"</span>)</span><br><span class="line">legend(<span class="string">'topleft'</span>, legend = row.names(UPE), fill = <span class="number">2</span>:<span class="number">6</span>, cex = <span class="number">0.7</span>) <span class="comment"># legend의 이름을 data의 row.name으로</span></span><br></pre></td></tr></table></figure><p><strong>결과</strong><br><img src="https://user-images.githubusercontent.com/25416425/54423687-968a9400-4754-11e9-9f62-b28064818b10.png" width="450"></p><p>원하는 대로 깔끔하게 data visualization 에 성공했다!</p><p>앞선 <strong>sleep</strong>와 마찬가지로 데이터를 병렬적으로 표기하기 위해 <code>beside=T</code> 옵션을 넣었고, 각각의 막대 컬러를 2번 ~ 6번 색상으로 다르게 지정했다.</p><p>그리고 <code>legend()</code>를 사용하여 따로 범례를 추가하였는데, 범례 이름은 <strong>UPE</strong>의 행 이름으로 지정했고, 색상은 <code>fill=</code>을 사용하여 앞서 지정하였던 막대 컬러 2~6번과 동일하게 하였다.</p><p>또한 <code>cex=</code>가 등장하였는데, 이는 글자 크기를 조절하는 데에 사용하며 비율로 결정되므로 적절히 조절해서 숫자를 넣으면 된다. 자주 쓰이는 옵션이니 기억해 두자.</p><p>이어지는 포스트에서는 barplot 외에 자주 쓰이는 pie chart 와 histogram에 대해 다루어 볼 예정이다.</p><blockquote><p><em>본 포스트는 KAIST 전산학부 대학원 과정에서 수강하고 있는 Big Data Analytics using R (CS564)을 실습하며 작성하였음을 밝힙니다.</em></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      R을 사용한 데이터 시각화 2편 - 막대 그래프 그려보기
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://jeongwookie.github.io/categories/Programming/"/>
+    
+      <category term="R" scheme="http://jeongwookie.github.io/categories/Programming/R/"/>
+    
+    
+      <category term="교육" scheme="http://jeongwookie.github.io/tags/%EA%B5%90%EC%9C%A1/"/>
+    
+      <category term="개발" scheme="http://jeongwookie.github.io/tags/%EA%B0%9C%EB%B0%9C/"/>
+    
+      <category term="R programming" scheme="http://jeongwookie.github.io/tags/R-programming/"/>
+    
+  </entry>
+  
+  <entry>
     <title>R을 사용한 데이터 시각화, 1편</title>
     <link href="http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/"/>
     <id>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</id>
@@ -561,32 +589,6 @@
       <category term="KAIST IT 프로그램" scheme="http://jeongwookie.github.io/tags/KAIST-IT-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/"/>
     
       <category term="파이썬" scheme="http://jeongwookie.github.io/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>건전한 소비 습관, 적금 들기</title>
-    <link href="http://jeongwookie.github.io/2018/09/21/recommend-saving-account/"/>
-    <id>http://jeongwookie.github.io/2018/09/21/recommend-saving-account/</id>
-    <published>2018-09-21T08:53:56.000Z</published>
-    <updated>2018-09-21T09:54:32.982Z</updated>
-    
-    <content type="html"><![CDATA[<p>부모님께서 항상 하시는 말씀이 있다.</p><p>작은 돈을 받을 때부터 조금씩이라도 돈을 모으는 습관을 가져야 한다고.</p><p>사실 지금까지를 고백하자면, 돈을 받는 족족 쓰기만 했지 한푼도 모아본 적이 없다.</p><p>얼마 안되는 돈, 모아봤자 얼마나 모으겠냐는 부모님께서 들으시면 괘씸한(?) 심리와</p><p>나중에 월급 받으면 모으기 시작하면 되지! 하는 안일한 심리가 합쳐진 결과.</p><p><img src="https://user-images.githubusercontent.com/25416425/45871830-5d86ed80-bdc9-11e8-853c-832c87743be6.png" alt="내 이야기인가?!"></p><p>하지만 이 글을 쓰는 순간에도 내 마음속 깊은 곳에는.. 돈 쓰는 만큼 더 많이 벌면 되지! 하는 변명이 꿈틀거린다.</p><p>맞다. 내가 돈 많이 벌면, 그만큼 쓰는 것이 시장에도 도움이 된다.</p><p>건전한 소비 생활이라는 건데, 팩트는 내가 지금 돈을 벌고 있지 않은 학생이라는 거다..</p><p>이런 내가 돈을 모아야겠다는 생각이 든 건 다름 아닌 <a href="http://www.zdnet.co.kr/news/news_view.asp?artice_id=20180117180410&amp;from=Mobile" target="_blank" rel="noopener">네이버의 김정호 대표님 이야기</a> 때문이다.</p><p>대표님은 삼성에 9년 다닐 동안, 월급의 100%을 적금으로 넣었다고 한다.</p><p>대단한 소비 습관이다. 보통 사람이라면 사리가 나올 것 같은..</p><p>하지만 나는 대표님의 이야기에서 그의 절약에 대해 감동 받은 것이 아니다.</p><p>잘나가는 삼성을 때려 치고 네이버를 창업하겠다는 결단력, 그리고 힘들때 버티는 인내력이</p><p>그의 평소 소비 습관에서 나온 것 같다는 느낌이 들었기 때문이다.</p><p>결국은 앞으로 닥칠 수도 있는, 아직은 보이지 않는 위험에 대해서 자신이 할 수 있는 방법으로 똑똑하게 대처한 것이다.</p><p>창업할 때, 요즘은 지원 받을 수 있는 돈이 많다.</p><p>하지만, 작게는 법인을 세우면서 팀원들끼리 지분을 나눌때부터 위기 상황에 회사에서 돈이 나오지 않는 경우 버티는 것까지,</p><p>여윳돈은 항상 필요하다.</p><p>돈이 최고는 절대 아니지만, 돈이 없으면 괴로운 일들이 많다.</p><p>그래서 결론은! 적금을 알아보다가 우리은행에서 18년 8월 따끈따끈하게 출시한 <a href="http://biz.chosun.com/site/data/html_dir/2018/08/14/2018081400946.html" target="_blank" rel="noopener">스무살 우리 적금</a>을 발견했다.</p><p><img src="https://user-images.githubusercontent.com/25416425/45873240-ebb0a300-bdcc-11e8-97e6-fe1303ed4bc8.jpg" alt="우리은행에서 새로 출시한 &quot;스무살 우리 적금&quot;"></p><p>평소, 적금 상품에 대해서 관심이 없어 관련 지식은 적지만</p><p>딱 봐도 최고 <strong>연 3.7% 금리 조건</strong>은 꽤나 만족스럽게 보였다.</p><p>간략히 설명하자면,</p><p>매월 지정한 금액을 입금하는 <strong>정기적금</strong>과 조금씩 내가 원하는 만큼 금액을 입금하고 중도 인출도 가능한 <strong>자율적금</strong> 이렇게 두가지가 있었다.</p><p>이름이 ‘스무살 우리 적금’ 이므로 당연히 대상자는 만 18세부터 만 30세까지.</p><p>정기와 자율 모두 기본금리 <strong>연 2.6%</strong>부터 시작해서 우리카드 월 10만원 이용 시 최고 0.5% 추가, 그리고 자동이체를 통한 납입 시 최고 0.6% 우대 금리를 받을 수 있더라.</p><p>조금 더 자세한 안내를 받으려면 <a href="https://spot.wooribank.com/pot/Dream?withyou=PODEP0021&amp;cc=c007095:c009166;c012263:c012399&amp;PLM_PDCD=P010002291&amp;PRD_CD=P010002291&amp;ALL_GB=&amp;depKind=A04" target="_blank" rel="noopener">우리은행 상품 페이지</a> 및 가까운 지점을 찾아가서 상담을 받아 보자.</p><p>나는 상담 받으러 가기는 귀찮아서 인터넷으로 후기 좀 찾아보고, 스마트폰으로 가입했다.</p><p>이미 우리은행을 사용하고 있었기 때문에, <strong>우리은행 원터치개인</strong> App이 깔려 있었고, 여기서 금융상품 -&gt; 예금/신탁을 누르면 찾을 수 있다.</p><p>내가 가입한 플랜은 <strong>정기적금</strong>으로, 1년동안 200만원 모으기 버튼을 클릭해서 연 3.5% 금리를 보장받았다.</p><p>한달에 16만 5천원을 자동이체하고, 12개월이 끝나면 대략 220만원이 조금 넘는 금액을 받는다.</p><p>또 플랜들을 보니까 욕심이 발동해서 2년동안 400만원 모으기, 3년동안 700만원 모으기에 눈길이 계속 갔지만..</p><p>처음 적금이란 것을 내 손으로 드는 거라 작게 작게 시작해 보자고 욕심을 억눌렀다..ㅋㅋ</p><p><img src="https://user-images.githubusercontent.com/25416425/45874392-b22d6700-bdcf-11e8-9656-13d41ffc0116.jpeg" alt="18년 9월 21일에 가입했으니 19년 9월 21일에 다시 보자구!"></p>]]></content>
-    
-    <summary type="html">
-    
-      우리은행에서 새로 나온 적금 들기
-    
-    </summary>
-    
-      <category term="Diary" scheme="http://jeongwookie.github.io/categories/Diary/"/>
-    
-      <category term="추천 아이템" scheme="http://jeongwookie.github.io/categories/Diary/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/"/>
-    
-    
-      <category term="일상" scheme="http://jeongwookie.github.io/tags/%EC%9D%BC%EC%83%81/"/>
-    
-      <category term="추천 아이템" scheme="http://jeongwookie.github.io/tags/%EC%B6%94%EC%B2%9C-%EC%95%84%EC%9D%B4%ED%85%9C/"/>
     
   </entry>
   
