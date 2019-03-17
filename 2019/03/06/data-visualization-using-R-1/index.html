@@ -23,7 +23,7 @@
 <meta property="og:description" content="R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/25416425/54202156-c5b1c300-4512-11e9-8f67-c200cc3719e6.png">
-<meta property="og:updated_time" content="2019-03-13T04:57:55.180Z">
+<meta property="og:updated_time" content="2019-03-17T15:25:47.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="R을 사용한 데이터 시각화, 1편">
 <meta name="twitter:description" content="R을 사용한 데이터 시각화 1편 - 기본적인 점과 선 그리기">
@@ -236,7 +236,7 @@ ga('send', 'pageview');
 <p>먼저, 내장 데이터셋인 <strong>faithful</strong> 을 기본 함수 <code>plot()</code>을 통해 그려보자.</p>
 <p><img src="https://user-images.githubusercontent.com/25416425/54251976-80ca7280-458c-11e9-99f8-fe3fbbb703b6.png" alt="faithful의 개략적 형태"></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">head(faithful)</span><br><span class="line">fa &lt;- faithful[order(faithful$waiting),] </span><br><span class="line"><span class="comment"># waiting을 오름차순으로 정렬한 값을 fa에 저장</span></span><br><span class="line">head(fa)</span><br><span class="line">x &lt;- fa[,<span class="number">2</span>]; y &lt;- fa[,<span class="number">1</span>] </span><br><span class="line"><span class="comment"># waiting을 x에, eruptions을 y에 저장</span></span><br><span class="line">plot(x,y,type=<span class="string">"l"</span>, col=<span class="number">4</span>, xlab = <span class="string">"Waiting Time"</span>, ylab = <span class="string">"Eruption Time"</span>, main = <span class="string">"Old Faithful Eruptions"</span>)</span><br><span class="line">points(x,y, pch=<span class="number">20</span>, col=<span class="number">3</span>) </span><br><span class="line"><span class="comment"># pch는 점의 생김새를 의미, 20은 작은 점</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/25416425/54250526-76f24080-4587-11e9-8024-211abb8730cf.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54250526-76f24080-4587-11e9-8024-211abb8730cf.png" width="450"></p>
 <p>fa는 <em>waiting</em> 열을 <code>order()</code>을 통해 정렬한 <strong>faithful</strong> 데이터를 기록한 것이다.</p>
 <p>즉, fa[,1] = fa$eruptions 이고, fa[,2] = fa$waiting 이다.</p>
 <p><code>plot()</code>은 type을 지정할 수 있으며, 여기서는 line을 나타내었다.</p>
@@ -245,7 +245,7 @@ ga('send', 'pageview');
 <p>여러가지 타입이 있다는 것만 알면 된다. 중요한 것은 <strong>pch=</strong> 가 점의 타입을 결정하는 요소이며 자주 쓰이는 것이 <strong>pch = 20(점), 21, 22, 23, 24, 25</strong> 라는 사실이다.</p>
 <p>이번에는 동일한 데이터를 <code>ggplot2</code> 패키지를 통해서 그려 보자.</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">ggplot(fa, aes(x,y))+</span><br><span class="line">  geom_point(col=<span class="number">3</span>) + geom_line(col=<span class="number">4</span>) + <span class="comment"># 점을 찍을 때 geom_point를 사용</span></span><br><span class="line">  xlab(<span class="string">'Waiting time'</span>) + ylab(<span class="string">'Eruption time'</span>)+</span><br><span class="line">  ggtitle(<span class="string">'Old Faithful Eruption'</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/25416425/54251159-bc177200-4589-11e9-8d10-8a0cbbc34cb9.png" width="600"></p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54251159-bc177200-4589-11e9-8d10-8a0cbbc34cb9.png" width="450"></p>
 <p>역시 <code>ggplot2</code> 답게 그래프 디자인이 조금 더 깔끔해 보인다.</p>
 <p><code>ggplot()</code>함수는 어떤 데이터로 어느 축에 할당할 것인지 정한다. 이 함수만 출력하면 <u>아무것도 plot되지 않음에 주의하자.</u> 실제로 점을 찍고 선을 긋는 함수는 뒤에 있다.</p>
 <p>자주 쓰이는 형태는 <code>ggplot(data, aes(x = , y = , fill = ))</code>으로, fill값에 대해서는 뒤에 다시 설명하겠다.</p>
