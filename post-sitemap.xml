@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://jeongwookie.github.io/2018/09/15/kaist-e5-startup-18f-firstmission/</loc>
+        <lastmod>2019-03-18T14:21:49.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jeongwookie.github.io/2018/09/14/kschool-student/</loc>
-        <lastmod>2019-03-18T11:32:14.736Z</lastmod>
+        <lastmod>2019-03-18T14:15:39.413Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -241,14 +249,6 @@
     <url>
         <loc>http://jeongwookie.github.io/2018/09/16/team-member/</loc>
         <lastmod>2018-09-16T16:48:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2018/09/15/kaist-e5-startup-18f-firstmission/</loc>
-        <lastmod>2018-09-16T16:38:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
