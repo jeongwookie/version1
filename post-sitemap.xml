@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</loc>
-        <lastmod>2019-03-17T15:25:47.579Z</lastmod>
+        <loc>http://jeongwookie.github.io/2019/03/18/naver-finance-data-crawling-using-python/</loc>
+        <lastmod>2019-03-18T04:08:25.904Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/</loc>
-        <lastmod>2019-03-17T15:25:46.271Z</lastmod>
+        <lastmod>2019-03-17T15:25:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</loc>
+        <lastmod>2019-03-17T15:24:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
