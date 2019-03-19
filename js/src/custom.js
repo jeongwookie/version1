@@ -1,9 +1,9 @@
 $(function () {
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyCzo_5YyP3pmlesnXHklIhbvfLw9zbYzcc",
-        authDomain: "jeongwookie01.firebaseapp.com",
-        databaseURL: "https://jeongwookie01.firebaseio.com",
+        apiKey: "{AIzaSyCzo_5YyP3pmlesnXHklIhbvfLw9zbYzcc}",
+        authDomain: "{jeongwookie01.firebaseapp.com}",
+        databaseURL: "{https://jeongwookie01.firebaseio.com}",
     };
     firebase.initializeApp(config);
 
