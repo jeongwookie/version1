@@ -8,7 +8,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/02/08/goal-directed-design/</loc>
-        <lastmod>2019-03-18T14:33:12.404Z</lastmod>
+        <lastmod>2019-03-18T14:32:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/03/14/kschool-2019-fall-admission/</loc>
-        <lastmod>2019-03-18T14:30:00.404Z</lastmod>
+        <lastmod>2019-03-18T14:30:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +24,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/15/kaist-e5-startup-18f-firstmission/</loc>
-        <lastmod>2019-03-18T14:21:49.364Z</lastmod>
+        <lastmod>2019-03-18T14:20:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,7 +32,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/14/kschool-student/</loc>
-        <lastmod>2019-03-18T14:15:39.413Z</lastmod>
+        <lastmod>2019-03-18T14:12:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,15 +40,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/03/18/naver-finance-data-crawling-using-python/</loc>
-        <lastmod>2019-03-18T09:17:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</loc>
-        <lastmod>2019-03-17T15:25:47.579Z</lastmod>
+        <lastmod>2019-03-18T09:18:16.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -56,7 +48,15 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/03/08/data-visualization-using-R-2/</loc>
-        <lastmod>2019-03-17T15:25:46.271Z</lastmod>
+        <lastmod>2019-03-17T15:25:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/2019/03/06/data-visualization-using-R-1/</loc>
+        <lastmod>2019-03-17T15:24:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -64,7 +64,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/02/03/find-a-new-hobby/</loc>
-        <lastmod>2019-02-07T17:45:17.000Z</lastmod>
+        <lastmod>2019-02-07T17:46:56.341Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -72,7 +72,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/12/31/happy-new-year/</loc>
-        <lastmod>2019-01-31T13:55:36.054Z</lastmod>
+        <lastmod>2019-01-31T13:55:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -80,7 +80,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/01/22/AI-development-training-course-in-kaist/</loc>
-        <lastmod>2019-01-24T09:39:57.000Z</lastmod>
+        <lastmod>2019-01-24T09:39:57.670Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -88,7 +88,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/01/17/house-remodeling-4/</loc>
-        <lastmod>2019-01-19T14:18:36.000Z</lastmod>
+        <lastmod>2019-01-19T14:18:56.527Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -96,7 +96,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/10/17/python-class-accomplishment/</loc>
-        <lastmod>2019-01-17T05:42:08.811Z</lastmod>
+        <lastmod>2019-01-17T05:42:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -104,7 +104,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/01/12/house-remodeling-3/</loc>
-        <lastmod>2019-01-16T17:24:20.206Z</lastmod>
+        <lastmod>2019-01-16T17:24:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -112,7 +112,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/01/09/house-remodeling-2/</loc>
-        <lastmod>2019-01-16T17:20:08.328Z</lastmod>
+        <lastmod>2019-01-16T17:20:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -120,7 +120,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2019/01/05/house-remodeling-1/</loc>
-        <lastmod>2019-01-16T15:33:18.660Z</lastmod>
+        <lastmod>2019-01-16T15:33:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -128,7 +128,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/11/28/what-makes-me-passionate/</loc>
-        <lastmod>2018-12-17T10:34:20.000Z</lastmod>
+        <lastmod>2018-12-17T10:34:20.138Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -136,7 +136,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/11/14/kaist-e5-making-ir/</loc>
-        <lastmod>2018-11-23T08:47:16.000Z</lastmod>
+        <lastmod>2018-11-23T08:47:51.473Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -144,7 +144,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/11/06/kaist-e5-item-interview/</loc>
-        <lastmod>2018-11-06T16:37:58.561Z</lastmod>
+        <lastmod>2018-11-06T16:37:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -152,7 +152,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/10/12/python-adress-book-program/</loc>
-        <lastmod>2018-10-12T05:55:08.000Z</lastmod>
+        <lastmod>2018-10-12T05:55:08.410Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -160,7 +160,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/10/04/python-module/</loc>
-        <lastmod>2018-10-05T15:43:24.090Z</lastmod>
+        <lastmod>2018-10-05T15:43:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -168,7 +168,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/10/02/put-google-adsense-in-your-hexo-blog/</loc>
-        <lastmod>2018-10-02T07:12:58.206Z</lastmod>
+        <lastmod>2018-10-02T07:12:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -176,7 +176,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/13/category-name-problem/</loc>
-        <lastmod>2018-10-02T07:11:54.594Z</lastmod>
+        <lastmod>2018-10-02T07:11:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -184,7 +184,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/10/Github-Blog-image-upload/</loc>
-        <lastmod>2018-10-02T05:22:03.123Z</lastmod>
+        <lastmod>2018-10-02T05:22:03.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -192,7 +192,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/30/python-class/</loc>
-        <lastmod>2018-09-29T18:17:50.058Z</lastmod>
+        <lastmod>2018-09-29T18:17:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -200,7 +200,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/21/second-homework-python/</loc>
-        <lastmod>2018-09-21T10:53:31.000Z</lastmod>
+        <lastmod>2018-09-21T10:53:31.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -208,7 +208,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/21/recommend-saving-account/</loc>
-        <lastmod>2018-09-21T09:54:12.000Z</lastmod>
+        <lastmod>2018-09-21T09:54:32.982Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -216,7 +216,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/17/have-trouble-in-me/</loc>
-        <lastmod>2018-09-21T09:37:58.000Z</lastmod>
+        <lastmod>2018-09-21T09:37:58.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -224,7 +224,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/18/customer-discovery-kaist-e5/</loc>
-        <lastmod>2018-09-19T16:48:41.277Z</lastmod>
+        <lastmod>2018-09-19T16:47:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -232,7 +232,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/20/function-in-python/</loc>
-        <lastmod>2018-09-19T16:42:23.638Z</lastmod>
+        <lastmod>2018-09-19T16:40:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -240,7 +240,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/18/set-in-python/</loc>
-        <lastmod>2018-09-17T15:43:07.353Z</lastmod>
+        <lastmod>2018-09-17T15:43:07.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -248,7 +248,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/16/team-member/</loc>
-        <lastmod>2018-09-16T16:48:28.000Z</lastmod>
+        <lastmod>2018-09-16T16:48:28.211Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -256,7 +256,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/13/recommend-lingerwater/</loc>
-        <lastmod>2018-09-16T07:00:55.000Z</lastmod>
+        <lastmod>2018-09-16T07:00:55.834Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -264,7 +264,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/14/tuple-and-dictionary/</loc>
-        <lastmod>2018-09-13T17:33:55.448Z</lastmod>
+        <lastmod>2018-09-13T17:33:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -272,7 +272,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/03/25/Start/</loc>
-        <lastmod>2018-09-13T06:53:35.097Z</lastmod>
+        <lastmod>2018-09-13T06:53:35.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -280,7 +280,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/08/28/new-semester-start/</loc>
-        <lastmod>2018-09-13T06:53:21.977Z</lastmod>
+        <lastmod>2018-09-13T06:53:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -288,7 +288,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/10/Start-learning-python/</loc>
-        <lastmod>2018-09-13T06:51:05.900Z</lastmod>
+        <lastmod>2018-09-13T06:51:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -296,7 +296,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/03/29/What-is-growth-hacker/</loc>
-        <lastmod>2018-09-13T06:50:20.967Z</lastmod>
+        <lastmod>2018-09-13T06:50:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -304,7 +304,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/03/29/start-from-customer/</loc>
-        <lastmod>2018-09-13T06:50:14.735Z</lastmod>
+        <lastmod>2018-09-13T06:50:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -312,7 +312,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/04/01/How-to-growth-hacking/</loc>
-        <lastmod>2018-09-13T06:49:45.152Z</lastmod>
+        <lastmod>2018-09-13T06:49:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -320,7 +320,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/12/list-operation/</loc>
-        <lastmod>2018-09-13T06:48:25.570Z</lastmod>
+        <lastmod>2018-09-13T06:48:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -328,7 +328,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/11/First-homework-python/</loc>
-        <lastmod>2018-09-13T06:48:19.395Z</lastmod>
+        <lastmod>2018-09-13T06:48:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -336,7 +336,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/10/Common-string-operation/</loc>
-        <lastmod>2018-09-13T06:48:13.268Z</lastmod>
+        <lastmod>2018-09-13T06:48:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -344,7 +344,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/09/11/code-alignment-using-format-function/</loc>
-        <lastmod>2018-09-13T06:47:49.596Z</lastmod>
+        <lastmod>2018-09-13T06:47:49.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -352,7 +352,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/03/27/after-meeting-1/</loc>
-        <lastmod>2018-09-12T16:53:15.076Z</lastmod>
+        <lastmod>2018-09-12T15:49:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -360,7 +360,7 @@
 
     <url>
         <loc>http://jeongwookie.github.io/2018/03/31/my-hobby/</loc>
-        <lastmod>2018-09-12T15:49:28.848Z</lastmod>
+        <lastmod>2018-09-12T15:48:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
