@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>네이버 api 연동하여 데이터 추출하기 | Jeongwook, Life Blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="파이썬,개발,크롤링,데이터 마이닝" />
+    
+
+      
+        <meta name="description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
+<meta name="keywords" content="파이썬,개발,크롤링,데이터 마이닝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="네이버 api 연동하여 데이터 추출하기">
+<meta property="og:url" content="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/index.html">
+<meta property="og:site_name" content="Jeongwook, Life Blog">
+<meta property="og:description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25416425/54654599-0b1d5400-4b02-11e9-9085-54b442593607.png">
+<meta property="og:updated_time" content="2019-03-20T04:14:31.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="네이버 api 연동하여 데이터 추출하기">
+<meta name="twitter:description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/25416425/54654599-0b1d5400-4b02-11e9-9085-54b442593607.png">
+        
+    
+    <link rel="canonical" href="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/"/>
+
+    
+        <link rel="alternate" href="https://jeongwookie.github.io/atom.xml" title="Jeongwook, Life Blog" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="https://user-images.githubusercontent.com/25416425/45255002-3806e680-b3bc-11e8-8d51-5dde5f6c454d.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-125636294-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <!-- Facebook Pixel Code -->
+<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '238359246855158');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=238359246855158&ev=PageView&noscript=1"
+      /></noscript>
+      <!-- End Facebook Pixel Code -->
+      
+</head>
+<script>
+        fbq('track', 'ViewContent');
+      </script>
+      
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">배움과 생각 쌓기</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/">Diary</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/일기장/">일기장</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/">Marketing</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/Design/">Design</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/R/">R</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Tools/">Tools</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/jeongwook">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- header -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="1101437998"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-collect-data-using-naver-search-api" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        네이버 api 연동하여 데이터 추출하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/20/collect-data-using-naver-search-api/" class="article-date">
+            <time datetime="2019-03-20T02:17:11.000Z" itemprop="datePublished">2019-03-20</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/개발/">개발</a>, <a class="tag-link" href="/tags/데이터-마이닝/">데이터 마이닝</a>, <a class="tag-link" href="/tags/크롤링/">크롤링</a>, <a class="tag-link" href="/tags/파이썬/">파이썬</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>이번 포스트는 네이버 개발자 센터에서 제공하는 검색 api를 통해 우리가 원하는 키워드를 검색하고, 그 결과를 json파일로 저장하는 것을 다루어보겠다.</p>
+<p>json파일로 저장하는 이유는 <code>pandas</code>와 같은 데이터 분석 툴을 사용할 때, import하기 좋은 파일 형식이기 때문이다.</p>
+<p>아래와 같은 순서로 진행한다.</p>
+<ul>
+<li>Step 1: 네이버 개발자센터 등록 및 키 값 받아오기</li>
+<li>Step 2: api caller 만들기</li>
+<li>Step 3: 데이터 수집 후 json 파일로 저장하기</li>
+<li>Step 4: pandas 사용하여 분석하기</li>
+</ul>
+<h4 id="Step-1-네이버-개발자센터-등록-및-키-값-받아오기"><a href="#Step-1-네이버-개발자센터-등록-및-키-값-받아오기" class="headerlink" title="Step 1. 네이버 개발자센터 등록 및 키 값 받아오기"></a>Step 1. 네이버 개발자센터 등록 및 키 값 받아오기</h4><p>먼저 <a href="https://developers.naver.com/main/" target="_blank" rel="noopener">네이버 개발자 센터</a>에 접속하여 Application -&gt; 애플리케이션 등록 을 클릭한다.</p>
+<p>아래와 같은 화면이 뜨는데, 검색 api 누르고 안드로이드 설정에서 적당한 이름을 넣으면 된다. (com.블라블라)</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54655089-e75b0d80-4b03-11e9-80cd-fdb8a1c8e654.png" width="550"></p>
+<p>완료하게 되면, 애플리케이션 정보에 client ID와 client secret 코드가 보이는데 이걸 어딘가 안전한 곳에 복사해둔다. (노출 절대 금지)</p>
+<h4 id="Step-2-api-caller-만들기"><a href="#Step-2-api-caller-만들기" class="headerlink" title="Step 2. api caller 만들기"></a>Step 2. api caller 만들기</h4><p>이제, 네이버 검색 api를 불러올 caller 을 만들어 보자.</p>
+<p>아까 전 네이버 개발자 센터 홈페이지에서 Documents -&gt; 서비스 API -&gt; 검색을 누르면 아래와 같은 페이지가 뜬다. 코드는 python으로 클릭.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54655436-43726180-4b05-11e9-8385-1dc66ae2e745.png" width="550"></p>
+<p>여기 있는 코드를 긁어서 오면 아래와 같다. 중간에 <code>YOUR_CLIENT_ID</code>와 <code>YOUR_CLIENT_SECRET</code>에는 아까 복사해 두었던 키값들을 기입한다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div><div style="line-height:130%">13</div><div style="line-height:130%">14</div><div style="line-height:130%">15</div><div style="line-height:130%">16</div><div style="line-height:130%">17</div><div style="line-height:130%">18</div><div style="line-height:130%">19</div><div style="line-height:130%">20</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;네이버&nbsp;검색&nbsp;API예제는&nbsp;블로그를&nbsp;비롯&nbsp;전문자료까지&nbsp;호출방법이&nbsp;동일하므로&nbsp;blog검색만&nbsp;대표로&nbsp;예제를&nbsp;올렸습니다.</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;네이버&nbsp;검색&nbsp;Open&nbsp;API&nbsp;예제&nbsp;-&nbsp;블로그&nbsp;검색</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;os</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;sys</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;urllib.request</div><div style="padding:0 6px; white-space:pre; line-height:130%">client_id&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“YOUR_CLIENT_ID”</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">client_secret&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“YOUR_CLIENT_SECRET”</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">encText&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;urllib.parse.quote(<span style="color:#ffd500">“검색할&nbsp;단어”</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">url&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“<a href="https://openapi.naver.com/v1/search/blog?query=&quot;" target="_blank" rel="noopener">https://openapi.naver.com/v1/search/blog?query=&quot;</a></span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;encText&nbsp;<span style="color:#999999">#&nbsp;json&nbsp;결과</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;url&nbsp;=&nbsp;”<a href="https://openapi.naver.com/v1/search/blog.xml?query=&quot;&nbsp;+&nbsp;encText&nbsp;#&nbsp;xml&nbsp;결과" target="_blank" rel="noopener">https://openapi.naver.com/v1/search/blog.xml?query=&quot;&nbsp;+&nbsp;encText&nbsp;#&nbsp;xml&nbsp;결과</a></span></div><div style="padding:0 6px; white-space:pre; line-height:130%">request&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;urllib.request.Request(url)</div><div style="padding:0 6px; white-space:pre; line-height:130%">request.add_header(<span style="color:#ffd500">“X-Naver-Client-Id”</span>,client_id)</div><div style="padding:0 6px; white-space:pre; line-height:130%">request.add_header(<span style="color:#ffd500">“X-Naver-Client-Secret”</span>,client_secret)</div><div style="padding:0 6px; white-space:pre; line-height:130%">response&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;urllib.request.urlopen(request)</div><div style="padding:0 6px; white-space:pre; line-height:130%">rescode&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;response.getcode()</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">if</span>(rescode<span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#0086b3"></span><span style="color:#ff3399">=</span><span style="color:#c10aff">200</span>):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;response_body&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;response.read()</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">print</span>(response_body.decode(<span style="color:#ffd500">‘utf-8’</span>))</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">else</span>:</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">print</span>(<span style="color:#ffd500">“Error&nbsp;Code:”</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;rescode)</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p>샘플 코드의 주석에 적힌 대로, 현재 이 코드는 키워드를 받아서 블로그를 검색한 결과를 보여준다.</p>
+<p>코드가 너무 기니까 조금 간략하게 바꾸어 보자. 대충 이런 식이다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;requests</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">from</span>&nbsp;urllib.parse&nbsp;<span style="color:#ff3399">import</span>&nbsp;urlparse</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">keyword&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;“”</div><div style="padding:0 6px; white-space:pre; line-height:130%">url&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“<a href="https://openapi.naver.com/v1/search/blog?query=&quot;" target="_blank" rel="noopener">https://openapi.naver.com/v1/search/blog?query=&quot;</a></span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;keyword</div><div style="padding:0 6px; white-space:pre; line-height:130%">result&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;requests.get(urlparse(url).geturl(),</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>{“X<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Naver<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Client<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Id”:“YOUR_CLIENT_ID”,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“X<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Naver<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Client<span style="color:#0086b3"></span><span style="color:#ff3399">-</span>Secret”:“YOUR_CLIENT_SECRET”})</div><div style="padding:0 6px; white-space:pre; line-height:130%">json_obj&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;result.json()</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(json_obj)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p>위 코드는 <code>keyword</code> 를 받아서 네이버 검색 api를 거친 후 <code>json_obj</code>를 반환한다.</p>
+<p>이제 call을 하는 함수를 만들어 보자. 키워드를 입력한 후, 그 검색 결과를 한번에 100개씩 받아오는 함수를 작성한다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;requests</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">from</span>&nbsp;urllib.parse&nbsp;<span style="color:#ff3399">import</span>&nbsp;quote</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">def</span>&nbsp;call(keyword,&nbsp;start):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;encText&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;quote(keyword)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“<a href="https://openapi.naver.com/v1/search/blog?query=&quot;" target="_blank" rel="noopener">https://openapi.naver.com/v1/search/blog?query=&quot;</a></span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;encText&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#ffd500">“&amp;display=100”</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#ffd500">“&amp;start=”</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#4be6fa">str</span>(start)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;requests.get(url<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>url,&nbsp;headers<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>{<span style="color:#ffd500">“X-Naver-Client-Id”</span>:<span style="color:#ffd500">“YOUR_CLIENT_ID”</span>,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">“X-Naver-Client-Secret”</span>:<span style="color:#ffd500">“YOUR_CLIENT_SECRET”</span>})</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">print</span>(result)&nbsp;&nbsp;<span style="color:#999999">#&nbsp;Response&nbsp;[200]</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">return</span>&nbsp;result.json()</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p><code>&amp;display=100</code>은 한번에 100개의 검색 결과를 보여준다는 것이고, <code>&amp;start=</code>은 그 뒤의 숫자에 따라 어느 순서의 검색 결과부터 출력하는지를 결정한다. </p>
+<p>뒤의 숫자는 그냥 두면 <code>int</code> 속성을 가지게 되므로, <code>str()</code>을 사용하여 <code>string</code>으로 바꾸어 url을 완성시킨다.</p>
+<h4 id="Step-3-데이터-수집-후-json-파일로-저장하기"><a href="#Step-3-데이터-수집-후-json-파일로-저장하기" class="headerlink" title="Step 3. 데이터 수집 후 json 파일로 저장하기"></a>Step 3. 데이터 수집 후 json 파일로 저장하기</h4><p>이제, 검색 결과를 한번에 1000개 수집하여 json 파일로 저장해 보자.</p>
+<p>모듈화를 위해 libs 폴더 내 naver_api_call 폴더를 만들고, 그 내부에 먼저 api_caller.py 파일을 만들어 작성하였다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div><div style="line-height:130%">13</div><div style="line-height:130%">14</div><div style="line-height:130%">15</div><div style="line-height:130%">16</div><div style="line-height:130%">17</div><div style="line-height:130%">18</div><div style="line-height:130%">19</div><div style="line-height:130%">20</div><div style="line-height:130%">21</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;api_caller.py</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;requests</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">from</span>&nbsp;urllib.parse&nbsp;<span style="color:#ff3399">import</span>&nbsp;quote</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;네이버&nbsp;api&nbsp;call</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">def</span>&nbsp;call(keyword,&nbsp;start):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;encText&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;quote(keyword)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">“<a href="https://openapi.naver.com/v1/search/blog?query=&quot;" target="_blank" rel="noopener">https://openapi.naver.com/v1/search/blog?query=&quot;</a></span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;encText&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">“&amp;display=100”</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#ffd500">“&amp;start=”</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#4be6fa">str</span>(start)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;requests.get(url<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>url,&nbsp;headers<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>{<span style="color:#ffd500">“X-Naver-Client-Id”</span>:<span style="color:#ffd500">“YOUR_CLIENT_ID”</span>,</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd500">“X-Naver-Client-Secret”</span>:<span style="color:#ffd500">“YOUR_CLIENT_SECRET”</span>})</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">print</span>(result)&nbsp;&nbsp;<span style="color:#999999">#&nbsp;Response&nbsp;[200]</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">return</span>&nbsp;result.json()</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;1000개의&nbsp;검색&nbsp;결과&nbsp;받아오기</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">def</span>&nbsp;get1000results(keyword):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;[]</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">for</span>&nbsp;num&nbsp;<span style="color:#ff3399">in</span>&nbsp;<span style="color:#4be6fa">range</span>(<span style="color:#c10aff">0</span>,<span style="color:#c10aff">10</span>):</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;call(keyword,&nbsp;num&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">*</span>&nbsp;<span style="color:#c10aff">100</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;<span style="color:#c10aff">1</span>)[<span style="color:#ffd500">‘items’</span>]&nbsp;<span style="color:#999999">#&nbsp;list&nbsp;안에&nbsp;키값이&nbsp;’item’인&nbsp;애들만&nbsp;넣기</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">return</span>&nbsp;list</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p>함수들을 만들었으니, 이제 실제로 사용해 보자. 우리가 할 일은 네이버 api call을 하고, 1000개의 키워드 검색 결과를 받아온 후, 이를 json파일에 저장하는 것이다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div><div style="line-height:130%">13</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;01_collect.py</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">from</span>&nbsp;libs.naver_api_call.api_caller&nbsp;<span style="color:#ff3399">import</span>&nbsp;get1000results</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;json</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;[]</div><div style="padding:0 6px; white-space:pre; line-height:130%">result&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;get1000results(<span style="color:#ffd500">“강남역&nbsp;맛집”</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">result_2&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;get1000results(<span style="color:#ffd500">“강남역&nbsp;찻집”</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%">list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;list&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;result&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">+</span>&nbsp;result_2</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">file</span>&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#4be6fa">open</span>(<span style="color:#ffd500">“./gangnam.json”</span>,&nbsp;<span style="color:#ffd500">“w+”</span>)&nbsp;&nbsp;<span style="color:#999999">#&nbsp;gangnam.json&nbsp;파일을&nbsp;쓰기&nbsp;가능한&nbsp;상태로&nbsp;열기&nbsp;(만들기)</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">file</span>.write(json.dumps(list))&nbsp;&nbsp;<span style="color:#999999">#&nbsp;쓰기</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p>위 코드를 출력하면 정상적으로 <code>gangnam.json</code>이 디렉토리에 생성됨을 확인할 수 있다.</p>
+<h4 id="Step-4-pandas-사용하여-분석하기"><a href="#Step-4-pandas-사용하여-분석하기" class="headerlink" title="Step 4. pandas 사용하여 분석하기"></a>Step 4. pandas 사용하여 분석하기</h4><p><code>pandas</code>는 여러가지 분석에 유용한 함수들을 제공하여, 길고 긴 json 파일을 보다 쉽고 빠르게 파악할 수 있도록 돕는다.</p>
+<div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;02_analyze_pd.py</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;pandas&nbsp;as&nbsp;pd</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">df&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;pd.read_json(<span style="color:#ffd500">“./gangnam.json”</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(df.count())&nbsp;&nbsp;<span style="color:#999999">#&nbsp;각&nbsp;key&nbsp;별&nbsp;숫자&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">df_sum&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;df.groupby(<span style="color:#ffd500">“bloggername”</span>).count()&nbsp;&nbsp;<span style="color:#999999">#&nbsp;groupby()&nbsp;함수를&nbsp;사용하여&nbsp;bloggername별로&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(df_sum)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">bloggernames&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;df[<span style="color:#ffd500">‘bloggername’</span>]&nbsp;&nbsp;<span style="color:#999999">#&nbsp;bloggername&nbsp;만&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(bloggernames)</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
+
+<p>아쉽게도, 본 포스트를 작성하고 있는 지금 맥의 Xcode가 맛이 가서 결과값이 제대로 출력이 안되고 있다.</p>
+<p>집에 가서 윈도우로 코드 돌려서 수정하는 걸로..</p>
+<blockquote>
+<p>위 포스트는 Kyeongrok Kim님의 네이버 api 불러오기 예시를 실습해보고, 이를 간단히 정리한 것임을 밝힙니다.</p>
+</blockquote>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- footer -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5144624785"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/" data-id="cjtgp25ku000w53q2nvztdvsq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+            
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/jeongwook-kim/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jeongwookie" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="instagram" href="https://www.instagram.com/bluelingo/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-instagram"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="https://jeongwookie.github.io/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jeongwookie" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/03/18/naver-finance-data-crawling-using-python/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">네이버 금융에서 주식 가격 크롤링하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/20/collect-data-using-naver-search-api/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54654599-0b1d5400-4b02-11e9-9085-54b442593607.png)" alt="네이버 api 연동하여 데이터 추출하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2019/03/20/collect-data-using-naver-search-api/" class="title">네이버 api 연동하여 데이터 추출하기</a></p>
+                            <p class="item-date"><time datetime="2019-03-20T02:17:11.000Z" itemprop="datePublished">2019-03-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/18/naver-finance-data-crawling-using-python/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54501738-76342280-496a-11e9-955a-65c96be1cd1b.png)" alt="네이버 금융에서 주식 가격 크롤링하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2019/03/18/naver-finance-data-crawling-using-python/" class="title">네이버 금융에서 주식 가격 크롤링하기</a></p>
+                            <p class="item-date"><time datetime="2019-03-18T01:36:15.000Z" itemprop="datePublished">2019-03-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/14/kschool-2019-fall-admission/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54342510-ff540c80-467f-11e9-88ed-8dbc343577fa.png)" alt="KAIST 창업석사 신입생 모집 (19년 가을)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Diary/학교-이야기/">학교 이야기</a></p>
+                            <p class="item-title"><a href="/2019/03/14/kschool-2019-fall-admission/" class="title">KAIST 창업석사 신입생 모집 (19년 가을)</a></p>
+                            <p class="item-date"><time datetime="2019-03-14T08:36:59.000Z" itemprop="datePublished">2019-03-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/08/data-visualization-using-R-2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54419985-2d9f1e00-474c-11e9-83b6-8a451e28eb2c.png)" alt="R을 사용한 데이터 시각화, 2편" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/R/">R</a></p>
+                            <p class="item-title"><a href="/2019/03/08/data-visualization-using-R-2/" class="title">R을 사용한 데이터 시각화, 2편</a></p>
+                            <p class="item-date"><time datetime="2019-03-08T07:06:15.000Z" itemprop="datePublished">2019-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/06/data-visualization-using-R-1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/25416425/54202156-c5b1c300-4512-11e9-8f67-c200cc3719e6.png)" alt="R을 사용한 데이터 시각화, 1편" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/R/">R</a></p>
+                            <p class="item-title"><a href="/2019/03/06/data-visualization-using-R-1/" class="title">R을 사용한 데이터 시각화, 1편</a></p>
+                            <p class="item-date"><time datetime="2019-03-06T12:54:08.000Z" itemprop="datePublished">2019-03-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/일기장/">일기장</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/창업-이야기/">창업 이야기</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/추천-아이템/">추천 아이템</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/학교-이야기/">학교 이야기</a><span class="category-list-count">7</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/">Marketing</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Design/">Design</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Marketing/Growth-Hacking/">Growth Hacking</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Python/">Python</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/R/">R</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Tools/">Tools</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Error/" style="font-size: 10.91px;">Error</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Google-Adsense/" style="font-size: 10px;">Google Adsense</a> <a href="/tags/Hexo/" style="font-size: 11.82px;">Hexo</a> <a href="/tags/IBM-Watson/" style="font-size: 10px;">IBM Watson</a> <a href="/tags/KAIST-IT-프로그램/" style="font-size: 17.27px;">KAIST IT 프로그램</a> <a href="/tags/R-programming/" style="font-size: 10.91px;">R programming</a> <a href="/tags/개발/" style="font-size: 19.09px;">개발</a> <a href="/tags/고민/" style="font-size: 12.73px;">고민</a> <a href="/tags/교육/" style="font-size: 18.18px;">교육</a> <a href="/tags/그로스-해킹/" style="font-size: 11.82px;">그로스 해킹</a> <a href="/tags/데이터-마이닝/" style="font-size: 10.91px;">데이터 마이닝</a> <a href="/tags/디자인-리서치/" style="font-size: 10px;">디자인 리서치</a> <a href="/tags/디지털-마케팅/" style="font-size: 10.91px;">디지털 마케팅</a> <a href="/tags/미팅/" style="font-size: 10px;">미팅</a> <a href="/tags/블로그-issue/" style="font-size: 11.82px;">블로그 issue</a> <a href="/tags/셀프-인테리어/" style="font-size: 12.73px;">셀프 인테리어</a> <a href="/tags/스타트업/" style="font-size: 16.36px;">스타트업</a> <a href="/tags/일상/" style="font-size: 20px;">일상</a> <a href="/tags/창업/" style="font-size: 10px;">창업</a> <a href="/tags/창업석사/" style="font-size: 14.55px;">창업석사</a> <a href="/tags/추천-아이템/" style="font-size: 10.91px;">추천 아이템</a> <a href="/tags/취미/" style="font-size: 13.64px;">취미</a> <a href="/tags/크롤링/" style="font-size: 10.91px;">크롤링</a> <a href="/tags/파이썬/" style="font-size: 18.18px;">파이썬</a> <a href="/tags/학교/" style="font-size: 15.45px;">학교</a>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1156366976077024"
+     data-ad-slot="5416797967"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jeongwook, Kim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jeongwookie';
+    
+    
+    var disqus_url = 'http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

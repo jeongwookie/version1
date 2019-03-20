@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/</loc>
+        <lastmod>2019-03-20T04:14:31.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://jeongwookie.github.io/2019/03/18/naver-finance-data-crawling-using-python/</loc>
+        <lastmod>2019-03-20T04:14:27.661Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://jeongwookie.github.io/2019/02/08/goal-directed-design/</loc>
         <lastmod>2019-03-18T14:32:27.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +49,6 @@
     <url>
         <loc>http://jeongwookie.github.io/2018/09/14/kschool-student/</loc>
         <lastmod>2019-03-18T14:12:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2019/03/18/naver-finance-data-crawling-using-python/</loc>
-        <lastmod>2019-03-18T09:18:16.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -209,14 +217,6 @@
     <url>
         <loc>http://jeongwookie.github.io/2018/09/21/recommend-saving-account/</loc>
         <lastmod>2018-09-21T09:54:32.982Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://jeongwookie.github.io/2018/09/17/have-trouble-in-me/</loc>
-        <lastmod>2018-09-21T09:37:58.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
