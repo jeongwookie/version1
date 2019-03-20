@@ -10,12 +10,12 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="파이썬,개발,크롤링,데이터 마이닝" />
+        <meta name="keywords" content="개발,파이썬,크롤링,데이터 마이닝" />
     
 
       
         <meta name="description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
-<meta name="keywords" content="파이썬,개발,크롤링,데이터 마이닝">
+<meta name="keywords" content="개발,파이썬,크롤링,데이터 마이닝">
 <meta property="og:type" content="article">
 <meta property="og:title" content="네이버 api 연동하여 데이터 추출하기">
 <meta property="og:url" content="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/index.html">
@@ -23,7 +23,7 @@
 <meta property="og:description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://user-images.githubusercontent.com/25416425/54654599-0b1d5400-4b02-11e9-9085-54b442593607.png">
-<meta property="og:updated_time" content="2019-03-20T04:14:31.197Z">
+<meta property="og:updated_time" content="2019-03-20T13:23:04.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="네이버 api 연동하여 데이터 추출하기">
 <meta name="twitter:description" content="[데이터 크롤링] 네이버 검색 api 활용하기">
@@ -270,8 +270,11 @@ ga('send', 'pageview');
 <h4 id="Step-4-pandas-사용하여-분석하기"><a href="#Step-4-pandas-사용하여-분석하기" class="headerlink" title="Step 4. pandas 사용하여 분석하기"></a>Step 4. pandas 사용하여 분석하기</h4><p><code>pandas</code>는 여러가지 분석에 유용한 함수들을 제공하여, 길고 긴 json 파일을 보다 쉽고 빠르게 파악할 수 있도록 돕는다.</p>
 <div class="colorscripter-code" style="font-size:12px; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div><div style="line-height:130%">10</div><div style="line-height:130%">11</div><div style="line-height:130%">12</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#999999">#&nbsp;02_analyze_pd.py</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">import</span>&nbsp;pandas&nbsp;as&nbsp;pd</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">df&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;pd.read_json(<span style="color:#ffd500">“./gangnam.json”</span>)</div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(df.count())&nbsp;&nbsp;<span style="color:#999999">#&nbsp;각&nbsp;key&nbsp;별&nbsp;숫자&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">df_sum&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;df.groupby(<span style="color:#ffd500">“bloggername”</span>).count()&nbsp;&nbsp;<span style="color:#999999">#&nbsp;groupby()&nbsp;함수를&nbsp;사용하여&nbsp;bloggername별로&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(df_sum)</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;</div><div style="padding:0 6px; white-space:pre; line-height:130%">bloggernames&nbsp;<span style="color:#0086b3"></span><span style="color:#ff3399">=</span>&nbsp;df[<span style="color:#ffd500">‘bloggername’</span>]&nbsp;&nbsp;<span style="color:#999999">#&nbsp;bloggername&nbsp;만&nbsp;출력</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">print</span>(bloggernames)</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4f; text-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none; color:white"><span style="font-size:9px; word-break:normal; background-color:#4f4f4f; color:white; border-radius:10px; padding:1px">cs</span></a></td></tr></table></div>
 
-<p>아쉽게도, 본 포스트를 작성하고 있는 지금 맥의 Xcode가 맛이 가서 결과값이 제대로 출력이 안되고 있다.</p>
-<p>집에 가서 윈도우로 코드 돌려서 수정하는 걸로..</p>
+<p><code>count()</code> 는 json 파일에 저장된 각각의 key값에 대한 데이터 숫자를 세어준다. 우리는 위에서 “강남역 맛집”으로 검색한 결과 1000개, 그리고 “강남역 찻집”으로 검색한 결과 1000개로 총 2000개의 결과값을 저장해 두었었다.</p>
+<p><code>groupby()</code> 는 지정한 key값으로 결과값을 그룹화하여 보여준다. 결과값을 보면 어떤 bloggername을 가진 사람이 우리가 지정한 키워드에 대해서 블로깅을 많이 하였는지 알 수 있다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54686400-8a3f7600-4b5c-11e9-8715-315304fda0d8.png" width="550"></p>
+<p>세 번째 출력값은 현재 저장된 json 파일에서 bloggername 을 전부 출력해 본 것이다. 총 1640개의 블로그가 수집되었음을 알 수 있다.</p>
+<p><img src="https://user-images.githubusercontent.com/25416425/54687073-100ff100-4b5e-11e9-8eda-8465816a34be.png" width="550"></p>
 <blockquote>
 <p>위 포스트는 Kyeongrok Kim님의 네이버 api 불러오기 예시를 실습해보고, 이를 간단히 정리한 것임을 밝힙니다.</p>
 </blockquote>
@@ -293,7 +296,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/" data-id="cjtgp25ku000w53q2nvztdvsq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://jeongwookie.github.io/2019/03/20/collect-data-using-naver-search-api/" data-id="cjth8mtw7000nc4ub2nhao897" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
